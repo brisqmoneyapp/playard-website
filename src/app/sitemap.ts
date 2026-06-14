@@ -48,6 +48,12 @@ const pages: MetadataRoute.Sitemap = [
     priority: 0.85,
   },
   {
+    url: `${baseUrl}/gift-cards`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.88,
+  },
+  {
     url: `${baseUrl}/contact`,
     lastModified: new Date(),
     changeFrequency: "monthly",

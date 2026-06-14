@@ -71,6 +71,7 @@ const navItems = [
   { href: "/parties", label: "Parties" },
   { href: "/corporate-events", label: "Corporate" },
   { href: "/offers", label: "Offers" },
+  { href: "/gift-cards", label: "Gift Cards" },
   { href: "/tournaments", label: "Tournaments" },
   { href: "/contact", label: "Find Us" },
 ];
@@ -92,6 +93,7 @@ const topTickerItems = [
   "Shuffleboard",
   "VR",
   "Parties",
+  "Gift Cards",
   "Work Socials",
   "Tournaments",
 ];
@@ -264,6 +266,7 @@ export default function RootLayout({
                 <div className="flex flex-col gap-2 text-zinc-400">
                   <Link href="/about" className="hover:text-white">About</Link>
                   <Link href="/corporate-events" className="hover:text-white">Corporate Events</Link>
+                  <Link href="/gift-cards" className="hover:text-white">Gift Cards</Link>
                   <Link href="/investment-and-sponsorship" className="hover:text-white">
                     Investment & Sponsorship
                   </Link>

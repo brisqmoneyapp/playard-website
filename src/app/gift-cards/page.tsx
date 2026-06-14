@@ -1,0 +1,241 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import Script from "next/script";
+
+export const metadata: Metadata = {
+  title: "Gift Cards | Playard Peterborough",
+  description:
+    "Buy Playard gift cards for birthdays, family treats, staff rewards, Christmas presents and unforgettable games, food and good times in Peterborough.",
+};
+
+const giftIdeas = [
+  {
+    title: "Birthdays",
+    emoji: "🎉",
+    colour: "bg-[#ff2bd6] text-white",
+    copy: "A brilliant gift for kids, teens, adults and group celebrations.",
+  },
+  {
+    title: "Family Treats",
+    emoji: "👨‍👩‍👧‍👦",
+    colour: "bg-[#00d4ff] text-black",
+    copy: "Give the family something they can actually enjoy together.",
+  },
+  {
+    title: "Staff Rewards",
+    emoji: "🏆",
+    colour: "bg-[#f59e0b] text-black",
+    copy: "Reward your team with games, food and a proper social experience.",
+  },
+  {
+    title: "Christmas Gifts",
+    emoji: "🎄",
+    colour: "bg-[#d71920] text-white",
+    copy: "Perfect for festive gifting, secret Santa upgrades and group treats.",
+  },
+];
+
+const experiences = [
+  "Interactive Darts",
+  "Pool",
+  "Shuffleboard",
+  "Street Curling",
+  "VR Experiences",
+  "Table Tennis",
+  "SimShooting",
+  "Food & Drinks",
+];
+
+export default function GiftCardsPage() {
+  return (
+    <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <section className="relative isolate flex min-h-[82vh] items-center overflow-hidden bg-black px-4 py-20 text-white sm:px-6 md:py-24">
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_20%,rgba(215,25,32,0.45),transparent_24rem),radial-gradient(circle_at_80%_20%,rgba(255,43,214,0.25),transparent_24rem),radial-gradient(circle_at_60%_80%,rgba(0,212,255,0.22),transparent_24rem)]" />
+
+        <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div>
+            <div className="mb-6 inline-flex rotate-[-3deg] bg-[#d71920] px-5 py-3 text-xs font-black uppercase tracking-[0.22em] text-white shadow-2xl sm:text-sm">
+              Playard Gift Cards
+            </div>
+
+            <h1 className="mb-6 text-[4.2rem] font-black uppercase leading-[0.78] tracking-[-0.1em] text-white sm:text-[5.8rem] md:text-[8rem] lg:text-[9.5rem]">
+              Give
+              <br />
+              The Gift
+              <br />
+              Of Games.
+            </h1>
+
+            <p className="mb-8 max-w-3xl bg-black/55 p-5 text-lg font-bold leading-8 text-white backdrop-blur sm:text-xl md:text-2xl md:leading-10">
+              Playard gift cards are perfect for birthdays, families, staff rewards, Christmas presents and anyone who deserves games, food and good times in Peterborough city centre.
+            </p>
+
+            <a
+              href="#buy-gift-card"
+              className="inline-flex bg-[#00d4ff] px-8 py-5 text-center text-base font-black uppercase tracking-wide text-black transition hover:rotate-[-2deg] hover:scale-[1.03] sm:text-lg"
+            >
+              Buy Gift Card
+            </a>
+          </div>
+
+          <div className="relative">
+            <div className="rotate-[2deg] border-4 border-white bg-[#111111] p-4 shadow-2xl sm:p-6">
+              <Image
+                src="/images/gift-cards/gift-card-hero.jpeg"
+                alt="Playard Gift Card"
+                width={1400}
+                height={900}
+                priority
+                className="h-auto w-full shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="rotate-[-1deg] scale-[1.02] border-y-4 border-black bg-[#d71920] px-4 py-5 text-white sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-4 gap-y-2 text-base font-black uppercase tracking-[-0.03em] sm:text-xl md:text-2xl">
+          <span>Games</span>
+          <span>•</span>
+          <span>Food</span>
+          <span>•</span>
+          <span>Parties</span>
+          <span>•</span>
+          <span>Good Times</span>
+        </div>
+      </section>
+
+      <section className="bg-[#fff3dd] px-4 py-16 sm:px-6 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 max-w-4xl">
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#d71920]">
+              Why buy a Playard gift card?
+            </p>
+            <h2 className="text-5xl font-black uppercase leading-none tracking-[-0.07em] sm:text-6xl md:text-8xl">
+              Better than another boring present.
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {giftIdeas.map((item) => (
+              <div
+                key={item.title}
+                className={`min-h-[290px] border-4 border-black p-8 shadow-2xl transition hover:-translate-y-2 hover:rotate-[-1deg] ${item.colour}`}
+              >
+                <div className="mb-6 text-5xl">{item.emoji}</div>
+                <h3 className="mb-4 text-4xl font-black uppercase leading-none tracking-[-0.05em]">
+                  {item.title}
+                </h3>
+                <p className="text-lg font-bold leading-8">{item.copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black px-4 py-16 text-white sm:px-6 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div>
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#00d4ff]">
+              What can they use it for?
+            </p>
+            <h2 className="mb-6 text-5xl font-black uppercase leading-none tracking-[-0.07em] sm:text-6xl md:text-8xl">
+              Let them choose the fun.
+            </h2>
+            <p className="text-lg font-bold leading-8 text-zinc-300 sm:text-xl sm:leading-9">
+              Gift cards can be used towards Playard experiences, including games, parties, group visits and food and drink purchases where supported by the booking system.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {experiences.map((item, index) => (
+              <div
+                key={item}
+                className={`border-4 border-white p-6 text-2xl font-black uppercase leading-none tracking-[-0.04em] shadow-xl ${
+                  index % 4 === 0
+                    ? "bg-[#d71920] text-white"
+                    : index % 4 === 1
+                      ? "bg-[#00d4ff] text-black"
+                      : index % 4 === 2
+                        ? "bg-[#f59e0b] text-black"
+                        : "bg-[#ff2bd6] text-white"
+                }`}
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="buy-gift-card" className="bg-[#fff3dd] px-4 py-16 sm:px-6 md:py-24">
+        <div className="mx-auto max-w-7xl border-4 border-black bg-white p-6 shadow-2xl sm:p-8 md:p-12">
+          <div className="mb-10 max-w-4xl">
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#d71920]">
+              Buy Online
+            </p>
+            <h2 className="mb-6 text-5xl font-black uppercase leading-none tracking-[-0.07em] sm:text-6xl md:text-8xl">
+              Buy a Playard gift card.
+            </h2>
+            <p className="text-lg font-bold leading-8 text-zinc-700 sm:text-xl sm:leading-9">
+              Choose the value, complete your purchase online and give someone a gift they can use for games, food and good times at Playard.
+            </p>
+          </div>
+
+          <div className="min-h-[520px] border-4 border-black bg-[#fff3dd] p-4 sm:p-6">
+            <Script
+              id="funbutler-gift-card-store"
+              src="https://booking.funbutler.com/assets/bootstrapper/bootstrap.js"
+              data-client-id="67360c42dd5e621cbcc0d7a5"
+              data-embed="giftCardStore"
+              strategy="afterInteractive"
+            />
+            <div className="flex min-h-[420px] items-center justify-center text-center">
+              <div>
+                <div className="mx-auto mb-6 h-20 w-20 animate-spin rounded-full border-8 border-black border-r-transparent" />
+                <p className="text-2xl font-black uppercase tracking-[-0.04em]">
+                  Loading Gift Card Store...
+                </p>
+                <p className="mt-3 font-bold text-zinc-700">
+                  If the store does not appear, refresh this page or contact Playard.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#00d4ff] px-4 py-16 text-black sm:px-6 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.45fr] lg:items-center">
+          <div>
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-black/70">
+              Gift more than a voucher
+            </p>
+            <h2 className="mb-6 text-5xl font-black uppercase leading-none tracking-[-0.07em] sm:text-6xl md:text-8xl">
+              Give them a reason to play.
+            </h2>
+            <p className="max-w-3xl text-lg font-bold leading-8 text-black/80 sm:text-xl sm:leading-9">
+              Gift cards are ideal for family treats, birthdays, rewards, thank you gifts and group celebrations.
+            </p>
+          </div>
+
+          <div className="grid gap-3">
+            <a
+              href="#buy-gift-card"
+              className="bg-[#d71920] px-8 py-5 text-center font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]"
+            >
+              Buy Gift Card
+            </a>
+            <Link
+              href="/activities"
+              className="border-2 border-black px-8 py-5 text-center font-black uppercase tracking-wide text-black hover:bg-black hover:text-white"
+            >
+              View Activities
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

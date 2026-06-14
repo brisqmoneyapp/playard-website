@@ -44,6 +44,12 @@ const offers = [
       "Competitive team experiences with activities, food and drinks included.",
     status: "Available Now",
   },
+  {
+    title: "Gift Cards",
+    description:
+      "Treat friends, family, colleagues or staff to games, food and good times with a Playard gift card.",
+    status: "Available Now",
+  },
 ];
 
 const reasons = [
@@ -51,6 +57,7 @@ const reasons = [
   "Group friendly offers",
   "Family value deals",
   "Seasonal promotions",
+  "Gift cards available",
 ];
 
 export default function OffersPage() {
@@ -79,7 +86,7 @@ export default function OffersPage() {
       </section>
 
       <section className="rotate-[-1deg] scale-[1.02] border-y-4 border-black bg-[#f59e0b] px-6 py-6">
-        <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-5">
           {reasons.map((item) => (
             <div
               key={item}
@@ -115,6 +122,40 @@ export default function OffersPage() {
                 <p className="font-bold leading-8 text-zinc-700">{offer.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-24">
+        <div className="mx-auto max-w-7xl border-4 border-black bg-[#fff3dd] p-8 shadow-2xl md:p-14">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+            <div>
+              <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-[#d71920]">
+                Gift Cards
+              </p>
+              <h2 className="mb-6 text-5xl font-black uppercase tracking-[-0.06em] md:text-7xl">
+                Give The Gift Of Games.
+              </h2>
+              <p className="max-w-3xl text-lg font-bold leading-8 text-zinc-700">
+                Looking for a birthday present, Christmas gift, thank you reward or staff incentive? A Playard gift card lets them choose their own adventure.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <Link
+                href="/gift-cards"
+                className="bg-[#d71920] px-8 py-4 text-center font-black uppercase tracking-wide text-white transition hover:scale-[1.03]"
+              >
+                Buy Gift Card
+              </Link>
+
+              <Link
+                href="/gift-cards"
+                className="bg-[#00d4ff] px-8 py-4 text-center font-black uppercase tracking-wide text-black transition hover:scale-[1.03]"
+              >
+                Learn More
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -160,11 +201,12 @@ export default function OffersPage() {
             FAN FAVOURITES.
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-5">
             <div className="border-4 border-black bg-[#f59e0b] p-8"><h3 className="text-3xl font-black uppercase">Student Nights 🎓</h3></div>
             <div className="border-4 border-black bg-[#d71920] p-8 text-white"><h3 className="text-3xl font-black uppercase">Group Deals 👥</h3></div>
             <div className="border-4 border-black bg-[#ff2bd6] p-8 text-white"><h3 className="text-3xl font-black uppercase">Birthday Extras 🎉</h3></div>
             <div className="border-4 border-black bg-[#00d4ff] p-8"><h3 className="text-3xl font-black uppercase">Family Offers 👨‍👩‍👧‍👦</h3></div>
+            <div className="border-4 border-black bg-[#111111] p-8 text-white"><h3 className="text-3xl font-black uppercase">Gift Cards 🎁</h3></div>
           </div>
         </div>
       </section>

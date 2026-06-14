@@ -61,6 +61,7 @@ const games = [
 
 const quickLinks = [
   { title: "Book Games", href: "/book", colour: "bg-[#d71920] text-white" },
+  { title: "Gift Cards", href: "/gift-cards", colour: "bg-[#111111] text-white" },
   { title: "Food & Drinks", href: "/food-and-drinks", colour: "bg-[#f59e0b] text-black" },
   { title: "Parties", href: "/parties", colour: "bg-[#ff2bd6] text-white" },
   { title: "Corporate", href: "/corporate-events", colour: "bg-[#00d4ff] text-black" },
@@ -93,6 +94,7 @@ const whatsOn = [
   "Student Nights",
   "Group Bookings",
   "Food & Drinks",
+  "Gift Cards",
   "Tournaments Coming Soon",
 ];
 
@@ -188,13 +190,15 @@ export default function Home() {
           <span>•</span>
           <span>Food</span>
           <span>•</span>
+          <span>Gift Cards</span>
+          <span>•</span>
           <span>Parties</span>
         </div>
       </section>
 
       <section className="bg-[#fff3dd] px-4 py-16 text-black sm:px-6 md:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {quickLinks.map((item) => (
               <Link
                 key={item.href}
@@ -403,3 +407,32 @@ export default function Home() {
     </main>
   );
 }
+
+      <section className="bg-white px-4 py-16 text-black sm:px-6 md:py-20 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="order-2 lg:order-1">
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#d71920]">
+              Gift Cards
+            </p>
+            <h2 className="mb-6 text-5xl font-black uppercase leading-none tracking-[-0.07em] sm:text-6xl md:text-8xl">
+              Give The Gift Of Games.
+            </h2>
+            <p className="mb-8 text-lg font-bold leading-8 text-zinc-700 sm:text-xl sm:leading-9">
+              Perfect for birthdays, Christmas gifts, family treats, staff rewards and anyone who deserves a Playard night out.
+            </p>
+            <Link
+              href="/gift-cards"
+              className="inline-flex bg-[#d71920] px-8 py-5 text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]"
+            >
+              Buy Gift Card
+            </Link>
+          </div>
+
+          <Link
+            href="/gift-cards"
+            className="order-1 block rotate-[2deg] border-4 border-black bg-black p-4 shadow-2xl transition hover:-translate-y-2 hover:rotate-[-1deg] lg:order-2"
+          >
+            <div className="min-h-[260px] bg-[url('/images/gift-cards/gift-card-hero.jpeg')] bg-cover bg-center sm:min-h-[360px] lg:min-h-[420px]" />
+          </Link>
+        </div>
+      </section>
