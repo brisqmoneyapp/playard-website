@@ -94,7 +94,7 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-[#111111]">
       <div className="relative isolate overflow-hidden bg-black">
         <video
-          className="absolute inset-0 -z-30 h-full w-full bg-black object-cover object-[center_20%] opacity-100"
+          className="absolute inset-0 -z-30 h-full w-full bg-black object-cover object-center opacity-100 lg:hidden"
           autoPlay
           muted
           loop
@@ -103,16 +103,16 @@ export default function Home() {
         >
           <source src="/videos/playard-hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 -z-20 bg-black/35" />
+        <div className="absolute inset-0 -z-20 bg-black/45 lg:bg-[radial-gradient(circle_at_20%_20%,rgba(215,25,32,0.28),transparent_24rem),radial-gradient(circle_at_80%_30%,rgba(0,212,255,0.16),transparent_24rem),#050505]" />
 
-        <section className="relative flex min-h-[100vh] items-center overflow-hidden px-4 py-20 text-white sm:px-6 md:py-24">
-          <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-1 lg:items-center">
+        <section className="relative flex min-h-[100vh] items-center overflow-hidden px-4 py-20 text-white sm:px-6 md:py-24 lg:min-h-[92vh]">
+          <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
             <div>
               <div className="mb-5 inline-flex rotate-[-3deg] bg-[#d71920] px-4 py-3 text-xs font-black uppercase tracking-[0.2em] text-white shadow-2xl sm:text-sm">
                 Peterborough games bar
               </div>
 
-              <h1 className="mb-6 max-w-4xl text-[3.35rem] font-black uppercase leading-[0.82] tracking-[-0.08em] text-white sm:text-[4.4rem] md:text-[5.8rem] lg:text-[7.5rem]">
+              <h1 className="mb-6 max-w-4xl text-[3.35rem] font-black uppercase leading-[0.82] tracking-[-0.08em] text-white sm:text-[4.4rem] md:text-[5.8rem] lg:text-[6.6rem]">
                 Play.
                 <br />
                 Connect.
@@ -144,6 +144,21 @@ export default function Home() {
                 >
                   Food & Drinks
                 </Link>
+              </div>
+            </div>
+
+            <div className="hidden lg:block">
+              <div className="rotate-[1.5deg] border-4 border-white bg-black p-3 shadow-2xl lg:min-h-[720px]">
+                <video
+                  className="h-[720px] w-full bg-black object-cover object-center"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster="/images/venue/hero-poster.jpg"
+                >
+                  <source src="/videos/playard-hero.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
