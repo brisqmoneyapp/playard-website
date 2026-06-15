@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
+import FunbutlerGiftCards from "@/components/FunbutlerGiftCards";
 
 export const metadata: Metadata = {
   title: "Gift Cards | Playard Peterborough",
@@ -183,26 +183,7 @@ export default function GiftCardsPage() {
             </p>
           </div>
 
-          <div className="min-h-[520px] border-4 border-black bg-[#fff3dd] p-4 sm:p-6">
-            <Script
-              id="funbutler-gift-card-store"
-              src="https://booking.funbutler.com/assets/bootstrapper/bootstrap.js"
-              data-client-id="67360c42dd5e621cbcc0d7a5"
-              data-embed="giftCardStore"
-              strategy="afterInteractive"
-            />
-            <div className="flex min-h-[420px] items-center justify-center text-center">
-              <div>
-                <div className="mx-auto mb-6 h-20 w-20 animate-spin rounded-full border-8 border-black border-r-transparent" />
-                <p className="text-2xl font-black uppercase tracking-[-0.04em]">
-                  Loading Gift Card Store...
-                </p>
-                <p className="mt-3 font-bold text-zinc-700">
-                  If the store does not appear, refresh this page or contact Playard.
-                </p>
-              </div>
-            </div>
-          </div>
+          <FunbutlerGiftCards clientId="67360c42dd5e621cbcc0d7a5" />
         </div>
       </section>
 

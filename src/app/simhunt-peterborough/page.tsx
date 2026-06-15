@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
 
 export const metadata: Metadata = {
   title: "SimShooting in Peterborough | Playard",
@@ -286,26 +287,20 @@ export default function SimHuntPeterboroughPage() {
                 Ready to aim?
               </h2>
               <p className="mb-8 text-xl font-bold leading-9 text-zinc-800">
-                Add the Funbutler SimShooting booking widget here so customers can book directly from this page.
+                Book your SimShooting session directly below. Choose your preferred date, time and group size, then lock in your Playard simulator experience.
               </p>
               <Link
                 href="/book"
                 className="inline-flex bg-black px-8 py-5 text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]"
               >
-                Go to Book Page
+                View All Packages
               </Link>
             </div>
 
-            <div className="flex min-h-[420px] items-center justify-center border-4 border-black bg-[#ff7a00] p-8 text-center text-white">
-              <div>
-                <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-white/80">
-                  Funbutler embed placeholder
-                </p>
-                <p className="text-5xl font-black uppercase leading-none tracking-[-0.06em]">
-                  Paste SimShooting booking code here later.
-                </p>
-              </div>
-            </div>
+            <FunbutlerBookingForm
+              bookingFormId="69ec0033288ba631d5ed0106"
+              title="Playard SimShooting Booking Form"
+            />
           </div>
         </div>
       </section>

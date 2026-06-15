@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
 
 export const metadata: Metadata = {
   title: "Interactive Darts in Peterborough | Playard",
   description:
-    "Book Dartsee interactive darts at Playard Peterborough. Digital darts, automatic scoring, group games, food, drinks, parties and work socials.",
+    "Book interactive darts at Playard Peterborough. Digital darts, automatic scoring, group games, food, drinks, parties and work socials.",
 };
 
 const dartGames = [
@@ -326,27 +327,20 @@ export default function InteractiveDartsPage() {
                 Ready to throw?
               </h2>
               <p className="mb-8 text-xl font-bold leading-9 text-zinc-800">
-                Add your Funbutler booking widget here so customers can book Dartsee
-                interactive darts directly from this page.
+                  Book interactive darts below. Choose your date, time and group size, then lock in your Playard darts session.
               </p>
               <Link
                 href="/book"
                 className="inline-flex bg-black px-8 py-5 text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]"
               >
-                Go to Book Page
+                View All Packages
               </Link>
             </div>
 
-            <div className="flex min-h-[420px] items-center justify-center border-4 border-black bg-[#00d4ff] p-8 text-center text-black">
-              <div>
-                <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-black/70">
-                  Funbutler embed placeholder
-                </p>
-                <p className="text-5xl font-black uppercase leading-none tracking-[-0.06em]">
-                  Paste darts booking code here later.
-                </p>
-              </div>
-            </div>
+            <FunbutlerBookingForm
+  bookingFormId="674cfe6da4deae77bd1f44bc"
+  title="Playard Interactive Darts Booking Form"
+/>
           </div>
         </div>
       </section>

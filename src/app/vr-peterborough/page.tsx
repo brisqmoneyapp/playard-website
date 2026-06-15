@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
 
 export const metadata: Metadata = {
   title: "VR Experiences in Peterborough | Playard",
@@ -107,13 +108,13 @@ export default function VRPeterboroughPage() {
               Book VR
             </Link>
             <Link
-              href="/games"
+              href="/activities"
               className="rounded-md border-4 border-[#00d4ff] px-8 py-4 text-center font-black uppercase tracking-wide text-[#00d4ff] hover:bg-[#00d4ff] hover:text-black transition-colors duration-300"
             >
               All Games
             </Link>
             <Link
-              href="/food-drinks"
+              href="/food-and-drinks"
               className="rounded-md border-4 border-[#ff2bd6] px-8 py-4 text-center font-black uppercase tracking-wide text-[#ff2bd6] hover:bg-[#ff2bd6] hover:text-black transition-colors duration-300"
             >
               Food & Drinks
@@ -243,19 +244,13 @@ export default function VRPeterboroughPage() {
               Ready To Enter The Game?
             </h2>
             <p className="mb-8 text-lg leading-8 text-black font-semibold">
-              Add the Funbutler VR booking widget here so customers can reserve sessions directly from this page.
+              Book your VR experience directly below. Choose your preferred date, time and group size, then lock in your Playard virtual reality session.
             </p>
           </div>
-          <div className="flex min-h-[400px] items-center justify-center rounded-3xl bg-gradient-to-tr from-[#7c3cff] via-[#00d4ff] to-[#ff2bd6] text-center shadow-neon">
-            <div>
-              <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-white">
-                Funbutler embed placeholder
-              </p>
-              <p className="text-3xl font-black text-white">
-                Paste VR booking widget here.
-              </p>
-            </div>
-          </div>
+          <FunbutlerBookingForm
+            bookingFormId="67370655544d4641942dfeb3"
+            title="Playard VR Booking Form"
+          />
         </div>
       </section>
 

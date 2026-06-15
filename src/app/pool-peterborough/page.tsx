@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
 
 export const metadata: Metadata = {
   title: "Pool Tables in Peterborough | Playard",
@@ -27,7 +28,7 @@ const faqs = [
   {
     question: "Can I book a pool table in advance?",
     answer:
-      "Yes. You can book a pool table in advance through Playard's booking system once the Funbutler booking widget is added to this page.",
+      "Yes. You can book a pool table in advance directly through the booking form on this page.",
   },
   {
     question: "Is pool suitable for beginners?",
@@ -184,27 +185,20 @@ export default function PoolPeterboroughPage() {
                 Ready to book a pool table?
               </h2>
               <p className="mb-8 text-lg leading-8 text-zinc-700">
-                Add the Funbutler pool booking widget here so customers can book
-                a pool table directly from this page.
+                Book your pool table directly below. Choose your preferred date, time and group size, then lock in your Playard pool session.
               </p>
               <Link
                 href="/book"
                 className="inline-flex rounded-md bg-black px-8 py-4 font-black uppercase tracking-wide text-white hover:bg-zinc-800"
               >
-                Go to Book Page
+                View All Packages
               </Link>
             </div>
 
-            <div className="flex min-h-[420px] items-center justify-center rounded-3xl border border-zinc-300 bg-zinc-100 p-8 text-center">
-              <div>
-                <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-zinc-500">
-                  Funbutler embed placeholder
-                </p>
-                <p className="text-3xl font-black tracking-tight">
-                  Paste pool booking code here later.
-                </p>
-              </div>
-            </div>
+            <FunbutlerBookingForm
+              bookingFormId="69ebfb29e8c635906752f869"
+              title="Playard Pool Booking Form"
+            />
           </div>
         </div>
       </section>

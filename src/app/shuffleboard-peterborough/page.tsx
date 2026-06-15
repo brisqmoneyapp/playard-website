@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
 
 export const metadata: Metadata = {
   title: "Shuffleboard in Peterborough | Playard",
@@ -185,27 +186,20 @@ export default function ShuffleboardPeterboroughPage() {
                 Ready to book shuffleboard?
               </h2>
               <p className="mb-8 text-lg leading-8 text-zinc-700">
-                Add the Funbutler shuffleboard booking widget here so customers
-                can book directly from this page.
+                Book your shuffleboard table directly below. Choose your preferred date, time and group size, then lock in your Playard shuffleboard session.
               </p>
               <Link
                 href="/book"
                 className="inline-flex rounded-md bg-black px-8 py-4 font-black uppercase tracking-wide text-white hover:bg-zinc-800"
               >
-                Go to Book Page
+                View All Packages
               </Link>
             </div>
 
-            <div className="flex min-h-[420px] items-center justify-center rounded-3xl border border-zinc-300 bg-zinc-100 p-8 text-center">
-              <div>
-                <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-zinc-500">
-                  Funbutler embed placeholder
-                </p>
-                <p className="text-3xl font-black tracking-tight">
-                  Paste shuffleboard booking code here later.
-                </p>
-              </div>
-            </div>
+            <FunbutlerBookingForm
+              bookingFormId="69ebffeeb35096147267158f"
+              title="Playard Shuffleboard Booking Form"
+            />
           </div>
         </div>
       </section>

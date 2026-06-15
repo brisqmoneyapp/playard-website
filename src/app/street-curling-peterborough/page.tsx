@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
 
 export const metadata: Metadata = {
   title: "Street Curling in Peterborough | Playard",
@@ -174,21 +175,14 @@ export default function StreetCurlingPage() {
                 Ready to play?
               </h2>
               <p className="mb-8 text-lg leading-8 text-zinc-700">
-                Add the Funbutler booking widget here so customers can reserve a
-                curling lane directly from this page.
+                Book your street curling lane directly below. Choose your preferred date, time and group size, then lock in your Playard curling session.
               </p>
             </div>
 
-            <div className="flex min-h-[400px] items-center justify-center border-4 border-black bg-[#9EEAFF] text-center">
-              <div>
-                <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-zinc-500">
-                  Funbutler embed placeholder
-                </p>
-                <p className="text-3xl font-black">
-                  Paste curling booking widget here.
-                </p>
-              </div>
-            </div>
+            <FunbutlerBookingForm
+              bookingFormId="69eb6a14cd2df222cf4ba485"
+              title="Playard Street Curling Booking Form"
+            />
           </div>
         </div>
       </section>

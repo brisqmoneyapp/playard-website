@@ -88,22 +88,13 @@ const moments = [
   },
 ];
 
-const whatsOn = [
-  "Birthday Parties",
-  "Work Socials",
-  "Student Nights",
-  "Group Bookings",
-  "Food & Drinks",
-  "Gift Cards",
-  "Tournaments Coming Soon",
-];
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-[#111111]">
-      <section className="relative isolate flex min-h-[88vh] items-center overflow-hidden bg-black px-4 py-20 text-white sm:px-6 md:py-24 lg:min-h-[92vh]">
+      <div className="relative isolate overflow-hidden bg-black">
         <video
-          className="absolute inset-0 -z-30 h-full w-full object-cover opacity-45 md:opacity-55"
+          className="absolute inset-0 -z-30 h-full w-full bg-black object-cover object-[center_20%] opacity-100"
           autoPlay
           muted
           loop
@@ -112,153 +103,135 @@ export default function Home() {
         >
           <source src="/videos/playard-hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 -z-20 bg-black/62" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(215,25,32,0.42),transparent_20rem),radial-gradient(circle_at_82%_20%,rgba(0,212,255,0.26),transparent_22rem),radial-gradient(circle_at_70%_82%,rgba(255,43,214,0.24),transparent_22rem)]" />
+        <div className="absolute inset-0 -z-20 bg-black/35" />
 
-        <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-center">
-          <div>
-            <div className="mb-6 inline-flex rotate-[-3deg] bg-[#d71920] px-4 py-3 text-xs font-black uppercase tracking-[0.2em] text-white shadow-2xl sm:text-sm">
-              Peterborough games bar
-            </div>
+        <section className="relative flex min-h-[100vh] items-center overflow-hidden px-4 py-20 text-white sm:px-6 md:py-24">
+          <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-1 lg:items-center">
+            <div>
+              <div className="mb-5 inline-flex rotate-[-3deg] bg-[#d71920] px-4 py-3 text-xs font-black uppercase tracking-[0.2em] text-white shadow-2xl sm:text-sm">
+                Peterborough games bar
+              </div>
 
-            <h1 className="mb-6 max-w-5xl text-[4.4rem] font-black uppercase leading-[0.76] tracking-[-0.1em] text-white sm:text-[5.7rem] md:text-[8rem] lg:text-[10.8rem]">
-              Play.
-              <br />
-              Connect.
-              <br />
-              Compete.
-            </h1>
+              <h1 className="mb-6 max-w-4xl text-[3.35rem] font-black uppercase leading-[0.82] tracking-[-0.08em] text-white sm:text-[4.4rem] md:text-[5.8rem] lg:text-[7.5rem]">
+                Play.
+                <br />
+                Connect.
+                <br />
+                Compete.
+              </h1>
 
-            <p className="mb-8 max-w-3xl bg-black/55 p-4 text-lg font-bold leading-7 text-white backdrop-blur sm:p-5 sm:text-xl sm:leading-8 md:text-2xl md:leading-10">
-              Darts, pool, shuffleboard, VR, street curling, food, parties,
-              birthdays, work socials and big group days and nights out in Peterborough city centre.
-            </p>
-
-            <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
-              <Link
-                href="/book"
-                className="bg-[#00d4ff] px-6 py-4 text-center text-base font-black uppercase tracking-wide text-black transition hover:rotate-[-2deg] hover:scale-[1.03] sm:px-7 sm:py-5 sm:text-lg"
-              >
-                Book Now
-              </Link>
-              <Link
-                href="/activities"
-                className="bg-[#d71920] px-6 py-4 text-center text-base font-black uppercase tracking-wide text-white transition hover:rotate-[2deg] hover:scale-[1.03] sm:px-7 sm:py-5 sm:text-lg"
-              >
-                Choose Game
-              </Link>
-              <Link
-                href="/food-and-drinks"
-                className="border-2 border-white px-6 py-4 text-center text-base font-black uppercase tracking-wide text-white transition hover:bg-white hover:text-black sm:px-7 sm:py-5 sm:text-lg"
-              >
-                Food & Drinks
-              </Link>
-            </div>
-          </div>
-
-          <div className="hidden lg:block">
-            <div className="rotate-[3deg] border-4 border-white bg-black/70 p-8 shadow-2xl backdrop-blur">
-              <p className="mb-6 text-sm font-black uppercase tracking-[0.25em] text-[#00d4ff]">
-                Tonight at Playard
+              <p className="mb-8 max-w-2xl bg-black/45 p-4 text-base font-bold leading-7 text-white backdrop-blur sm:p-5 sm:text-lg sm:leading-8 md:text-xl md:leading-9">
+                Darts, pool, shuffleboard, VR, street curling, food, parties,
+                birthdays, work socials and big group days and nights out in Peterborough city centre.
               </p>
-              <div className="grid gap-3">
-                {whatsOn.map((item) => (
-                  <div
-                    key={item}
-                    className="border border-white/20 bg-white/10 px-5 py-4 text-2xl font-black uppercase tracking-[-0.04em]"
-                  >
-                    {item}
-                  </div>
-                ))}
+
+              <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
+                <Link
+                  href="/book"
+                  className="bg-[#00d4ff] px-6 py-4 text-center text-base font-black uppercase tracking-wide text-black transition hover:rotate-[-2deg] hover:scale-[1.03] sm:px-7 sm:py-5 sm:text-lg"
+                >
+                  Book Now
+                </Link>
+                <Link
+                  href="/activities"
+                  className="bg-[#d71920] px-6 py-4 text-center text-base font-black uppercase tracking-wide text-white transition hover:rotate-[2deg] hover:scale-[1.03] sm:px-7 sm:py-5 sm:text-lg"
+                >
+                  Choose Game
+                </Link>
+                <Link
+                  href="/food-and-drinks"
+                  className="border-2 border-white px-6 py-4 text-center text-base font-black uppercase tracking-wide text-white transition hover:bg-white hover:text-black sm:px-7 sm:py-5 sm:text-lg"
+                >
+                  Food & Drinks
+                </Link>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section className="rotate-[-1deg] scale-[1.03] border-y-4 border-black bg-[#00d4ff] py-4 text-black sm:py-5">
-        <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 text-base font-black uppercase tracking-[-0.03em] sm:text-xl md:text-2xl">
-          <span>Games Bar</span>
-          <span>•</span>
-          <span>Darts</span>
-          <span>•</span>
-          <span>Pool</span>
-          <span>•</span>
-          <span>Shuffleboard</span>
-          <span>•</span>
-          <span>VR</span>
-          <span>•</span>
-          <span>Food</span>
-          <span>•</span>
-          <span>Gift Cards</span>
-          <span>•</span>
-          <span>Parties</span>
-        </div>
-      </section>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 text-base font-black uppercase tracking-[-0.03em] sm:text-xl md:text-2xl">
+            <span>Games Bar</span>
+            <span>•</span>
+            <span>Darts</span>
+            <span>•</span>
+            <span>Pool</span>
+            <span>•</span>
+            <span>Shuffleboard</span>
+            <span>•</span>
+            <span>VR</span>
+            <span>•</span>
+            <span>Food</span>
+            <span>•</span>
+            <span>Gift Cards</span>
+            <span>•</span>
+            <span>Parties</span>
+          </div>
+        </section>
 
       <section className="bg-[#fff3dd] px-4 py-16 text-black sm:px-6 md:py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {quickLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`border-4 border-black p-6 text-center text-2xl font-black uppercase tracking-[-0.04em] shadow-xl transition hover:-translate-y-2 hover:rotate-[-1deg] ${item.colour}`}
-              >
-                {item.title}
-              </Link>
-            ))}
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              {quickLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`border-4 border-black p-6 text-center text-2xl font-black uppercase tracking-[-0.04em] shadow-xl transition hover:-translate-y-2 hover:rotate-[-1deg] ${item.colour}`}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       <section className="bg-[#fff3dd] px-4 pb-20 text-black sm:px-6 lg:pb-24">
-        <div className="mx-auto max-w-7xl text-center">
-          <h2 className="mb-5 text-5xl font-black uppercase leading-none tracking-[-0.07em] sm:text-6xl md:text-8xl">
-            Choose Your Game
-          </h2>
-          <p className="mx-auto mb-10 max-w-4xl text-lg font-bold leading-8 sm:text-xl md:text-2xl md:leading-9">
-            Pick a game, grab a drink, bring your mates and make it a proper Playard night.
-          </p>
+          <div className="mx-auto max-w-7xl text-center">
+            <h2 className="mb-5 text-5xl font-black uppercase leading-none tracking-[-0.07em] sm:text-6xl md:text-8xl">
+              Choose Your Game
+            </h2>
+            <p className="mx-auto mb-10 max-w-4xl text-lg font-bold leading-8 sm:text-xl md:text-2xl md:leading-9">
+              Pick a game, grab a drink, bring your mates and make it a proper Playard night.
+            </p>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-            {games.map((game) => (
-              <Link
-                key={game.name}
-                href={game.href}
-                className="group overflow-hidden bg-black text-white shadow-2xl transition duration-300 hover:-translate-y-3 hover:rotate-[-1deg] hover:scale-[1.03]"
-              >
-                <div className="relative h-56 overflow-hidden bg-zinc-800 sm:h-64">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${game.image})` }}
-                  />
-                  <div className="absolute inset-0 bg-black/35" />
-                  <div className="absolute inset-x-0 bottom-0 bg-black/65 p-4 backdrop-blur-sm sm:p-5">
-                    <h3 className="text-2xl font-black uppercase leading-none tracking-[-0.05em] sm:text-3xl">
-                      {game.name}
-                    </h3>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+              {games.map((game) => (
+                <Link
+                  key={game.name}
+                  href={game.href}
+                  className="group overflow-hidden bg-black text-white shadow-2xl transition duration-300 hover:-translate-y-3 hover:rotate-[-1deg] hover:scale-[1.03]"
+                >
+                  <div className="relative h-56 overflow-hidden bg-zinc-800 sm:h-64">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-110"
+                      style={{ backgroundImage: `url(${game.image})` }}
+                    />
+                    <div className="absolute inset-0 bg-black/35" />
+                    <div className="absolute inset-x-0 bottom-0 bg-black/65 p-4 backdrop-blur-sm sm:p-5">
+                      <h3 className="text-2xl font-black uppercase leading-none tracking-[-0.05em] sm:text-3xl">
+                        {game.name}
+                      </h3>
+                    </div>
                   </div>
-                </div>
 
-                <div className="grid grid-cols-2 gap-0 p-3 sm:p-4">
-                  <span className={`${game.colour} px-3 py-3 text-center text-xs font-black uppercase tracking-wide sm:px-4 sm:py-4 sm:text-sm`}>
-                    Book Now
-                  </span>
-                  <span className="bg-zinc-900 px-3 py-3 text-center text-xs font-black uppercase tracking-wide text-white sm:px-4 sm:py-4 sm:text-sm">
-                    Learn More
-                  </span>
-                </div>
+                  <div className="grid grid-cols-2 gap-0 p-3 sm:p-4">
+                    <span className={`${game.colour} px-3 py-3 text-center text-xs font-black uppercase tracking-wide sm:px-4 sm:py-4 sm:text-sm`}>
+                      Book Now
+                    </span>
+                    <span className="bg-zinc-900 px-3 py-3 text-center text-xs font-black uppercase tracking-wide text-white sm:px-4 sm:py-4 sm:text-sm">
+                      Learn More
+                    </span>
+                  </div>
 
-                <p className="px-4 pb-5 text-left text-sm font-bold leading-6 text-zinc-300 sm:px-5 sm:pb-6">
-                  {game.note}
-                </p>
-              </Link>
-            ))}
+                  <p className="px-4 pb-5 text-left text-sm font-bold leading-6 text-zinc-300 sm:px-5 sm:pb-6">
+                    {game.note}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
+        </section>
       <section className="bg-black px-4 py-16 text-white sm:px-6 md:py-20 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="min-h-[260px] bg-[url('/images/venue/food-drinks.jpg')] bg-cover bg-center shadow-2xl sm:min-h-[360px] lg:min-h-[420px]" />
@@ -407,32 +380,3 @@ export default function Home() {
     </main>
   );
 }
-
-      <section className="bg-white px-4 py-16 text-black sm:px-6 md:py-20 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="order-2 lg:order-1">
-            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#d71920]">
-              Gift Cards
-            </p>
-            <h2 className="mb-6 text-5xl font-black uppercase leading-none tracking-[-0.07em] sm:text-6xl md:text-8xl">
-              Give The Gift Of Games.
-            </h2>
-            <p className="mb-8 text-lg font-bold leading-8 text-zinc-700 sm:text-xl sm:leading-9">
-              Perfect for birthdays, Christmas gifts, family treats, staff rewards and anyone who deserves a Playard night out.
-            </p>
-            <Link
-              href="/gift-cards"
-              className="inline-flex bg-[#d71920] px-8 py-5 text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]"
-            >
-              Buy Gift Card
-            </Link>
-          </div>
-
-          <Link
-            href="/gift-cards"
-            className="order-1 block rotate-[2deg] border-4 border-black bg-black p-4 shadow-2xl transition hover:-translate-y-2 hover:rotate-[-1deg] lg:order-2"
-          >
-            <div className="min-h-[260px] bg-[url('/images/gift-cards/gift-card-hero.jpeg')] bg-cover bg-center sm:min-h-[360px] lg:min-h-[420px]" />
-          </Link>
-        </div>
-      </section>
