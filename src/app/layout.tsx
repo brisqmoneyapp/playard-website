@@ -66,13 +66,9 @@ export const metadata: Metadata = {
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/activities", label: "Games" },
+  { href: "/activities", label: "Activities" },
   { href: "/food-and-drinks", label: "Food & Drinks" },
-  { href: "/parties", label: "Parties" },
-  { href: "/corporate-events", label: "Corporate" },
   { href: "/offers", label: "Offers" },
-  { href: "/gift-cards", label: "Gift Cards" },
-  { href: "/tournaments", label: "Tournaments" },
   { href: "/contact", label: "Find Us" },
 ];
 
@@ -80,8 +76,10 @@ const footerGameLinks = [
   { href: "/interactive-darts-peterborough", label: "Interactive Darts" },
   { href: "/pool-peterborough", label: "Pool" },
   { href: "/shuffleboard-peterborough", label: "Shuffleboard" },
-  { href: "/vr-peterborough", label: "VR" },
   { href: "/street-curling-peterborough", label: "Street Curling" },
+  { href: "/vr-peterborough", label: "VR" },
+  { href: "/simhunt-peterborough", label: "SimShooting" },
+  { href: "/table-tennis-peterborough", label: "Table Tennis" },
   { href: "/games-lounge-peterborough", label: "Games Lounge" },
 ];
 
@@ -148,6 +146,12 @@ export default function RootLayout({
                 >
                   Call
                 </a>
+                <Link
+                  href="/gift-cards"
+                  className="hidden border-2 border-white px-4 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:border-[#00d4ff] hover:bg-[#00d4ff] hover:text-black lg:inline-flex"
+                >
+                  Gift Cards
+                </Link>
                 <Link
                   href="/book"
                   className="bg-playard-red px-4 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:rotate-[-3deg] hover:bg-[#ef233c] sm:px-5 sm:text-sm playard-glow"
@@ -221,7 +225,7 @@ export default function RootLayout({
               </div>
             </div>
 
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
               <div className="lg:col-span-2">
                 <h3 className="mb-5 text-4xl font-black uppercase leading-none tracking-[-0.08em] sm:text-5xl">
                   PLAYARD
@@ -236,6 +240,48 @@ export default function RootLayout({
                   <span className="rotate-[-1deg] bg-white px-3 py-2">Food</span>
                   <span className="rotate-[1deg] bg-playard-red px-3 py-2 text-white">Parties</span>
                   <span className="rotate-[-2deg] bg-white px-3 py-2">Chaos</span>
+                </div>
+                <div className="mt-8">
+                  <h3 className="mb-4 font-black uppercase tracking-[0.18em] text-playard-red">
+                    Follow Us
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href="https://www.facebook.com/804074306133481/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Follow Playard Peterborough on Facebook"
+                      className="group inline-flex h-12 w-12 items-center justify-center border-2 border-white bg-[#1877F2] text-white transition hover:rotate-[-3deg] hover:scale-110"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
+                        <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.9h2.54V9.84c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.77l-.44 2.9h-2.33V22c4.78-.75 8.44-4.92 8.44-9.94Z" />
+                      </svg>
+                    </a>
+
+                    <a
+                      href="https://www.instagram.com/playardpeterborough/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Follow Playard Peterborough on Instagram"
+                      className="group inline-flex h-12 w-12 items-center justify-center border-2 border-white bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white transition hover:rotate-[3deg] hover:scale-110"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
+                        <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.55a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7.35A4.65 4.65 0 1 1 12 16.65 4.65 4.65 0 0 1 12 7.35Zm0 2A2.65 2.65 0 1 0 12 14.65 2.65 2.65 0 0 0 12 9.35Z" />
+                      </svg>
+                    </a>
+
+                    <a
+                      href="https://www.tiktok.com/@playardpeterborough"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Follow Playard Peterborough on TikTok"
+                      className="group inline-flex h-12 w-12 items-center justify-center border-2 border-white bg-black text-white transition hover:rotate-[-3deg] hover:scale-110"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
+                        <path d="M16.6 2c.32 2.72 1.84 4.35 4.4 4.52v3.05c-1.48.14-2.78-.34-4.3-1.25v5.7c0 7.24-7.9 9.5-11.07 4.31-2.04-3.34-.79-9.2 5.76-9.43v3.22c-.48.08-.99.2-1.46.36-1.4.47-2.2 1.35-1.98 2.9.42 2.98 5.9 3.86 5.44-1.96V2h3.21Z" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -263,6 +309,8 @@ export default function RootLayout({
 
               <div>
                 <h3 className="mb-4 font-black uppercase tracking-[0.18em] text-playard-red">Info</h3>
+
+
                 <div className="flex flex-col gap-2 text-zinc-400">
                   <Link href="/about" className="hover:text-white">About</Link>
                   <Link href="/corporate-events" className="hover:text-white">Corporate Events</Link>
@@ -280,11 +328,33 @@ export default function RootLayout({
               </div>
             </div>
 
-            <div className="mt-12 grid gap-6 border-t border-zinc-800 pt-8 text-zinc-400 lg:grid-cols-[1fr_1fr]">
+            <div className="mt-12 grid gap-6 border-t border-zinc-800 pt-8 text-sm text-zinc-400 lg:grid-cols-[1fr_1.5fr_1fr]">
               <div>
                 <p className="font-bold text-white">Find us</p>
                 <p>26 Hereward Cross, Peterborough, PE1 1TE</p>
               </div>
+
+              <div>
+                <p className="mb-2 font-bold text-white">Opening times</p>
+                <div className="grid gap-x-6 gap-y-1 sm:grid-cols-2">
+                  <div>
+                    <p className="font-bold text-playard-red">Term Time</p>
+                    <p>Mon &amp; Tue: Closed</p>
+                    <p>Wed &amp; Thu: 2pm to 9pm</p>
+                    <p>Fri: 2pm to 11pm</p>
+                    <p>Sat: 10am to 11pm</p>
+                    <p>Sun: 10am to 8pm</p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-playard-red">Holidays</p>
+                    <p>Mon to Thu: 12pm to 9pm</p>
+                    <p>Fri: 12pm to 11pm</p>
+                    <p>Sat: 10am to 11pm</p>
+                    <p>Sun: 10am to 8pm</p>
+                  </div>
+                </div>
+              </div>
+
               <div className="flex flex-col gap-2 lg:items-end">
                 <a href="mailto:info@playard.co.uk" className="hover:text-white">info@playard.co.uk</a>
                 <a href="tel:01733641062" className="hover:text-white">01733 641062</a>
