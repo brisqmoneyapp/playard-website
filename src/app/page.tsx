@@ -120,7 +120,7 @@ export default function Home() {
                 Compete.
               </h1>
 
-              <p className="mb-8 max-w-2xl bg-black/45 p-4 text-base font-bold leading-7 text-white backdrop-blur sm:p-5 sm:text-lg sm:leading-8 md:text-xl md:leading-9">
+              <p className="mb-8 hidden max-w-2xl bg-black/45 p-4 text-base font-bold leading-7 text-white backdrop-blur sm:block sm:p-5 sm:text-lg sm:leading-8 md:text-xl md:leading-9">
                 Darts, pool, shuffleboard, VR, street curling, food, parties,
                 birthdays, work socials and big group days and nights out in Peterborough city centre.
               </p>
