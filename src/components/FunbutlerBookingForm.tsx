@@ -1,6 +1,3 @@
-import { createElement } from "react";
-import FunbutlerScripts from "@/components/FunbutlerScripts";
-
 type FunbutlerBookingFormProps = {
   clientId?: string;
   bookingFormId: string;
@@ -26,12 +23,13 @@ export default function FunbutlerBookingForm({
   `;
 
   return (
-    <div className="min-h-[680px] border-4 border-black bg-[#fff3dd] p-2 shadow-2xl sm:p-4">
+    <div className="min-h-[720px] overflow-hidden border-4 border-black bg-[#fff3dd] p-1 shadow-2xl sm:min-h-[760px] sm:p-4 lg:min-h-[900px]">
       <iframe
         title={title}
         srcDoc={srcDoc}
-        className="h-[900px] w-full border-0 bg-[#fff3dd]"
-        loading="lazy"
+        className="h-[1150px] w-full border-0 bg-[#fff3dd] sm:h-[1050px] lg:h-[1000px]"
+        loading="eager"
+        scrolling="yes"
       />
     </div>
   );

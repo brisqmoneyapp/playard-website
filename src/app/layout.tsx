@@ -167,13 +167,13 @@ export default function RootLayout({
               </div>
             </div>
 
-            <div className="border-t border-red-950/60 px-6 py-2 xl:hidden">
-              <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto pb-1 text-[0.7rem] font-black uppercase tracking-wide text-zinc-300 sm:gap-3 sm:text-xs">
+            <div className="border-t border-red-950/60 px-3 py-2 xl:hidden">
+              <div className="mx-auto grid max-w-7xl grid-cols-5 gap-1 text-center text-[0.62rem] font-black uppercase tracking-[0.04em] text-zinc-300 sm:gap-2 sm:text-xs">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="shrink-0 border border-zinc-800 bg-black px-3 py-2 hover:border-playard-red hover:text-white"
+                    className="min-w-0 border border-zinc-800 bg-black px-1 py-2 leading-tight hover:border-playard-red hover:text-white sm:px-2"
                   >
                     {item.label}
                   </Link>
