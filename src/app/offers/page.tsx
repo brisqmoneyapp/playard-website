@@ -202,11 +202,11 @@ export default function OffersPage() {
           </h2>
 
           <div className="grid gap-6 md:grid-cols-5">
-            <div className="border-4 border-black bg-[#f59e0b] p-8"><h3 className="text-3xl font-black uppercase">Student Nights 🎓</h3></div>
-            <div className="border-4 border-black bg-[#d71920] p-8 text-white"><h3 className="text-3xl font-black uppercase">Group Deals 👥</h3></div>
-            <div className="border-4 border-black bg-[#ff2bd6] p-8 text-white"><h3 className="text-3xl font-black uppercase">Birthday Extras 🎉</h3></div>
-            <div className="border-4 border-black bg-[#00d4ff] p-8"><h3 className="text-3xl font-black uppercase">Family Offers 👨‍👩‍👧‍👦</h3></div>
-            <div className="border-4 border-black bg-[#111111] p-8 text-white"><h3 className="text-3xl font-black uppercase">Gift Cards 🎁</h3></div>
+            <div className="border-4 border-black bg-[#f59e0b] p-8"><h3 className="text-3xl font-black uppercase">Student Nights</h3></div>
+            <div className="border-4 border-black bg-[#d71920] p-8 text-white"><h3 className="text-3xl font-black uppercase">Group Deals</h3></div>
+            <div className="border-4 border-black bg-[#ff2bd6] p-8 text-white"><h3 className="text-3xl font-black uppercase">Birthday Extras</h3></div>
+            <div className="border-4 border-black bg-[#00d4ff] p-8"><h3 className="text-3xl font-black uppercase">Family Offers</h3></div>
+            <div className="border-4 border-black bg-[#111111] p-8 text-white"><h3 className="text-3xl font-black uppercase">Gift Cards</h3></div>
           </div>
         </div>
       </section>

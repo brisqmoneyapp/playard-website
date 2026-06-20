@@ -173,10 +173,10 @@ export default function KidsPartiesPage() {
           </h2>
 
           <div className="grid gap-6 md:grid-cols-4">
-            <div className="border-4 border-black bg-[#ff2bd6] p-8 text-white"><h3 className="text-3xl font-black uppercase">VR Games 🎮</h3></div>
-            <div className="border-4 border-black bg-[#00d4ff] p-8 text-black"><h3 className="text-3xl font-black uppercase">Challenges 🏆</h3></div>
-            <div className="border-4 border-black bg-[#f59e0b] p-8 text-black"><h3 className="text-3xl font-black uppercase">Food 🍕</h3></div>
-            <div className="border-4 border-black bg-[#d71920] p-8 text-white"><h3 className="text-3xl font-black uppercase">Fun Memories 🎉</h3></div>
+            <div className="border-4 border-black bg-[#ff2bd6] p-8 text-white"><h3 className="text-3xl font-black uppercase">VR Games</h3></div>
+            <div className="border-4 border-black bg-[#00d4ff] p-8 text-black"><h3 className="text-3xl font-black uppercase">Challenges</h3></div>
+            <div className="border-4 border-black bg-[#f59e0b] p-8 text-black"><h3 className="text-3xl font-black uppercase">Food</h3></div>
+            <div className="border-4 border-black bg-[#d71920] p-8 text-white"><h3 className="text-3xl font-black uppercase">Fun Memories</h3></div>
           </div>
         </div>
       </section>

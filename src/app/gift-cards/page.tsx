@@ -12,25 +12,21 @@ export const metadata: Metadata = {
 const giftIdeas = [
   {
     title: "Birthdays",
-    emoji: "🎉",
     colour: "bg-[#ff2bd6] text-white",
     copy: "A brilliant gift for kids, teens, adults and group celebrations.",
   },
   {
     title: "Family Treats",
-    emoji: "👨‍👩‍👧‍👦",
     colour: "bg-[#00d4ff] text-black",
     copy: "Give the family something they can actually enjoy together.",
   },
   {
     title: "Staff Rewards",
-    emoji: "🏆",
     colour: "bg-[#f59e0b] text-black",
     copy: "Reward your team with games, food and a proper social experience.",
   },
   {
     title: "Christmas Gifts",
-    emoji: "🎄",
     colour: "bg-[#d71920] text-white",
     copy: "Perfect for festive gifting, secret Santa upgrades and group treats.",
   },
@@ -123,7 +119,6 @@ export default function GiftCardsPage() {
                 key={item.title}
                 className={`min-h-[290px] border-4 border-black p-8 shadow-2xl transition hover:-translate-y-2 hover:rotate-[-1deg] ${item.colour}`}
               >
-                <div className="mb-6 text-5xl">{item.emoji}</div>
                 <h3 className="mb-4 text-4xl font-black uppercase leading-none tracking-[-0.05em]">
                   {item.title}
                 </h3>

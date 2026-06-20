@@ -11,6 +11,8 @@ const activities = [
   {
     name: "Interactive Darts",
     href: "/interactive-darts-peterborough",
+    image: "/images/activities/darts.jpeg",
+    badgeClass: "bg-[#d71920] text-white",
     label: "Digital darts. Big reactions.",
     summary:
       "Interactive darts with digital scoring, group games and a competitive social feel built for nights out, birthdays and work socials.",
@@ -20,6 +22,8 @@ const activities = [
   {
     name: "Shuffleboard",
     href: "/shuffleboard-peterborough",
+    image: "/images/activities/shuffleboard.jpeg",
+    badgeClass: "bg-[#f59e0b] text-black",
     label: "Slide. Score. Settle it.",
     summary:
       "A smooth, tactical game that works brilliantly with drinks, conversation and a bit of friendly rivalry.",
@@ -29,6 +33,8 @@ const activities = [
   {
     name: "Pool",
     href: "/pool-peterborough",
+    image: "/images/activities/pool.jpeg",
+    badgeClass: "bg-[#00b86b] text-white",
     label: "Classic games never miss.",
     summary:
       "Pool tables for casual games, competitive nights, date nights and relaxed group sessions in Peterborough city centre.",
@@ -38,6 +44,8 @@ const activities = [
   {
     name: "Indoor Street Curling",
     href: "/street-curling-peterborough",
+    image: "/images/activities/curling.jpg",
+    badgeClass: "bg-[#9eeaff] text-black",
     label: "Curling without the ice.",
     summary:
       "Easy to learn, surprisingly competitive and brilliant for groups who want something different from the usual night out.",
@@ -47,6 +55,8 @@ const activities = [
   {
     name: "VR Experiences",
     href: "/vr-peterborough",
+    image: "/images/activities/vr.jpg",
+    badgeClass: "bg-[#7c3cff] text-white",
     label: "Step inside the game.",
     summary:
       "Immersive VR experiences for kids parties, teenagers, families and groups looking for something high energy.",
@@ -56,6 +66,8 @@ const activities = [
   {
     name: "Table Tennis",
     href: "/table-tennis-peterborough",
+    image: "/images/activities/table-tennis.jpeg",
+    badgeClass: "bg-[#ff2bd6] text-white",
     label: "Fast rallies. No excuses.",
     summary:
       "Quick games, big reactions and competitive rallies for groups who want something simple, physical and fun.",
@@ -65,6 +77,8 @@ const activities = [
   {
     name: "SimHunt",
     href: "/simhunt-peterborough",
+    image: "/images/activities/simhunt.jpg",
+    badgeClass: "bg-[#ff7a00] text-white",
     label: "Big screen simulator action.",
     summary:
       "A big screen simulator experience for groups looking for something different, social and easy to enjoy together.",
@@ -104,35 +118,28 @@ export default function ActivitiesPage() {
               href={activity.href}
               className="group flex min-h-[560px] flex-col overflow-hidden border-4 border-black bg-white shadow-2xl transition duration-300 hover:-translate-y-3 hover:rotate-[-1deg] hover:scale-[1.02]"
             >
-              <div
-                className="mb-6 flex h-64 items-end p-5 text-white"
-                style={{
-                  background:
-                    activity.name === 'Interactive Darts'
-                      ? '#d71920'
-                      : activity.name === 'Shuffleboard'
-                      ? '#f59e0b'
-                      : activity.name === 'Pool'
-                      ? '#00b86b'
-                      : activity.name === 'Indoor Street Curling'
-                      ? '#9EEAFF'
-                      : activity.name === 'VR Experiences'
-                      ? '#7c3cff'
-                      : activity.name === 'Table Tennis'
-                      ? '#ff2bd6'
-                      : '#ff7a00',
-                }}
-              >
-                <span className="text-xs font-black uppercase tracking-[0.22em] text-zinc-500">
-                  View Activity
-                </span>
+              <div className="relative h-56 overflow-hidden bg-zinc-800 sm:h-64">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${activity.image})` }}
+                />
+                <div className="absolute inset-0 bg-black/35" />
+                <div className="absolute inset-x-0 bottom-0 bg-black/65 p-4 backdrop-blur-sm sm:p-5">
+                  <div className="mb-3 flex items-center justify-between gap-3">
+                    <span
+                      className={`inline-flex px-3 py-1 text-xs font-black uppercase tracking-[0.22em] ${activity.badgeClass}`}
+                    >
+                      View Activity
+                    </span>
+                  </div>
+                  <h2 className="text-2xl font-black uppercase leading-none tracking-[-0.05em] text-white sm:text-3xl">
+                    {activity.name}
+                  </h2>
+                </div>
               </div>
 
-              <div className="flex flex-1 flex-col">
+              <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
                 <p className="section-label mb-3">{activity.label}</p>
-                <h2 className="mb-4 text-4xl font-black tracking-tight">
-                  {activity.name}
-                </h2>
                 <p className="mb-6 text-lg font-bold leading-8 text-zinc-700">
                   {activity.summary}
                 </p>

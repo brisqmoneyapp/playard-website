@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
+import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
   title: "Pool Tables in Peterborough | Playard",
@@ -195,10 +195,14 @@ export default function PoolPeterboroughPage() {
               </Link>
             </div>
 
-            <FunbutlerBookingForm
-              bookingFormId="69ebfb29e8c635906752f869"
-              title="Playard Pool Booking Form"
-            />
+            <div className="flex min-h-[320px] items-center justify-center border-4 border-black bg-[#fff3dd] p-10 text-center shadow-xl sm:p-12">
+              <FunbutlerBookingModal
+                bookingFormId="69ebfb29e8c635906752f869"
+                buttonText="Book Pool Now"
+                title="Book Pool"
+                subtitle="Choose your date, time and group size, then lock in your Playard pool session."
+              />
+            </div>
           </div>
         </div>
       </section>

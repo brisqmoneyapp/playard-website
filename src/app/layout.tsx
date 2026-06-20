@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import CookieBanner from "@/components/CookieBanner";
 import "./globals.css";
+import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -152,12 +153,13 @@ export default function RootLayout({
                 >
                   Gift Cards
                 </Link>
-                <Link
-                  href="/book"
-                  className="bg-playard-red px-4 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:rotate-[-3deg] hover:bg-[#ef233c] sm:px-5 sm:text-sm playard-glow"
-                >
-                  Quick Book
-                </Link>
+               <FunbutlerBookingModal
+  bookingFormId="673706716dbb45cccad59994"
+  buttonText="Quick Book"
+  title="Book Playard"
+  subtitle="Activities, parties, group bookings and Playard packages."
+  className="px-4 py-3 text-xs sm:px-5 sm:text-sm playard-glow"
+/>
                 <Link
                   href="/activities"
                   className="border-2 border-white px-4 py-3 text-xs font-black uppercase tracking-wide text-white sm:hidden"
@@ -210,12 +212,12 @@ export default function RootLayout({
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
-                <Link
-                  href="/book"
-                  className="bg-playard-red px-7 py-4 text-center font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:bg-[#ef233c]"
-                >
-                  Quick Book
-                </Link>
+                <FunbutlerBookingModal
+  bookingFormId="673706716dbb45cccad59994"
+  buttonText="Quick Book"
+  title="Book Playard"
+  subtitle="Activities, parties, group bookings and Playard packages."
+/>
                 <Link
                   href="/parking-and-directions"
                   className="border-2 border-white px-7 py-4 text-center font-black uppercase tracking-wide text-white transition hover:rotate-[2deg] hover:border-playard-red hover:bg-playard-red"
@@ -225,8 +227,8 @@ export default function RootLayout({
               </div>
             </div>
 
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
-              <div className="lg:col-span-2">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_0.9fr_1fr_1.35fr]">
+              <div>
                 <h3 className="mb-5 text-4xl font-black uppercase leading-none tracking-[-0.08em] sm:text-5xl">
                   PLAYARD
                 </h3>
@@ -239,7 +241,7 @@ export default function RootLayout({
                   <span className="rotate-[2deg] bg-playard-red px-3 py-2 text-white">Drinks</span>
                   <span className="rotate-[-1deg] bg-white px-3 py-2">Food</span>
                   <span className="rotate-[1deg] bg-playard-red px-3 py-2 text-white">Parties</span>
-                  <span className="rotate-[-2deg] bg-white px-3 py-2">Chaos</span>
+                  <span className="rotate-[-2deg] bg-white px-3 py-2">Good Times</span>
                 </div>
                 <div className="mt-8">
                   <h3 className="mb-4 font-black uppercase tracking-[0.18em] text-playard-red">
@@ -315,11 +317,19 @@ export default function RootLayout({
                   <Link href="/about" className="hover:text-white">About</Link>
                   <Link href="/corporate-events" className="hover:text-white">Corporate Events</Link>
                   <Link href="/gift-cards" className="hover:text-white">Gift Cards</Link>
-                  <Link href="/investment-and-sponsorship" className="hover:text-white">
+                  <Link
+                    href="/investment-and-sponsorship"
+                    className="whitespace-nowrap hover:text-white"
+                  >
                     Investment & Sponsorship
                   </Link>
                   <Link href="/faq" className="hover:text-white">FAQ</Link>
-                  <Link href="/parking-and-directions" className="hover:text-white">Parking & Directions</Link>
+                  <Link
+                    href="/parking-and-directions"
+                    className="whitespace-nowrap hover:text-white"
+                  >
+                    Parking & Directions
+                  </Link>
                   <Link href="/accessibility" className="hover:text-white">Accessibility</Link>
                   <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
                   <Link href="/cookie-policy" className="hover:text-white">Cookie Policy</Link>

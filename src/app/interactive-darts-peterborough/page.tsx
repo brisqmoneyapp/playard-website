@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
+import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
   title: "Interactive Darts in Peterborough | Playard",
@@ -13,89 +13,49 @@ const dartGames = [
     name: "X01",
     detail: "301, 501 and 701",
     players: "1 to 6 players",
-    difficulty: "Medium",
-    rounds: "Up to 15 rounds",
+    difficulty: "Classic",
+    rounds: "Fast competitive rounds",
     copy: "Race down to zero, avoid the bust and try not to blame your mate for putting you off.",
   },
   {
     name: "Moon Landing",
     detail: "Beginner friendly",
     players: "1 to 6 players",
-    difficulty: "Low",
-    rounds: "Up to 15 rounds",
+    difficulty: "Easy",
+    rounds: "Great first game",
     copy: "Start at 200 and land on zero. Easy to understand, hard to resist another go.",
   },
   {
     name: "Cricket",
     detail: "Tactical chaos",
     players: "1 to 6 players",
-    difficulty: "Hard",
-    rounds: "Up to 15 rounds",
+    difficulty: "Tactical",
+    rounds: "Best for rivalries",
     copy: "Close numbers, score points and make the whole group nervous when you hit the right target.",
-  },
-  {
-    name: "Fight Game",
-    detail: "Lives, damage and healing",
-    players: "2 to 4 players",
-    difficulty: "Medium",
-    rounds: "Up to 25 rounds",
-    copy: "Attack your opponents, heal yourself and turn darts into a proper battle mode.",
-  },
-  {
-    name: "Shanghai",
-    detail: "Pressure darts",
-    players: "1 to 12 players",
-    difficulty: "Medium",
-    rounds: "Up to 25 rounds",
-    copy: "Hit the right number at the right time. Big scoring moments. Bigger reactions.",
   },
   {
     name: "Killer",
     detail: "Knockout mode",
     players: "2 to 10 players",
-    difficulty: "Beginner to advanced",
-    rounds: "Up to 15 rounds",
+    difficulty: "Social",
+    rounds: "Great for groups",
     copy: "Claim your number, become the killer and start taking your friends out of the game.",
   },
   {
-    name: "Football",
-    detail: "Score goals with darts",
+    name: "Shanghai",
+    detail: "Pressure darts",
+    players: "1 to 12 players",
+    difficulty: "Party mode",
+    rounds: "Big scoring moments",
+    copy: "Hit the right number at the right time. Big scoring moments. Bigger reactions.",
+  },
+  {
+    name: "Party Modes",
+    detail: "Football, Golf, Radar and more",
     players: "2 to 10 players",
-    difficulty: "Beginner to advanced",
-    rounds: "Up to 15 rounds",
-    copy: "Move the ball, attack the goal and celebrate like you meant every throw.",
-  },
-  {
-    name: "Golf",
-    detail: "Mini golf meets darts",
-    players: "2 to 10 players",
-    difficulty: "Beginner to advanced",
-    rounds: "Up to 15 rounds",
-    copy: "Navigate hazards, chase the target and turn darts into a playful golf challenge.",
-  },
-  {
-    name: "Radar",
-    detail: "Moving targets",
-    players: "1 to 8 players",
-    difficulty: "Beginner to advanced",
-    rounds: "Up to 15 rounds",
-    copy: "Hit moving targets, chase bonuses and keep your aim sharp when the screen gets busy.",
-  },
-  {
-    name: "Beer Tap",
-    detail: "Bar energy mode",
-    players: "2 to 10 players",
-    difficulty: "Beginner to advanced",
-    rounds: "Up to 15 rounds",
-    copy: "Your darts decide what happens on screen. Built for laughs, groups and proper bar energy.",
-  },
-  {
-    name: "Conqueror",
-    detail: "Territory control",
-    players: "2 to 8 players",
-    difficulty: "Advanced",
-    rounds: "Up to 15 rounds",
-    copy: "Claim the board, attack rivals and turn the darts lane into a mini battlefield.",
+    difficulty: "Mixed",
+    rounds: "Ask staff for all modes",
+    copy: "Try playful digital modes built for laughs, quick rematches and proper bar energy.",
   },
 ];
 
@@ -269,11 +229,14 @@ export default function InteractiveDartsPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-5xl">
             <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#00d4ff]">
-              Dartsee games
+            
             </p>
             <h2 className="text-6xl font-black uppercase leading-none tracking-[-0.07em] md:text-8xl">
-              Choose the mode. Start the rivalry.
+              Popular darts modes.
             </h2>
+            <p className="mt-6 max-w-3xl text-lg font-bold leading-8 text-zinc-300">
+              
+            </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -318,7 +281,7 @@ export default function InteractiveDartsPage() {
 
       <section id="book-darts" className="bg-[#fff3dd] px-6 py-24 text-black">
         <div className="mx-auto max-w-7xl border-4 border-black bg-white p-8 shadow-2xl md:p-14">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#d71920]">
                 Book interactive darts
@@ -327,7 +290,7 @@ export default function InteractiveDartsPage() {
                 Ready to throw?
               </h2>
               <p className="mb-8 text-xl font-bold leading-9 text-zinc-800">
-                  Book interactive darts below. Choose your date, time and group size, then lock in your Playard darts session.
+                Tap the button to open the full screen booking form. Choose your date, time and group size, then lock in your Playard darts session.
               </p>
               <Link
                 href="/book"
@@ -337,10 +300,14 @@ export default function InteractiveDartsPage() {
               </Link>
             </div>
 
-            <FunbutlerBookingForm
-  bookingFormId="674cfe6da4deae77bd1f44bc"
-  title="Playard Interactive Darts Booking Form"
-/>
+            <div className="flex min-h-[320px] items-center justify-center border-4 border-black bg-[#fff3dd] p-10 text-center shadow-xl sm:p-12">
+              <FunbutlerBookingModal
+                bookingFormId="674cfe6da4deae77bd1f44bc"
+                buttonText="Book Darts Now"
+                title="Book Interactive Darts"
+                subtitle="Choose your date, time and group size, then lock in your Playard darts session."
+              />
+            </div>
           </div>
         </div>
       </section>

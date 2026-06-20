@@ -254,16 +254,16 @@ export default function ParkingAndDirectionsPage() {
 
           <div className="grid gap-6 md:grid-cols-4">
             <div className="border-4 border-black bg-[#00d4ff] p-8">
-              <h3 className="text-3xl font-black uppercase">Use PE1 1TE 📍</h3>
+              <h3 className="text-3xl font-black uppercase">Use PE1 1TE</h3>
             </div>
             <div className="border-4 border-black bg-[#f59e0b] p-8">
-              <h3 className="text-3xl font-black uppercase">Check Parking Tariffs 🚗</h3>
+              <h3 className="text-3xl font-black uppercase">Check Parking Tariffs</h3>
             </div>
             <div className="border-4 border-black bg-[#ff2bd6] p-8 text-white">
-              <h3 className="text-3xl font-black uppercase">Allow Walk Time 🚶</h3>
+              <h3 className="text-3xl font-black uppercase">Allow Walk Time</h3>
             </div>
             <div className="border-4 border-black bg-[#d71920] p-8 text-white">
-              <h3 className="text-3xl font-black uppercase">Book Your Game 🎯</h3>
+              <h3 className="text-3xl font-black uppercase">Book Your Game</h3>
             </div>
           </div>
         </div>

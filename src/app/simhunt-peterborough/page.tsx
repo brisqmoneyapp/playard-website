@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
+import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
   title: "SimShooting in Peterborough | Playard",
@@ -297,10 +297,14 @@ export default function SimHuntPeterboroughPage() {
               </Link>
             </div>
 
-            <FunbutlerBookingForm
-              bookingFormId="69ec0033288ba631d5ed0106"
-              title="Playard SimShooting Booking Form"
-            />
+            <div className="flex min-h-[320px] items-center justify-center border-4 border-black bg-[#fff3dd] p-10 text-center shadow-xl sm:p-12">
+              <FunbutlerBookingModal
+                bookingFormId="69ec0033288ba631d5ed0106"
+                buttonText="Book SimShooting Now"
+                title="Book SimShooting"
+                subtitle="Choose your date, time and group size, then lock in your Playard SimShooting session."
+              />
+            </div>
           </div>
         </div>
       </section>

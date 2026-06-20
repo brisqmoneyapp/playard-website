@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
+import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
   title: "Shuffleboard in Peterborough | Playard",
@@ -196,10 +196,14 @@ export default function ShuffleboardPeterboroughPage() {
               </Link>
             </div>
 
-            <FunbutlerBookingForm
-              bookingFormId="69ebffeeb35096147267158f"
-              title="Playard Shuffleboard Booking Form"
-            />
+            <div className="flex min-h-[320px] items-center justify-center border-4 border-black bg-[#fff3dd] p-10 text-center shadow-xl sm:p-12">
+              <FunbutlerBookingModal
+                bookingFormId="69ebffeeb35096147267158f"
+                buttonText="Book Shuffleboard Now"
+                title="Book Shuffleboard"
+                subtitle="Choose your date, time and group size, then lock in your Playard shuffleboard session."
+              />
+            </div>
           </div>
         </div>
       </section>

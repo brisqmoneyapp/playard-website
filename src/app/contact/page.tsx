@@ -151,17 +151,17 @@ export default function ContactPage() {
 
           <div className="grid gap-6 md:grid-cols-3">
             <a href="mailto:info@playard.co.uk?subject=Birthday Party Enquiry" className="border-4 border-black bg-[#ff2bd6] p-8 text-white transition hover:-translate-y-2 hover:rotate-[-1deg]">
-              <h3 className="mb-3 text-3xl font-black uppercase">Birthday Parties 🎉</h3>
+              <h3 className="mb-3 text-3xl font-black uppercase">Birthday Parties</h3>
               <p className="font-bold">Ask about birthday party packages.</p>
             </a>
 
             <a href="mailto:info@playard.co.uk?subject=Corporate Event Enquiry" className="border-4 border-black bg-[#00d4ff] p-8 text-black transition hover:-translate-y-2 hover:rotate-[-1deg]">
-              <h3 className="mb-3 text-3xl font-black uppercase">Corporate Events 🏆</h3>
+              <h3 className="mb-3 text-3xl font-black uppercase">Corporate Events</h3>
               <p className="font-bold">Work socials, networking and venue hire.</p>
             </a>
 
             <a href="mailto:info@playard.co.uk?subject=General Playard Enquiry" className="border-4 border-black bg-[#f59e0b] p-8 text-black transition hover:-translate-y-2 hover:rotate-[-1deg]">
-              <h3 className="mb-3 text-3xl font-black uppercase">General Enquiries 📞</h3>
+              <h3 className="mb-3 text-3xl font-black uppercase">General Enquiries</h3>
               <p className="font-bold">Questions about activities, bookings and visits.</p>
             </a>
           </div>

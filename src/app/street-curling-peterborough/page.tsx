@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
+import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
   title: "Street Curling in Peterborough | Playard",
@@ -179,10 +179,14 @@ export default function StreetCurlingPage() {
               </p>
             </div>
 
-            <FunbutlerBookingForm
-              bookingFormId="69eb6a14cd2df222cf4ba485"
-              title="Playard Street Curling Booking Form"
-            />
+            <div className="flex min-h-[320px] items-center justify-center border-4 border-black bg-[#fff3dd] p-10 text-center shadow-xl sm:p-12">
+              <FunbutlerBookingModal
+                bookingFormId="69eb6a14cd2df222cf4ba485"
+                buttonText="Book Curling Now"
+                title="Book Street Curling"
+                subtitle="Choose your date, time and group size, then lock in your Playard street curling session."
+              />
+            </div>
           </div>
         </div>
       </section>

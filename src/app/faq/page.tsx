@@ -145,17 +145,17 @@ export default function FAQPage() {
 
           <div className="grid gap-6 md:grid-cols-3">
             <Link href="/birthday-parties-peterborough" className="border-4 border-black bg-[#ff2bd6] p-8 text-white transition hover:-translate-y-2 hover:rotate-[-1deg]">
-              <h3 className="mb-3 text-3xl font-black uppercase">Birthday Parties 🎉</h3>
+              <h3 className="mb-3 text-3xl font-black uppercase">Birthday Parties</h3>
               <p className="font-bold">Party packages, food and activities.</p>
             </Link>
 
             <Link href="/corporate-events" className="border-4 border-black bg-[#00d4ff] p-8 text-black transition hover:-translate-y-2 hover:rotate-[-1deg]">
-              <h3 className="mb-3 text-3xl font-black uppercase">Corporate Events 🏆</h3>
+              <h3 className="mb-3 text-3xl font-black uppercase">Corporate Events</h3>
               <p className="font-bold">Team building and work socials.</p>
             </Link>
 
             <Link href="/activities" className="border-4 border-black bg-[#f59e0b] p-8 text-black transition hover:-translate-y-2 hover:rotate-[-1deg]">
-              <h3 className="mb-3 text-3xl font-black uppercase">Activities 🎯</h3>
+              <h3 className="mb-3 text-3xl font-black uppercase">Activities</h3>
               <p className="font-bold">Explore everything Playard offers.</p>
             </Link>
           </div>

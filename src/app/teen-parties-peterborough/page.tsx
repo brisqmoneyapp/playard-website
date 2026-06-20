@@ -228,10 +228,10 @@ export default function TeenPartiesPage() {
           </h2>
 
           <div className="grid gap-6 md:grid-cols-4">
-            <div className="border-4 border-white bg-[#7c3cff] p-8"><h3 className="text-3xl font-black uppercase">VR Battles 🎮</h3></div>
-            <div className="border-4 border-white bg-[#00d4ff] p-8 text-black"><h3 className="text-3xl font-black uppercase">Group Challenges 🏆</h3></div>
-            <div className="border-4 border-white bg-[#ff2bd6] p-8"><h3 className="text-3xl font-black uppercase">Social Gaming ⚡</h3></div>
-            <div className="border-4 border-white bg-[#f59e0b] p-8 text-black"><h3 className="text-3xl font-black uppercase">Food & Drinks 🍕</h3></div>
+            <div className="border-4 border-white bg-[#7c3cff] p-8"><h3 className="text-3xl font-black uppercase">VR Battles</h3></div>
+            <div className="border-4 border-white bg-[#00d4ff] p-8 text-black"><h3 className="text-3xl font-black uppercase">Group Challenges</h3></div>
+            <div className="border-4 border-white bg-[#ff2bd6] p-8"><h3 className="text-3xl font-black uppercase">Social Gaming</h3></div>
+            <div className="border-4 border-white bg-[#f59e0b] p-8 text-black"><h3 className="text-3xl font-black uppercase">Food & Drinks</h3></div>
           </div>
         </div>
       </section>

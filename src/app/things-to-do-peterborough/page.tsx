@@ -233,10 +233,10 @@ export default function ThingsToDoPeterboroughPage() {
           </h2>
 
           <div className="grid gap-6 md:grid-cols-4">
-            <div className="border-4 border-white bg-[#d71920] p-8"><h3 className="text-3xl font-black uppercase">VR 🎮</h3></div>
-            <div className="border-4 border-white bg-[#00d4ff] p-8 text-black"><h3 className="text-3xl font-black uppercase">Darts 🎯</h3></div>
-            <div className="border-4 border-white bg-[#f59e0b] p-8 text-black"><h3 className="text-3xl font-black uppercase">Shuffleboard 🏆</h3></div>
-            <div className="border-4 border-white bg-[#ff2bd6] p-8"><h3 className="text-3xl font-black uppercase">Parties 🎉</h3></div>
+            <div className="border-4 border-white bg-[#d71920] p-8"><h3 className="text-3xl font-black uppercase">VR</h3></div>
+            <div className="border-4 border-white bg-[#00d4ff] p-8 text-black"><h3 className="text-3xl font-black uppercase">Darts</h3></div>
+            <div className="border-4 border-white bg-[#f59e0b] p-8 text-black"><h3 className="text-3xl font-black uppercase">Shuffleboard</h3></div>
+            <div className="border-4 border-white bg-[#ff2bd6] p-8"><h3 className="text-3xl font-black uppercase">Parties</h3></div>
           </div>
         </div>
       </section>

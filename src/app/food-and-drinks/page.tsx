@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Food & Drinks Peterborough | Playard",
   description:
-    "Food, drinks, cocktails, beer and social gaming under one roof at Playard Peterborough.",
+    "Drinks, hot dogs, chicken, snacks and easy food options while you play at Playard Peterborough. Full menu coming soon.",
 };
 
 const highlights = [
@@ -16,28 +16,28 @@ const highlights = [
 
 const menuSections = [
   {
-    title: "Burgers",
-    copy: "Stacked burgers perfect for gaming sessions, parties and group nights out.",
+    title: "Drinks",
+    copy: "Beer, cocktails, soft drinks and bar favourites while you play.",
   },
   {
-    title: "Loaded Fries",
-    copy: "Sharers and sides designed for social groups and events.",
+    title: "Hot Dogs & Chicken",
+    copy: "Easy hot food options for groups, parties and long gaming sessions.",
   },
   {
-    title: "Bar Snacks",
-    copy: "Quick bites to keep the competition going.",
+    title: "Snacks",
+    copy: "Bar snacks and sharers to keep the competition going.",
   },
   {
-    title: "Cocktails",
-    copy: "Classic favourites and venue specials.",
+    title: "Easy Food",
+    copy: "Simple food you can enjoy between games without leaving the action.",
   },
   {
-    title: "Beer & Cider",
-    copy: "Refreshing options to enjoy alongside activities.",
+    title: "Group Bookings",
+    copy: "Food and drinks can be added to parties, celebrations and work socials.",
   },
   {
-    title: "Soft Drinks",
-    copy: "Family friendly options for all ages.",
+    title: "Full Menu",
+    copy: "Our complete menu is being finalised and will be available soon.",
   },
 ];
 
@@ -75,6 +75,10 @@ export default function FoodAndDrinksPage() {
             Food & Drinks
           </div>
 
+          <div className="mb-8 inline-flex rotate-[2deg] border-2 border-[#f59e0b] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#f59e0b]">
+            Full menu coming soon
+          </div>
+
           <h1 className="mb-8 text-[4rem] font-black uppercase leading-[0.82] tracking-[-0.08em] md:text-[7rem] lg:text-[9rem]">
             EAT.
             <br />
@@ -84,7 +88,7 @@ export default function FoodAndDrinksPage() {
           </h1>
 
           <p className="max-w-4xl bg-black/50 p-6 text-xl font-bold leading-8 text-white md:text-2xl md:leading-10">
-            Burgers, loaded fries, cocktails, beers, soft drinks and social gaming all under one roof in Peterborough city centre.
+            Drinks, hot dogs, chicken, snacks and easy food options while you play. Our full menu is being finalised and will be available soon.
           </p>
         </div>
       </section>
@@ -192,16 +196,16 @@ export default function FoodAndDrinksPage() {
 
           <div className="grid gap-6 md:grid-cols-4">
             <div className="border-4 border-black bg-[#f59e0b] p-8">
-              <h3 className="text-3xl font-black uppercase">Burgers 🍔</h3>
+              <h3 className="text-3xl font-black uppercase">Hot Dogs</h3>
             </div>
             <div className="border-4 border-black bg-[#d71920] p-8 text-white">
-              <h3 className="text-3xl font-black uppercase">Loaded Fries 🍟</h3>
+              <h3 className="text-3xl font-black uppercase">Chicken</h3>
             </div>
             <div className="border-4 border-black bg-[#ff2bd6] p-8 text-white">
-              <h3 className="text-3xl font-black uppercase">Cocktails 🍹</h3>
+              <h3 className="text-3xl font-black uppercase">Snacks</h3>
             </div>
             <div className="border-4 border-black bg-[#00d4ff] p-8">
-              <h3 className="text-3xl font-black uppercase">Beer 🍺</h3>
+              <h3 className="text-3xl font-black uppercase">Drinks</h3>
             </div>
           </div>
         </div>

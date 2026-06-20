@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FunbutlerBookingForm from "@/components/FunbutlerBookingForm";
+import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
   title: "VR Experiences in Peterborough | Playard",
@@ -85,6 +85,36 @@ const faqs = [
 ];
 
 const neonColors = ["#7c3cff", "#00d4ff", "#ff2bd6"];
+
+const vrCatalogueCards = [
+  {
+    title: "Arcade Games",
+    href: "/vr-arcade-games-peterborough",
+    color: "#7c3cff",
+    text: "Sports, shooters, rhythm games, puzzles, family favourites and multiplayer VR arcade experiences.",
+    button: "View Arcade Games",
+    textClass: "text-white",
+    buttonClass: "bg-black text-white hover:bg-white hover:text-black",
+  },
+  {
+    title: "Escape Rooms",
+    href: "/vr-escape-rooms-peterborough",
+    color: "#00d4ff",
+    text: "Work together to solve puzzles, complete missions and see if your team can beat the room record.",
+    button: "View Escape Rooms",
+    textClass: "text-black",
+    buttonClass: "bg-black text-white hover:bg-white hover:text-black",
+  },
+  {
+    title: "Free Roam VR",
+    href: "/free-roam-vr-peterborough",
+    color: "#ff2bd6",
+    text: "Move freely inside shared virtual worlds with action, adventure and multiplayer experiences for groups.",
+    button: "View Free Roam VR",
+    textClass: "text-white",
+    buttonClass: "bg-black text-white hover:bg-white hover:text-black",
+  },
+];
 
 export default function VRPeterboroughPage() {
   return (
@@ -230,6 +260,53 @@ export default function VRPeterboroughPage() {
         </div>
       </section>
 
+      {/* VR Games Catalogue */}
+      <section className="bg-black px-6 py-24 text-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 max-w-4xl text-center lg:mx-auto">
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#00d4ff]">
+              VR Games Catalogue
+            </p>
+            <h2 className="mb-6 text-5xl font-black uppercase leading-none tracking-[-0.07em] text-transparent bg-clip-text bg-gradient-to-r from-[#7c3cff] via-[#00d4ff] to-[#ff2bd6] md:text-7xl">
+              Choose Your VR Experience.
+            </h2>
+            <p className="text-lg font-semibold leading-8 text-zinc-300 sm:text-xl sm:leading-9">
+              Explore our VR Arcade Games, VR Escape Rooms and Free Roam VR experiences before you book. Each page shows the games available and what to expect.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-3">
+            {vrCatalogueCards.map((card) => (
+              <Link
+                key={card.title}
+                href={card.href}
+                className="group flex min-h-[420px] flex-col justify-between border-4 border-black p-8 shadow-2xl transition duration-300 hover:-translate-y-3 hover:rotate-[-1deg] hover:scale-[1.02] sm:min-h-[460px] sm:p-10"
+                style={{
+                  background: `linear-gradient(160deg, ${card.color} 0%, #000000 72%)`,
+                  boxShadow: `0 0 30px ${card.color}44`,
+                }}
+              >
+                <div>
+                  <h3
+                    className={`mb-6 text-4xl font-black uppercase leading-none tracking-[-0.06em] sm:text-5xl ${card.textClass}`}
+                  >
+                    {card.title}
+                  </h3>
+                  <p className={`text-lg font-bold leading-8 ${card.textClass === "text-black" ? "text-black/80" : "text-white/90"}`}>
+                    {card.text}
+                  </p>
+                </div>
+                <span
+                  className={`mt-8 inline-flex w-full items-center justify-center px-6 py-4 text-center text-base font-black uppercase tracking-wide transition duration-300 group-hover:scale-[1.03] ${card.buttonClass}`}
+                >
+                  {card.button}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Booking Section */}
       <section
         id="book-vr"
@@ -247,10 +324,14 @@ export default function VRPeterboroughPage() {
               Book your VR experience directly below. Choose your preferred date, time and group size, then lock in your Playard virtual reality session.
             </p>
           </div>
-          <FunbutlerBookingForm
-            bookingFormId="67370655544d4641942dfeb3"
-            title="Playard VR Booking Form"
-          />
+          <div className="flex min-h-[320px] items-center justify-center border-4 border-black bg-[#fff3dd] p-10 text-center shadow-xl sm:p-12">
+            <FunbutlerBookingModal
+              bookingFormId="67370655544d4641942dfeb3"
+              buttonText="Book VR Now"
+              title="Book VR"
+              subtitle="Choose your date, time and group size, then lock in your Playard VR session."
+            />
+          </div>
         </div>
       </section>
 

@@ -146,10 +146,10 @@ export default function PartiesPage() {
           </h2>
 
           <div className="grid gap-6 md:grid-cols-4">
-            <div className="border-4 border-black bg-[#ff2bd6] p-8 text-white"><h3 className="text-3xl font-black uppercase">Kids 🎉</h3></div>
-            <div className="border-4 border-black bg-[#00d4ff] p-8 text-black"><h3 className="text-3xl font-black uppercase">Teens 🎮</h3></div>
-            <div className="border-4 border-black bg-[#f59e0b] p-8 text-black"><h3 className="text-3xl font-black uppercase">Adults 🍻</h3></div>
-            <div className="border-4 border-black bg-[#d71920] p-8 text-white"><h3 className="text-3xl font-black uppercase">Corporate 🏆</h3></div>
+            <div className="border-4 border-black bg-[#ff2bd6] p-8 text-white"><h3 className="text-3xl font-black uppercase">Kids</h3></div>
+            <div className="border-4 border-black bg-[#00d4ff] p-8 text-black"><h3 className="text-3xl font-black uppercase">Teens</h3></div>
+            <div className="border-4 border-black bg-[#f59e0b] p-8 text-black"><h3 className="text-3xl font-black uppercase">Adults</h3></div>
+            <div className="border-4 border-black bg-[#d71920] p-8 text-white"><h3 className="text-3xl font-black uppercase">Corporate</h3></div>
           </div>
         </div>
       </section>

@@ -10,37 +10,31 @@ export const metadata: Metadata = {
 const eventTypes = [
   {
     title: "Team Building",
-    emoji: "🏆",
     colour: "#d71920",
     copy: "Competitive games and shared experiences that bring teams together without the awkward icebreakers.",
   },
   {
     title: "Work Socials",
-    emoji: "🍻",
     colour: "#00d4ff",
     copy: "A better alternative to another restaurant booking, office drinks or forgettable team meal.",
   },
   {
     title: "Christmas Parties",
-    emoji: "🎄",
     colour: "#f59e0b",
     copy: "Food, drinks, games and festive competition in one city centre venue.",
   },
   {
     title: "Networking Events",
-    emoji: "🤝",
     colour: "#7c3cff",
     copy: "A more relaxed way to bring people together, start conversations and keep the room moving.",
   },
   {
     title: "Client Entertainment",
-    emoji: "🎯",
     colour: "#00b86b",
     copy: "Impress clients with an experience they will remember after the meeting ends.",
   },
   {
     title: "Company Celebrations",
-    emoji: "🎉",
     colour: "#ff2bd6",
     copy: "Celebrate milestones, launches, targets and staff wins with games, food and drinks.",
   },
@@ -197,7 +191,6 @@ export default function CorporateEventsPage() {
                 className="min-h-[330px] border-4 border-black p-8 text-white shadow-2xl transition hover:-translate-y-3 hover:rotate-[-1deg]"
                 style={{ backgroundColor: item.colour }}
               >
-                <div className="mb-8 text-5xl">{item.emoji}</div>
                 <h3 className="mb-5 text-4xl font-black uppercase leading-none tracking-[-0.05em]">
                   {item.title}
                 </h3>
