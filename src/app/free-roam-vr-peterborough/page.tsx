@@ -87,6 +87,7 @@ const bookingModalProps = {
   title: "Book Free Roam VR",
   subtitle:
     "Choose your date, time and group size, then lock in your Playard Free Roam VR session.",
+  trackEvent: "free_roam_booking_clicked" as const,
 };
 
 export default function FreeRoamVRPeterboroughPage() {

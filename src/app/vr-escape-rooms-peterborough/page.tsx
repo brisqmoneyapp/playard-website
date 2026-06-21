@@ -179,6 +179,7 @@ const bookingModalProps = {
   title: "Book VR Escape Room",
   subtitle:
     "Choose your date, time and group size, then lock in your Playard VR escape room session.",
+  trackEvent: "vr_escape_booking_clicked" as const,
 };
 
 export default function VREscapeRoomsPeterboroughPage() {

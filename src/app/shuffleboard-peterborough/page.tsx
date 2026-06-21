@@ -202,6 +202,7 @@ export default function ShuffleboardPeterboroughPage() {
                 buttonText="Book Shuffleboard Now"
                 title="Book Shuffleboard"
                 subtitle="Choose your date, time and group size, then lock in your Playard shuffleboard session."
+                trackEvent="shuffleboard_booking_clicked"
               />
             </div>
           </div>

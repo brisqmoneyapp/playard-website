@@ -3,6 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 
+import type { AnalyticsEvent } from "@/lib/analytics";
+import { trackEvent as trackAnalyticsEvent } from "@/lib/analytics";
+
 type FunbutlerBookingModalProps = {
   clientId?: string;
   bookingFormId: string;
@@ -10,6 +13,7 @@ type FunbutlerBookingModalProps = {
   title?: string;
   subtitle?: string;
   className?: string;
+  trackEvent?: AnalyticsEvent;
 };
 
 export default function FunbutlerBookingModal({
@@ -19,6 +23,7 @@ export default function FunbutlerBookingModal({
   title = "Book at Playard",
   subtitle = "Choose your date, time and group size, then complete your booking securely.",
   className = "",
+  trackEvent,
 }: FunbutlerBookingModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -171,7 +176,12 @@ export default function FunbutlerBookingModal({
     <>
       <button
         type="button"
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          if (trackEvent) {
+            trackAnalyticsEvent(trackEvent);
+          }
+          setIsOpen(true);
+        }}
         className={`inline-flex items-center justify-center bg-[#d71920] px-8 py-5 text-center text-base font-black uppercase tracking-wide text-white shadow-xl transition hover:rotate-[-2deg] hover:scale-[1.03] hover:bg-[#ef233c] sm:text-lg ${className}`}
       >
         {buttonText}

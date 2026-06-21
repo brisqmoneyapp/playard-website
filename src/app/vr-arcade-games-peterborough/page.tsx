@@ -226,6 +226,7 @@ const bookingModalProps = {
   title: "Book VR Arcade",
   subtitle:
     "Choose your date, time and group size, then lock in your Playard VR arcade session.",
+  trackEvent: "vr_arcade_booking_clicked" as const,
 };
 
 export default function VRArcadeGamesPeterboroughPage() {

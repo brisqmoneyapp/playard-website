@@ -306,6 +306,7 @@ export default function InteractiveDartsPage() {
                 buttonText="Book Darts Now"
                 title="Book Interactive Darts"
                 subtitle="Choose your date, time and group size, then lock in your Playard darts session."
+                trackEvent="darts_booking_clicked"
               />
             </div>
           </div>

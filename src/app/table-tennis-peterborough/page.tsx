@@ -303,6 +303,7 @@ export default function TableTennisPage() {
                 buttonText="Book Table Tennis Now"
                 title="Book Table Tennis"
                 subtitle="Choose your date, time and group size, then lock in your Playard table tennis session."
+                trackEvent="table_tennis_booking_clicked"
               />
             </div>
           </div>

@@ -185,6 +185,7 @@ export default function StreetCurlingPage() {
                 buttonText="Book Curling Now"
                 title="Book Street Curling"
                 subtitle="Choose your date, time and group size, then lock in your Playard street curling session."
+                trackEvent="curling_booking_clicked"
               />
             </div>
           </div>

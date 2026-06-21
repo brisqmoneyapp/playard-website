@@ -37,6 +37,7 @@ export default function BookPage() {
               buttonText="Quick Book"
               title="Book Playard"
               subtitle="Activities, parties, group bookings and Playard packages."
+              trackEvent="quick_book_clicked"
             />
           </div>
         </div>

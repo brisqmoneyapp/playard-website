@@ -201,6 +201,7 @@ export default function PoolPeterboroughPage() {
                 buttonText="Book Pool Now"
                 title="Book Pool"
                 subtitle="Choose your date, time and group size, then lock in your Playard pool session."
+                trackEvent="pool_booking_clicked"
               />
             </div>
           </div>

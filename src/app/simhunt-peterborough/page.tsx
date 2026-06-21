@@ -303,6 +303,7 @@ export default function SimHuntPeterboroughPage() {
                 buttonText="Book SimShooting Now"
                 title="Book SimShooting"
                 subtitle="Choose your date, time and group size, then lock in your Playard SimShooting session."
+                trackEvent="simshooting_booking_clicked"
               />
             </div>
           </div>

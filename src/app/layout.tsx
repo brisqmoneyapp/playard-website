@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import CookieBanner from "@/components/CookieBanner";
+import Analytics from "@/components/Analytics";
+import NavLink from "@/components/NavLink";
+import TrackedLink from "@/components/TrackedLink";
 import "./globals.css";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
@@ -67,9 +70,9 @@ export const metadata: Metadata = {
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/activities", label: "Activities" },
+  { href: "/activities", label: "Activities", trackEvent: "activities_clicked" as const },
   { href: "/food-and-drinks", label: "Food & Drinks" },
-  { href: "/offers", label: "Offers" },
+  { href: "/offers", label: "Offers", trackEvent: "offers_clicked" as const },
   { href: "/contact", label: "Find Us" },
 ];
 
@@ -128,15 +131,16 @@ export default function RootLayout({
 
               <nav className="hidden items-center gap-5 text-xs font-black uppercase tracking-[0.12em] text-zinc-300 xl:flex">
                 {navItems.map((item, index) => (
-                  <Link
+                  <NavLink
                     key={item.href}
                     href={item.href}
+                    trackEvent={"trackEvent" in item ? item.trackEvent : undefined}
                     className={`relative transition hover:text-white after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-0 after:bg-playard-red after:transition-all hover:after:w-full ${
                       index % 2 === 0 ? "hover:rotate-[-2deg]" : "hover:rotate-[2deg]"
                     }`}
                   >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 ))}
               </nav>
 
@@ -147,38 +151,42 @@ export default function RootLayout({
                 >
                   Call
                 </a>
-                <Link
+                <TrackedLink
                   href="/gift-cards"
+                  eventName="gift_card_clicked"
                   className="hidden border-2 border-white px-4 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:border-[#00d4ff] hover:bg-[#00d4ff] hover:text-black lg:inline-flex"
                 >
                   Gift Cards
-                </Link>
+                </TrackedLink>
                <FunbutlerBookingModal
   bookingFormId="673706716dbb45cccad59994"
   buttonText="Quick Book"
   title="Book Playard"
   subtitle="Activities, parties, group bookings and Playard packages."
   className="px-4 py-3 text-xs sm:px-5 sm:text-sm playard-glow"
+  trackEvent="quick_book_clicked"
 />
-                <Link
+                <TrackedLink
                   href="/gift-cards"
+                  eventName="gift_card_clicked"
                   className="border-2 border-white px-4 py-3 text-xs font-black uppercase tracking-wide text-white sm:hidden"
                 >
                   Gift Cards
-                </Link>
+                </TrackedLink>
               </div>
             </div>
 
             <div className="border-t border-red-950/60 px-3 py-2 xl:hidden">
               <div className="mx-auto grid max-w-7xl grid-cols-5 gap-1 text-center text-[0.62rem] font-black uppercase tracking-[0.04em] text-zinc-300 sm:gap-2 sm:text-xs">
                 {navItems.map((item) => (
-                  <Link
+                  <NavLink
                     key={item.href}
                     href={item.href}
+                    trackEvent={"trackEvent" in item ? item.trackEvent : undefined}
                     className="min-w-0 border border-zinc-800 bg-black px-1 py-2 leading-tight hover:border-playard-red hover:text-white sm:px-2"
                   >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 ))}
               </div>
             </div>
@@ -217,6 +225,7 @@ export default function RootLayout({
   buttonText="Quick Book"
   title="Book Playard"
   subtitle="Activities, parties, group bookings and Playard packages."
+  trackEvent="quick_book_clicked"
 />
                 <Link
                   href="/parking-and-directions"
@@ -316,7 +325,9 @@ export default function RootLayout({
                 <div className="flex flex-col gap-2 text-zinc-400">
                   <Link href="/about" className="hover:text-white">About</Link>
                   <Link href="/corporate-events" className="hover:text-white">Corporate Events</Link>
-                  <Link href="/gift-cards" className="hover:text-white">Gift Cards</Link>
+                  <TrackedLink href="/gift-cards" eventName="gift_card_clicked" className="hover:text-white">
+                    Gift Cards
+                  </TrackedLink>
                   <Link
                     href="/investment-and-sponsorship"
                     className="whitespace-nowrap hover:text-white"
@@ -373,6 +384,7 @@ export default function RootLayout({
           </div>
         </footer>
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );

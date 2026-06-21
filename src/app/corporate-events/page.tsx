@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TrackedAnchor from "@/components/TrackedAnchor";
 
 export const metadata: Metadata = {
   title: "Corporate Events Peterborough | Team Building | Playard",
@@ -121,12 +122,13 @@ export default function CorporateEventsPage() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <a
+              <TrackedAnchor
                 href="mailto:info@playard.co.uk?subject=Corporate Event Enquiry"
+                eventName="corporate_enquiry_clicked"
                 className="bg-[#d71920] px-8 py-4 text-center font-black uppercase tracking-wide text-white transition hover:scale-[1.03]"
               >
                 Enquire Now
-              </a>
+              </TrackedAnchor>
 
               <Link
                 href="/activities"
@@ -296,12 +298,13 @@ export default function CorporateEventsPage() {
             />
             <div className="absolute inset-0 bg-black/40" />
             <div className="relative flex min-h-[350px] items-end justify-center px-6 pb-10 pt-16 md:min-h-[500px] md:pb-14">
-              <a
+              <TrackedAnchor
                 href="mailto:info@playard.co.uk?subject=Corporate%20Event%20Enquiry"
+                eventName="corporate_enquiry_clicked"
                 className="inline-flex bg-[#d71920] px-8 py-4 font-black uppercase tracking-wide text-white transition hover:scale-[1.03]"
               >
                 Email Corporate Team
-              </a>
+              </TrackedAnchor>
             </div>
           </div>
         </div>

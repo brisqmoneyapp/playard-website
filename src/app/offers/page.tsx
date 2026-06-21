@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
+import TrackedLink from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Offers & Promotions | Playard Peterborough",
@@ -124,6 +125,7 @@ export default function OffersPage() {
                       title="Book Combo Package"
                       subtitle="Choose your date, time and group size, then book your Playard combo package."
                       className="mt-6 w-full bg-[#d71920] px-6 py-4 text-white"
+                      trackEvent="combo_package_clicked"
                     />
                   )}
                   {offer.title === "All You Can Play" && (
@@ -133,6 +135,7 @@ export default function OffersPage() {
                       title="Book All You Can Play"
                       subtitle="Book your Wednesday or Thursday all you can play session. Excludes VR and SimShooting."
                       className="mt-6 w-full bg-[#d71920] px-6 py-4 text-white"
+                      trackEvent="all_you_can_play_clicked"
                     />
                   )}
                   {offer.title === "Group Booking Savings" && (
@@ -142,6 +145,7 @@ export default function OffersPage() {
                       title="Book Group Booking"
                       subtitle="Choose your date, time and group size, then lock in your Playard group booking."
                       className="mt-6 w-full bg-[#d71920] px-6 py-4 text-center font-black uppercase tracking-wide text-white"
+                      trackEvent="group_booking_clicked"
                     />
                   )}
                 </>
@@ -181,19 +185,21 @@ export default function OffersPage() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <Link
+              <TrackedLink
                 href="/gift-cards"
+                eventName="gift_card_clicked"
                 className="bg-[#d71920] px-8 py-4 text-center font-black uppercase tracking-wide text-white transition hover:scale-[1.03]"
               >
                 Buy Gift Card
-              </Link>
+              </TrackedLink>
 
-              <Link
+              <TrackedLink
                 href="/gift-cards"
+                eventName="gift_card_clicked"
                 className="bg-[#00d4ff] px-8 py-4 text-center font-black uppercase tracking-wide text-black transition hover:scale-[1.03]"
               >
                 Learn More
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </div>

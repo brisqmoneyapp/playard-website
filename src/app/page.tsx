@@ -1,4 +1,5 @@
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
+import NavLink from "@/components/NavLink";
 import Link from "next/link";
 
 const games = [
@@ -61,7 +62,7 @@ const games = [
 ];
 
 const quickLinks = [
-  { title: "Gift Cards", href: "/gift-cards", colour: "bg-[#111111] text-white" },
+  { title: "Gift Cards", href: "/gift-cards", colour: "bg-[#111111] text-white", trackEvent: "gift_card_clicked" as const },
   { title: "Food & Drinks", href: "/food-and-drinks", colour: "bg-[#f59e0b] text-black" },
   { title: "Parties", href: "/parties", colour: "bg-[#ff2bd6] text-white" },
   { title: "Corporate", href: "/corporate-events", colour: "bg-[#00d4ff] text-black" },
@@ -201,13 +202,14 @@ export default function Home() {
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-5xl grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {quickLinks.map((item) => (
-                <Link
+                <NavLink
                   key={item.href}
                   href={item.href}
+                  trackEvent={"trackEvent" in item ? item.trackEvent : undefined}
                   className={`border-4 border-black p-6 text-center text-2xl font-black uppercase tracking-[-0.04em] shadow-xl transition hover:-translate-y-2 hover:rotate-[-1deg] ${item.colour}`}
                 >
                   {item.title}
-                </Link>
+                </NavLink>
               ))}
             </div>
           </div>
@@ -457,10 +459,15 @@ export default function Home() {
               title="Book Playard"
               subtitle="Activities, parties, group bookings and Playard packages."
               className="w-full bg-[#d71920] px-8 py-5 text-white"
+              trackEvent="quick_book_clicked"
             />
-            <Link href="/activities" className="border-2 border-black px-8 py-5 text-center font-black uppercase tracking-wide text-black hover:bg-black hover:text-white">
+            <NavLink
+              href="/activities"
+              trackEvent="activities_clicked"
+              className="border-2 border-black px-8 py-5 text-center font-black uppercase tracking-wide text-black hover:bg-black hover:text-white"
+            >
               View Activities
-            </Link>
+            </NavLink>
           </div>
         </div>
       </section>

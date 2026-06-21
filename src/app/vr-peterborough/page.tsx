@@ -330,6 +330,7 @@ export default function VRPeterboroughPage() {
               buttonText="Book VR Now"
               title="Book VR"
               subtitle="Choose your date, time and group size, then lock in your Playard VR session."
+              trackEvent="vr_booking_clicked"
             />
           </div>
         </div>
