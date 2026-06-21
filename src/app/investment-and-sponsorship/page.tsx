@@ -70,7 +70,7 @@ export default function InvestmentPage() {
               BUILD THE FUTURE.
             </h1>
 
-            <p className="max-w-4xl text-xl leading-9 text-zinc-300 md:text-2xl">
+            <p className="max-w-4xl text-xl font-medium leading-9 text-white md:text-2xl">
               Playard is one of Peterborough's newest competitive social gaming venues. We are continually investing in new activities, experiences and venue improvements and welcome conversations with investors, sponsors, commercial partners and businesses looking to grow alongside us.
             </p>
           </div>
@@ -102,7 +102,7 @@ export default function InvestmentPage() {
             Built for Peterborough.
           </h2>
 
-          <div className="space-y-6 text-xl font-bold leading-9 text-zinc-700">
+          <div className="space-y-6 text-xl font-medium leading-9 text-black">
             <p>
               Playard was created to help bring more life back into Peterborough city centre.
             </p>
@@ -129,7 +129,7 @@ export default function InvestmentPage() {
               Your brand in the middle of the action.
             </h2>
 
-            <p className="text-lg leading-8 text-zinc-300">
+            <p className="text-lg font-medium leading-8 text-black">
               Playard brings together games, food, drinks, birthdays, work socials,
               family visits, tournaments and group nights out in Peterborough city centre.
               Sponsorship gives local and regional businesses a chance to place their brand
@@ -171,7 +171,7 @@ export default function InvestmentPage() {
                 <h3 className="mb-4 text-3xl font-black uppercase leading-none tracking-[-0.04em]">
                   {item.title}
                 </h3>
-                <p className="leading-8 text-zinc-300">{item.copy}</p>
+                <p className="font-medium leading-8 text-white">{item.copy}</p>
               </div>
             ))}
           </div>
@@ -219,7 +219,7 @@ export default function InvestmentPage() {
               Looking to advertise your business in Peterborough?
             </h2>
 
-            <p className="text-xl font-bold leading-9 text-zinc-800">
+            <p className="text-xl font-medium leading-9 text-black">
               Your brand could be displayed on activity areas, scoreboards,
               tournament screens, venue signage, event materials and customer communications.
             </p>
@@ -256,7 +256,7 @@ export default function InvestmentPage() {
           Let's Talk.
         </h2>
 
-        <p className="mb-10 text-xl leading-9 text-zinc-700">
+        <p className="mb-10 text-xl font-medium leading-9 text-black">
           If you are interested in investment opportunities, sponsorship packages,
           advertising your business, branding a game area or building a strategic partnership,
           we'd love to hear from you.

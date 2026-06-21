@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
@@ -119,12 +120,13 @@ export default function InteractiveDartsPage() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
+              <TrackedLink
                 href="#book-darts"
+                eventName="darts_booking_clicked"
                 className="bg-[#00d4ff] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[-2deg] hover:scale-[1.03]"
               >
                 Book Darts
-              </Link>
+              </TrackedLink>
               <Link
                 href="/activities"
                 className="bg-[#d71920] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[2deg] hover:scale-[1.03]"
@@ -193,12 +195,13 @@ export default function InteractiveDartsPage() {
               Dartsee turns darts into a social experience with animated games,
               automatic scoring and formats for beginners, casual players and competitive groups.
             </p>
-            <Link
+            <TrackedLink
               href="#book-darts"
+              eventName="darts_booking_clicked"
               className="inline-flex bg-[#d71920] px-8 py-5 text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]"
             >
               Book Interactive Darts
-            </Link>
+            </TrackedLink>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">

@@ -9,6 +9,7 @@ const games = [
     image: "/images/activities/darts.jpeg",
     colour: "bg-[#d71920] text-white",
     note: "Digital darts. Automatic scoring. Massive reactions.",
+    trackEvent: "darts_booking_clicked" as const,
   },
   {
     name: "Pool",
@@ -16,6 +17,7 @@ const games = [
     image: "/images/activities/pool.jpeg",
     colour: "bg-[#00b86b] text-white",
     note: "Classic games. Friendly rivalries. One more frame.",
+    trackEvent: "pool_booking_clicked" as const,
   },
   {
     name: "Shuffleboard",
@@ -23,27 +25,31 @@ const games = [
     image: "/images/activities/shuffleboard.jpeg",
     colour: "bg-[#f59e0b] text-black",
     note: "Slide first. Talk later. Perfect with drinks.",
+    trackEvent: "shuffleboard_booking_clicked" as const,
   },
   {
     name: "Street Curling",
     href: "/street-curling-peterborough",
-    image: "/images/activities/curling.jpg",
+    image: "/images/activities/curling.jpeg",
     colour: "bg-[#9eeaff] text-black",
     note: "Curling without the ice. Easy to learn. Hard to master.",
+    trackEvent: "curling_booking_clicked" as const,
   },
   {
     name: "VR",
     href: "/vr-peterborough",
-    image: "/images/activities/vr.jpg",
+    image: "/images/activities/vr.jpeg",
     colour: "bg-[#7c3cff] text-white",
     note: "Step in. Switch worlds. Battle, escape and compete.",
+    trackEvent: "vr_booking_clicked" as const,
   },
   {
     name: "SimShooting",
     href: "/simhunt-peterborough",
-    image: "/images/activities/simhunt.jpg",
+    image: "/images/activities/simhunt.jpeg",
     colour: "bg-[#ff7a00] text-white",
     note: "Big screen simulator action for groups who want something different.",
+    trackEvent: "simshooting_booking_clicked" as const,
   },
   {
     name: "Table Tennis",
@@ -51,6 +57,7 @@ const games = [
     image: "/images/activities/table-tennis.jpeg",
     colour: "bg-[#ff2bd6] text-white",
     note: "Fast rallies, quick rematches and loud reactions.",
+    trackEvent: "table_tennis_booking_clicked" as const,
   },
   {
     name: "Games Lounge",
@@ -58,6 +65,7 @@ const games = [
     image: "/images/activities/games-lounge.jpg",
     colour: "bg-[#00d4ff] text-black",
     note: "Cornhole, table football, board games and social chaos.",
+    trackEvent: "activities_clicked" as const,
   },
 ];
 
@@ -226,9 +234,10 @@ export default function Home() {
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
               {games.map((game) => (
-                <Link
+                <NavLink
                   key={game.name}
                   href={game.href}
+                  trackEvent={game.trackEvent}
                   className="group overflow-hidden bg-black text-white shadow-2xl transition duration-300 hover:-translate-y-3 hover:rotate-[-1deg] hover:scale-[1.03]"
                 >
                   <div className="relative h-56 overflow-hidden bg-zinc-800 sm:h-64">
@@ -264,7 +273,7 @@ export default function Home() {
                   <p className="px-4 pb-5 text-left text-sm font-bold leading-6 text-zinc-300 sm:px-5 sm:pb-6">
                     {game.note}
                   </p>
-                </Link>
+                </NavLink>
               ))}
             </div>
           </div>

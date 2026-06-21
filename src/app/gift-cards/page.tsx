@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import FunbutlerGiftCards from "@/components/FunbutlerGiftCards";
+import FunbutlerGiftCardModal from "@/components/FunbutlerGiftCardModal";
 
 export const metadata: Metadata = {
   title: "Gift Cards | Playard Peterborough",
@@ -67,12 +67,12 @@ export default function GiftCardsPage() {
               Playard gift cards are perfect for birthdays, families, staff rewards, Christmas presents and anyone who deserves games, food and good times in Peterborough city centre.
             </p>
 
-            <a
-              href="#buy-gift-card"
-              className="inline-flex bg-[#00d4ff] px-8 py-5 text-center text-base font-black uppercase tracking-wide text-black transition hover:rotate-[-2deg] hover:scale-[1.03] sm:text-lg"
-            >
-              Buy Gift Card
-            </a>
+            <FunbutlerGiftCardModal
+              buttonText="Buy Gift Card"
+              title="Buy Gift Card"
+              subtitle="Choose your gift card amount and complete your purchase securely."
+              className="bg-[#00d4ff] px-8 py-5 text-black shadow-xl hover:bg-[#00d4ff] hover:text-black"
+            />
           </div>
 
           <div className="relative">
@@ -166,19 +166,22 @@ export default function GiftCardsPage() {
 
       <section id="buy-gift-card" className="bg-[#fff3dd] px-4 py-16 sm:px-6 md:py-24">
         <div className="mx-auto max-w-7xl border-4 border-black bg-white p-6 shadow-2xl sm:p-8 md:p-12">
-          <div className="mb-10 max-w-4xl">
+          <div className="max-w-4xl">
             <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#d71920]">
               Buy Online
             </p>
             <h2 className="mb-6 text-5xl font-black uppercase leading-none tracking-[-0.07em] sm:text-6xl md:text-8xl">
               Buy a Playard gift card.
             </h2>
-            <p className="text-lg font-bold leading-8 text-zinc-700 sm:text-xl sm:leading-9">
+            <p className="mb-8 text-lg font-bold leading-8 text-zinc-700 sm:text-xl sm:leading-9">
               Choose the value, complete your purchase online and give someone a gift they can use for games, food and good times at Playard.
             </p>
+            <FunbutlerGiftCardModal
+              buttonText="Buy Gift Card"
+              title="Buy Gift Card"
+              subtitle="Choose your gift card amount and complete your purchase securely."
+            />
           </div>
-
-          <FunbutlerGiftCards clientId="67360c42dd5e621cbcc0d7a5" />
         </div>
       </section>
 
@@ -197,12 +200,12 @@ export default function GiftCardsPage() {
           </div>
 
           <div className="grid gap-3">
-            <a
-              href="#buy-gift-card"
-              className="bg-[#d71920] px-8 py-5 text-center font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]"
-            >
-              Buy Gift Card
-            </a>
+            <FunbutlerGiftCardModal
+              buttonText="Buy Gift Card"
+              title="Buy Gift Card"
+              subtitle="Choose your gift card amount and complete your purchase securely."
+              className="w-full"
+            />
             <Link
               href="/activities"
               className="border-2 border-black px-8 py-5 text-center font-black uppercase tracking-wide text-black hover:bg-black hover:text-white"

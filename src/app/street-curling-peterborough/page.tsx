@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
@@ -74,9 +75,9 @@ export default function StreetCurlingPage() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="#book-curling" className="bg-[#9EEAFF] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[-2deg] hover:scale-[1.03]">
+              <TrackedLink href="#book-curling" eventName="curling_booking_clicked" className="bg-[#9EEAFF] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[-2deg] hover:scale-[1.03]">
                 Book Curling
-              </Link>
+              </TrackedLink>
               <Link href="/activities" className="bg-[#00d4ff] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[2deg] hover:scale-[1.03]">
                 All Games
               </Link>
@@ -110,7 +111,7 @@ export default function StreetCurlingPage() {
             <h2 className="mb-6 text-5xl font-black tracking-tight md:text-7xl">
               Simple. Social. Surprisingly Competitive.
             </h2>
-            <p className="text-lg leading-8 text-zinc-300">
+            <p className="text-lg font-medium leading-8 text-black">
               Street curling is one of Playard's most accessible activities.
               Everyone can get involved within minutes, yet the strategy and
               competition keep groups coming back for more.

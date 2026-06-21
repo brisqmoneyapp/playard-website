@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
@@ -131,12 +132,13 @@ export default function VRPeterboroughPage() {
             Battle zombies, escape virtual worlds, compete with friends and experience gaming like you've never seen before.
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 max-w-md mx-auto lg:mx-0">
-            <Link
+            <TrackedLink
               href="#book-vr"
+              eventName="vr_booking_clicked"
               className="rounded-md bg-[#7c3cff] px-8 py-4 text-center font-black uppercase tracking-wide text-white shadow-neon hover:shadow-neon-lg transition-shadow duration-300"
             >
               Book VR
-            </Link>
+            </TrackedLink>
             <Link
               href="/activities"
               className="rounded-md border-4 border-[#00d4ff] px-8 py-4 text-center font-black uppercase tracking-wide text-[#00d4ff] hover:bg-[#00d4ff] hover:text-black transition-colors duration-300"

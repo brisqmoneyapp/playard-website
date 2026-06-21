@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TrackedAnchor from "@/components/TrackedAnchor";
 
 export const metadata: Metadata = {
   title: "Contact Playard Peterborough",
@@ -155,10 +156,10 @@ export default function ContactPage() {
               <p className="font-bold">Ask about birthday party packages.</p>
             </a>
 
-            <a href="mailto:info@playard.co.uk?subject=Corporate Event Enquiry" className="border-4 border-black bg-[#00d4ff] p-8 text-black transition hover:-translate-y-2 hover:rotate-[-1deg]">
+            <TrackedAnchor href="mailto:info@playard.co.uk?subject=Corporate Event Enquiry" eventName="corporate_enquiry_clicked" className="border-4 border-black bg-[#00d4ff] p-8 text-black transition hover:-translate-y-2 hover:rotate-[-1deg]">
               <h3 className="mb-3 text-3xl font-black uppercase">Corporate Events</h3>
               <p className="font-bold">Work socials, networking and venue hire.</p>
-            </a>
+            </TrackedAnchor>
 
             <a href="mailto:info@playard.co.uk?subject=General Playard Enquiry" className="border-4 border-black bg-[#f59e0b] p-8 text-black transition hover:-translate-y-2 hover:rotate-[-1deg]">
               <h3 className="mb-3 text-3xl font-black uppercase">General Enquiries</h3>

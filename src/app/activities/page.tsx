@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NavLink from "@/components/NavLink";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ const activities = [
       "Interactive darts with digital scoring, group games and a competitive social feel built for nights out, birthdays and work socials.",
     bestFor: "Friends, dates, work socials, adult parties",
     cta: "Book Darts",
+    trackEvent: "darts_booking_clicked" as const,
   },
   {
     name: "Shuffleboard",
@@ -29,6 +31,7 @@ const activities = [
       "A smooth, tactical game that works brilliantly with drinks, conversation and a bit of friendly rivalry.",
     bestFor: "Couples, groups, team nights, relaxed socials",
     cta: "Book Shuffleboard",
+    trackEvent: "shuffleboard_booking_clicked" as const,
   },
   {
     name: "Pool",
@@ -40,28 +43,31 @@ const activities = [
       "Pool tables for casual games, competitive nights, date nights and relaxed group sessions in Peterborough city centre.",
     bestFor: "Casual games, friends, dates, walk ins",
     cta: "Book Pool",
+    trackEvent: "pool_booking_clicked" as const,
   },
   {
     name: "Indoor Street Curling",
     href: "/street-curling-peterborough",
-    image: "/images/activities/curling.jpg",
+    image: "/images/activities/curling.jpeg",
     badgeClass: "bg-[#9eeaff] text-black",
     label: "Curling without the ice.",
     summary:
       "Easy to learn, surprisingly competitive and brilliant for groups who want something different from the usual night out.",
     bestFor: "Families, teams, corporate events, mixed groups",
     cta: "Book Curling",
+    trackEvent: "curling_booking_clicked" as const,
   },
   {
     name: "VR Experiences",
     href: "/vr-peterborough",
-    image: "/images/activities/vr.jpg",
+    image: "/images/activities/vr.jpeg",
     badgeClass: "bg-[#7c3cff] text-white",
     label: "Step inside the game.",
     summary:
       "Immersive VR experiences for kids parties, teenagers, families and groups looking for something high energy.",
     bestFor: "Kids parties, teenagers, families, gaming groups",
     cta: "Book VR",
+    trackEvent: "vr_booking_clicked" as const,
   },
   {
     name: "Table Tennis",
@@ -73,17 +79,19 @@ const activities = [
       "Quick games, big reactions and competitive rallies for groups who want something simple, physical and fun.",
     bestFor: "Friends, families, work socials, quick games",
     cta: "Book Table Tennis",
+    trackEvent: "table_tennis_booking_clicked" as const,
   },
   {
     name: "SimHunt",
     href: "/simhunt-peterborough",
-    image: "/images/activities/simhunt.jpg",
+    image: "/images/activities/simhunt.jpeg",
     badgeClass: "bg-[#ff7a00] text-white",
     label: "Big screen simulator action.",
     summary:
       "A big screen simulator experience for groups looking for something different, social and easy to enjoy together.",
     bestFor: "Groups, parties, simulator fans, mixed ability teams",
     cta: "Book SimHunt",
+    trackEvent: "simshooting_booking_clicked" as const,
   },
 ];
 
@@ -113,9 +121,10 @@ export default function ActivitiesPage() {
       <section className="bg-[#fff3dd] px-6 py-24">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-3">
           {activities.map((activity) => (
-            <Link
+            <NavLink
               key={activity.href}
               href={activity.href}
+              trackEvent={activity.trackEvent}
               className="group flex min-h-[560px] flex-col overflow-hidden border-4 border-black bg-white shadow-2xl transition duration-300 hover:-translate-y-3 hover:rotate-[-1deg] hover:scale-[1.02]"
             >
               <div className="relative h-56 overflow-hidden bg-zinc-800 sm:h-64">
@@ -155,7 +164,7 @@ export default function ActivitiesPage() {
                   {activity.cta}
                 </span>
               </div>
-            </Link>
+            </NavLink>
           ))}
         </div>
       </section>

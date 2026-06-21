@@ -166,15 +166,21 @@ export default function ParkingAndDirectionsPage() {
 
           <div className="border-4 border-black bg-white p-8 shadow-2xl md:p-12">
             <p className="section-label mb-4">Map</p>
-            <div className="flex min-h-[420px] items-center justify-center border-4 border-black bg-[#d71920] p-8 text-center text-white">
-              <div>
-                <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-white/80">
-                  Google Maps Embed
-                </p>
-                <p className="text-5xl font-black uppercase leading-none tracking-[-0.06em]">
-                  Insert map for 26 Hereward Cross here.
+            <div className="overflow-hidden border-4 border-white bg-white shadow-2xl">
+              <div className="border-b-4 border-black bg-[#d71920] p-4 text-center text-white">
+                <p className="text-sm font-black uppercase tracking-[0.22em]">
+                  Find Us
                 </p>
               </div>
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2424.732524255821!2d-0.2430829233155558!3d52.574448172075506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877f15e2b991e1b%3A0x6b698f7afe8b3f30!2sPLAYARD%20Peterborough!5e0!3m2!1sen!2suk!4v1781546119754!5m2!1sen!2suk"
+                className="h-[500px] w-full"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>

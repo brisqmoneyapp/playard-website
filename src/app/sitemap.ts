@@ -98,6 +98,24 @@ const pages: MetadataRoute.Sitemap = [
     priority: 0.88,
   },
   {
+    url: `${baseUrl}/vr-arcade-games-peterborough`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.86,
+  },
+  {
+    url: `${baseUrl}/vr-escape-rooms-peterborough`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.86,
+  },
+  {
+    url: `${baseUrl}/free-roam-vr-peterborough`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.86,
+  },
+  {
     url: `${baseUrl}/simhunt-peterborough`,
     lastModified: new Date(),
     changeFrequency: "weekly",

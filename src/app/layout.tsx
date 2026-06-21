@@ -7,6 +7,7 @@ import NavLink from "@/components/NavLink";
 import TrackedLink from "@/components/TrackedLink";
 import "./globals.css";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
+import FunbutlerGiftCardModal from "@/components/FunbutlerGiftCardModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,6 +66,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.playard.co.uk",
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
   },
 };
 
@@ -151,13 +156,12 @@ export default function RootLayout({
                 >
                   Call
                 </a>
-                <TrackedLink
-                  href="/gift-cards"
-                  eventName="gift_card_clicked"
-                  className="hidden border-2 border-white px-4 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:border-[#00d4ff] hover:bg-[#00d4ff] hover:text-black lg:inline-flex"
-                >
-                  Gift Cards
-                </TrackedLink>
+                <FunbutlerGiftCardModal
+                  buttonText="Gift Cards"
+                  title="Buy Gift Card"
+                  subtitle="Choose your gift card amount and complete your purchase securely."
+                  className="hidden whitespace-nowrap border-2 border-white !bg-transparent !px-3 !py-2 !text-xs font-black uppercase tracking-wide text-white !shadow-none transition hover:!scale-100 hover:!rotate-0 hover:border-[#d71920] hover:!bg-[#d71920] hover:text-white lg:inline-flex"
+                />
                <FunbutlerBookingModal
   bookingFormId="673706716dbb45cccad59994"
   buttonText="Quick Book"
@@ -166,13 +170,12 @@ export default function RootLayout({
   className="px-4 py-3 text-xs sm:px-5 sm:text-sm playard-glow"
   trackEvent="quick_book_clicked"
 />
-                <TrackedLink
-                  href="/gift-cards"
-                  eventName="gift_card_clicked"
-                  className="border-2 border-white px-4 py-3 text-xs font-black uppercase tracking-wide text-white sm:hidden"
-                >
-                  Gift Cards
-                </TrackedLink>
+                <FunbutlerGiftCardModal
+                  buttonText="Gift Cards"
+                  title="Buy Gift Card"
+                  subtitle="Choose your gift card amount and complete your purchase securely."
+                  className="whitespace-nowrap border-2 border-white !bg-transparent !px-3 !py-2 !text-xs font-black uppercase tracking-wide text-white !shadow-none transition hover:!scale-100 hover:!rotate-0 hover:border-[#d71920] hover:!bg-[#d71920] hover:text-white sm:hidden"
+                />
               </div>
             </div>
 

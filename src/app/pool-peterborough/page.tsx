@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
@@ -74,9 +75,9 @@ export default function PoolPeterboroughPage() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="#book-pool" className="bg-[#00b86b] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]">
+              <TrackedLink href="#book-pool" eventName="pool_booking_clicked" className="bg-[#00b86b] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]">
                 Book Pool
-              </Link>
+              </TrackedLink>
               <Link href="/activities" className="bg-[#00d4ff] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[2deg] hover:scale-[1.03]">
                 All Games
               </Link>
@@ -115,12 +116,13 @@ export default function PoolPeterboroughPage() {
               want something relaxed but still competitive. Add drinks, food and
               other Playard games to turn it into a full night out.
             </p>
-            <Link
+            <TrackedLink
               href="#book-pool"
+              eventName="pool_booking_clicked"
               className="inline-flex rounded-md bg-white px-7 py-4 font-black uppercase tracking-wide text-black hover:bg-zinc-200"
             >
               Book Pool Table
-            </Link>
+            </TrackedLink>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">

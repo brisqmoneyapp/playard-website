@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
@@ -74,9 +75,9 @@ export default function ShuffleboardPeterboroughPage() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="#book-shuffleboard" className="bg-[#f59e0b] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]">
+              <TrackedLink href="#book-shuffleboard" eventName="shuffleboard_booking_clicked" className="bg-[#f59e0b] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]">
                 Book Shuffleboard
-              </Link>
+              </TrackedLink>
               <Link href="/activities" className="bg-[#00d4ff] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[2deg] hover:scale-[1.03]">
                 All Games
               </Link>
@@ -116,12 +117,13 @@ export default function ShuffleboardPeterboroughPage() {
               for competitive players and relaxed enough to enjoy with food and
               drinks.
             </p>
-            <Link
+            <TrackedLink
               href="#book-shuffleboard"
+              eventName="shuffleboard_booking_clicked"
               className="inline-flex rounded-md bg-white px-7 py-4 font-black uppercase tracking-wide text-black hover:bg-zinc-200"
             >
               Book Shuffleboard
-            </Link>
+            </TrackedLink>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">

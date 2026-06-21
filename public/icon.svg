@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Playard">
+  <rect width="32" height="32" fill="#000000" />
+  <rect y="28" width="32" height="4" fill="#d71920" />
+  <path
+    fill="#ffffff"
+    d="M10 7h7.2c4.1 0 6.8 2.4 6.8 6.1 0 2.5-1.2 4.4-3.3 5.3L24.5 25h-4.1l-3.4-5.8H14.2V25H10V7zm4.2 3.4V14h2.6c1.8 0 2.9-1 2.9-2.6 0-1.6-1.1-2.6-2.9-2.6h-2.6z"
+  />
+</svg>
