@@ -99,6 +99,7 @@ export default function FunbutlerBookingModal({
               <div class="loader-icon large"></div>
             </div>
           </booking-form>
+          <side-cart clientId="${clientId}"></side-cart>
           <script src="https://booking.funbutler.com/apps/public-app/runtime.js"></script>
           <script src="https://booking.funbutler.com/apps/public-app/polyfills.js"></script>
           <script src="https://booking.funbutler.com/apps/public-app/main.js"></script>
@@ -166,6 +167,8 @@ export default function FunbutlerBookingModal({
             className="h-full min-h-[82vh] w-full border-0 bg-[#fff3dd]"
             loading="eager"
             scrolling="yes"
+            allow="payment *; fullscreen"
+            referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
       </div>

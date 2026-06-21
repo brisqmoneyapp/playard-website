@@ -111,7 +111,7 @@ export default function ShuffleboardPeterboroughPage() {
             <h2 className="mb-6 text-5xl font-black tracking-tight md:text-7xl">
               Simple. Social. Competitive.
             </h2>
-            <p className="mb-8 text-lg leading-8 text-zinc-300">
+            <p className="mb-8 text-lg font-medium leading-8 text-black">
               Shuffleboard is one of the best social games because nobody needs
               to be an expert. It is simple enough for beginners, tactical enough
               for competitive players and relaxed enough to enjoy with food and
