@@ -161,10 +161,10 @@ export default function RootLayout({
   className="px-4 py-3 text-xs sm:px-5 sm:text-sm playard-glow"
 />
                 <Link
-                  href="/activities"
+                  href="/gift-cards"
                   className="border-2 border-white px-4 py-3 text-xs font-black uppercase tracking-wide text-white sm:hidden"
                 >
-                  Games
+                  Gift Cards
                 </Link>
               </div>
             </div>
@@ -236,12 +236,12 @@ export default function RootLayout({
                   Peterborough city centre games bar for darts, pool, shuffleboard,
                   VR, street curling, food, drinks, birthdays, work socials and loud group nights out.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-2 text-xs font-black uppercase tracking-wide text-black">
-                  <span className="rotate-[-2deg] bg-white px-3 py-2">Games</span>
-                  <span className="rotate-[2deg] bg-playard-red px-3 py-2 text-white">Drinks</span>
-                  <span className="rotate-[-1deg] bg-white px-3 py-2">Food</span>
-                  <span className="rotate-[1deg] bg-playard-red px-3 py-2 text-white">Parties</span>
-                  <span className="rotate-[-2deg] bg-white px-3 py-2">Good Times</span>
+                <div className="mt-6 flex flex-nowrap gap-2 overflow-x-auto whitespace-nowrap text-[0.65rem] font-black uppercase tracking-wide text-black sm:text-xs">
+                  <span className="rotate-[-2deg] bg-white px-2 py-2 sm:px-3">Games</span>
+                  <span className="rotate-[2deg] bg-playard-red px-2 py-2 text-white sm:px-3">Drinks</span>
+                  <span className="rotate-[-1deg] bg-white px-2 py-2 sm:px-3">Food</span>
+                  <span className="rotate-[1deg] bg-playard-red px-2 py-2 text-white sm:px-3">Parties</span>
+                  <span className="rotate-[-2deg] bg-white px-2 py-2 sm:px-3">Good Times</span>
                 </div>
                 <div className="mt-8">
                   <h3 className="mb-4 font-black uppercase tracking-[0.18em] text-playard-red">

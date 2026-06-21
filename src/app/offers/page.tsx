@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
 export const metadata: Metadata = {
   title: "Offers & Promotions | Playard Peterborough",
@@ -9,21 +10,21 @@ export const metadata: Metadata = {
 
 const offers = [
   {
-    title: "Midweek Socials",
+    title: "All You Can Play",
     description:
-      "Beat the crowds and enjoy discounted gaming sessions during selected weekdays.",
+      "All you can play on Wednesday and Thursday. Includes all activities except VR and SimShooting.",
     status: "Available Now",
   },
   {
-    title: "Family Activity Deals",
+    title: "Combo Packages",
     description:
-      "More activities, more laughs and better value for families visiting together.",
+      "Bundle activities together and enjoy more Playard games in one visit.",
     status: "Available Now",
   },
   {
     title: "Student Offers",
     description:
-      "Affordable gaming, competitions and social nights designed for students.",
+      "Discount available for students and NHS or emergency services. Walk ins only. Valid on activities and drinks.",
     status: "Seasonal",
   },
   {
@@ -35,7 +36,7 @@ const offers = [
   {
     title: "Birthday Bonuses",
     description:
-      "Celebrate in style with bonus extras available on selected birthday bookings.",
+      "Celebrate in style. The birthday celebrant gets a free game on their next booking.",
     status: "Available Now",
   },
   {
@@ -43,12 +44,7 @@ const offers = [
     description:
       "Competitive team experiences with activities, food and drinks included.",
     status: "Available Now",
-  },
-  {
-    title: "Gift Cards",
-    description:
-      "Treat friends, family, colleagues or staff to games, food and good times with a Playard gift card.",
-    status: "Available Now",
+    href: "/corporate-events",
   },
 ];
 
@@ -108,20 +104,63 @@ export default function OffersPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {offers.map((offer) => (
-              <div
-                key={offer.title}
-                className="border-4 border-black bg-white p-8 shadow-2xl transition hover:-translate-y-3 hover:rotate-[-1deg]"
-              >
-                <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-[#d71920]">
-                  {offer.status}
-                </p>
-                <h3 className="mb-4 text-3xl font-black uppercase tracking-[-0.04em]">
-                  {offer.title}
-                </h3>
-                <p className="font-bold leading-8 text-zinc-700">{offer.description}</p>
-              </div>
-            ))}
+            {offers.map((offer) => {
+              const cardClassName =
+                "border-4 border-black bg-white p-8 shadow-2xl transition hover:-translate-y-3 hover:rotate-[-1deg]";
+
+              const cardContent = (
+                <>
+                  <p className="mb-4 text-xs font-black uppercase tracking-[0.22em] text-[#d71920]">
+                    {offer.status}
+                  </p>
+                  <h3 className="mb-4 text-3xl font-black uppercase tracking-[-0.04em]">
+                    {offer.title}
+                  </h3>
+                  <p className="font-bold leading-8 text-zinc-700">{offer.description}</p>
+                  {offer.title === "Combo Packages" && (
+                    <FunbutlerBookingModal
+                      bookingFormId="69f15192943d8141a1cb7936"
+                      buttonText="Book Now"
+                      title="Book Combo Package"
+                      subtitle="Choose your date, time and group size, then book your Playard combo package."
+                      className="mt-6 w-full bg-[#d71920] px-6 py-4 text-white"
+                    />
+                  )}
+                  {offer.title === "All You Can Play" && (
+                    <FunbutlerBookingModal
+                      bookingFormId="69f3fd87cdf197eb150e03d4"
+                      buttonText="Book Now"
+                      title="Book All You Can Play"
+                      subtitle="Book your Wednesday or Thursday all you can play session. Excludes VR and SimShooting."
+                      className="mt-6 w-full bg-[#d71920] px-6 py-4 text-white"
+                    />
+                  )}
+                  {offer.title === "Group Booking Savings" && (
+                    <FunbutlerBookingModal
+                      bookingFormId="69f151f050a4525e7a28da8d"
+                      buttonText="Book Now"
+                      title="Book Group Booking"
+                      subtitle="Choose your date, time and group size, then lock in your Playard group booking."
+                      className="mt-6 w-full bg-[#d71920] px-6 py-4 text-center font-black uppercase tracking-wide text-white"
+                    />
+                  )}
+                </>
+              );
+
+              if ("href" in offer && offer.href) {
+                return (
+                  <Link key={offer.title} href={offer.href} className={cardClassName}>
+                    {cardContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={offer.title} className={cardClassName}>
+                  {cardContent}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

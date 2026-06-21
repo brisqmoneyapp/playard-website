@@ -287,36 +287,21 @@ export default function CorporateEventsPage() {
       </section>
 
       <section className="bg-[#fff3dd] px-6 py-24">
-        <div className="mx-auto max-w-7xl border-4 border-black bg-white p-8 text-black shadow-2xl md:p-14">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-[#d71920]">
-                Corporate Enquiry
-              </p>
-              <h2 className="mb-6 text-6xl font-black uppercase leading-none tracking-[-0.07em] md:text-8xl">
-                READY TO BUILD YOUR EVENT?
-              </h2>
-              <p className="mb-8 text-xl font-bold leading-9 text-zinc-700">
-                Tell us your preferred date, group size and objectives. We'll help build the right package for your team.
-              </p>
-
+        <div className="mx-auto max-w-7xl">
+          <div className="relative min-h-[350px] overflow-hidden border-4 border-black shadow-2xl md:min-h-[500px]">
+            <img
+              src="/images/activities/corporate.jpeg"
+              alt="Corporate events at Playard Peterborough"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="relative flex min-h-[350px] items-end justify-center px-6 pb-10 pt-16 md:min-h-[500px] md:pb-14">
               <a
-                href="mailto:info@playard.co.uk?subject=Corporate Event Enquiry&body=Hi Playard,%0D%0A%0D%0AI would like to enquire about a corporate event.%0D%0A%0D%0ACompany:%0D%0AGroup size:%0D%0APreferred date:%0D%0AEvent type:%0D%0AFood and drinks required:%0D%0A%0D%0AThanks"
+                href="mailto:info@playard.co.uk?subject=Corporate%20Event%20Enquiry"
                 className="inline-flex bg-[#d71920] px-8 py-4 font-black uppercase tracking-wide text-white transition hover:scale-[1.03]"
               >
                 Email Corporate Team
               </a>
-            </div>
-
-            <div className="flex min-h-[420px] items-center justify-center border-4 border-black bg-[#d71920] p-8 text-center text-white">
-              <div>
-                <p className="mb-4 text-sm font-black uppercase tracking-[0.22em] text-white/80">
-                  Event Enquiry Placeholder
-                </p>
-                <h3 className="text-5xl font-black uppercase leading-none tracking-[-0.06em]">
-                  CORPORATE ENQUIRY FORM
-                </h3>
-              </div>
             </div>
           </div>
         </div>

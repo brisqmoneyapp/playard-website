@@ -174,7 +174,7 @@ const escapeRooms = [
 ];
 
 const bookingModalProps = {
-  bookingFormId: "VR_ESCAPE_ROOM_BOOKING_ID_HERE",
+  bookingFormId: "6a37281a1406c5a5f774ec7e",
   buttonText: "Book VR Escape Room",
   title: "Book VR Escape Room",
   subtitle:
