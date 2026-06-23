@@ -116,8 +116,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-black text-white">
-        <header className="sticky top-0 z-50 bg-black text-white">
-          <div className="red-stripe border-b border-red-950 px-6 py-2 text-black">
+        <header className="sticky top-0 z-50 w-full overflow-x-hidden bg-black text-white">
+          <div className="red-stripe border-b border-red-950 px-3 py-2 text-black sm:px-6">
             <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[0.68rem] font-black uppercase tracking-[0.22em] text-white md:justify-between">
               <span>Peterborough games bar</span>
               <span className="hidden md:inline">Food • Drinks • Darts • Pool • Parties</span>
@@ -126,10 +126,10 @@ export default function RootLayout({
           </div>
 
           <div className="border-b-4 border-playard-red bg-[#080202]/95 backdrop-blur">
-            <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
+            <div className="mx-auto flex w-full min-w-0 max-w-7xl flex-wrap items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-6 sm:py-4">
               <Link
                 href="/"
-                className="shrink-0 text-3xl font-black uppercase tracking-[-0.06em] text-white sm:text-4xl"
+                className="min-w-0 shrink text-2xl font-black uppercase tracking-[-0.06em] text-white sm:text-3xl lg:text-4xl"
               >
                 Playard
               </Link>
@@ -149,32 +149,26 @@ export default function RootLayout({
                 ))}
               </nav>
 
-              <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+              <div className="flex min-w-0 flex-wrap items-center justify-end gap-1.5 sm:gap-3">
                 <a
                   href="tel:01733641062"
                   className="hidden border-2 border-white px-4 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:rotate-[2deg] hover:border-playard-red hover:bg-playard-red lg:inline-flex"
                 >
                   Call
                 </a>
-                <FunbutlerGiftCardModal
-                  buttonText="Gift Cards"
-                  title="Buy Gift Card"
-                  subtitle="Choose your gift card amount and complete your purchase securely."
-                  className="hidden whitespace-nowrap border-2 border-white !bg-transparent !px-3 !py-2 !text-xs font-black uppercase tracking-wide text-white !shadow-none transition hover:!scale-100 hover:!rotate-0 hover:border-[#d71920] hover:!bg-[#d71920] hover:text-white lg:inline-flex"
+                <FunbutlerBookingModal
+                  bookingFormId="673706716dbb45cccad59994"
+                  buttonText="Quick Book"
+                  title="Book Playard"
+                  subtitle="Activities, parties, group bookings and Playard packages."
+                  className="!px-3 !py-3 !text-xs font-black uppercase tracking-wide playard-glow sm:!px-5 sm:!py-3 sm:!text-sm"
+                  trackEvent="quick_book_clicked"
                 />
-               <FunbutlerBookingModal
-  bookingFormId="673706716dbb45cccad59994"
-  buttonText="Quick Book"
-  title="Book Playard"
-  subtitle="Activities, parties, group bookings and Playard packages."
-  className="px-4 py-3 text-xs sm:px-5 sm:text-sm playard-glow"
-  trackEvent="quick_book_clicked"
-/>
                 <FunbutlerGiftCardModal
                   buttonText="Gift Cards"
                   title="Buy Gift Card"
                   subtitle="Choose your gift card amount and complete your purchase securely."
-                  className="whitespace-nowrap border-2 border-white !bg-transparent !px-3 !py-2 !text-xs font-black uppercase tracking-wide text-white !shadow-none transition hover:!scale-100 hover:!rotate-0 hover:border-[#d71920] hover:!bg-[#d71920] hover:text-white sm:hidden"
+                  className="border-2 border-white !bg-transparent !px-3 !py-3 !text-xs font-black uppercase tracking-wide text-white !shadow-none transition hover:!scale-100 hover:!rotate-0 hover:border-[#d71920] hover:!bg-[#d71920] hover:text-white"
                 />
               </div>
             </div>

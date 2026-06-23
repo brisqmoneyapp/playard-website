@@ -74,11 +74,11 @@ export default function PoolPeterboroughPage() {
               Pool tables in Peterborough for date nights, group nights, birthdays, work socials and relaxed competitive fun.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <TrackedLink href="#book-pool" eventName="pool_booking_clicked" className="bg-[#00b86b] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <TrackedLink href="#book-pool" eventName="pool_booking_clicked" className="bg-[#00b86b] px-5 py-4 text-center text-base sm:px-9 sm:py-5 sm:text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]">
                 Book Pool
               </TrackedLink>
-              <Link href="/activities" className="bg-[#00d4ff] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[2deg] hover:scale-[1.03]">
+              <Link href="/activities" className="bg-[#00d4ff] px-5 py-4 text-center text-base sm:px-9 sm:py-5 sm:text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[2deg] hover:scale-[1.03]">
                 All Games
               </Link>
             </div>

@@ -94,23 +94,23 @@ export default function TableTennisPage() {
               Fast rallies, loud reactions and quick-fire competition. Table tennis at Playard is perfect for friends, families, teens, birthdays and work socials.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <TrackedLink
                 href="#book-table-tennis"
                 eventName="table_tennis_booking_clicked"
-                className="bg-[#ff2bd6] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]"
+                className="bg-[#ff2bd6] px-5 py-4 text-center text-base sm:px-9 sm:py-5 sm:text-lg font-black uppercase tracking-wide text-white transition hover:rotate-[-2deg] hover:scale-[1.03]"
               >
                 Book Table Tennis
               </TrackedLink>
               <Link
                 href="/activities"
-                className="bg-[#00d4ff] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[2deg] hover:scale-[1.03]"
+                className="bg-[#00d4ff] px-5 py-4 text-center text-base sm:px-9 sm:py-5 sm:text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[2deg] hover:scale-[1.03]"
               >
                 All Games
               </Link>
               <Link
                 href="/food-and-drinks"
-                className="border-2 border-white px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-white transition hover:bg-white hover:text-black"
+                className="border-2 border-white px-5 py-4 text-center text-base sm:px-9 sm:py-5 sm:text-lg font-black uppercase tracking-wide text-white transition hover:bg-white hover:text-black"
               >
                 Food & Drinks
               </Link>

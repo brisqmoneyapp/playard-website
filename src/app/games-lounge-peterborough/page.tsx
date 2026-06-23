@@ -66,7 +66,7 @@ export default function BoardGamesPage() {
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side - text */}
           <div className="space-y-8">
-            <h1 className="font-extrabold uppercase text-[5rem] leading-[1.05] tracking-tight bg-gradient-to-r from-[#ff2bd6] via-[#00d4ff] via-[#f59e0b] to-[#00b86b] bg-clip-text text-transparent">
+            <h1 className="font-extrabold uppercase text-[3rem] sm:text-[5rem] leading-[1.05] tracking-tight bg-gradient-to-r from-[#ff2bd6] via-[#00d4ff] via-[#f59e0b] to-[#00b86b] bg-clip-text text-transparent">
               NO RULES.<br />JUST GAMES.
             </h1>
             <p className="text-xl md:text-2xl max-w-xl text-white/90 font-semibold">

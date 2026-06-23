@@ -74,11 +74,11 @@ export default function StreetCurlingPage() {
               All the fun, strategy and competition of curling without the ice. Perfect for families, birthdays, work socials and team events.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <TrackedLink href="#book-curling" eventName="curling_booking_clicked" className="bg-[#9EEAFF] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[-2deg] hover:scale-[1.03]">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <TrackedLink href="#book-curling" eventName="curling_booking_clicked" className="bg-[#9EEAFF] px-5 py-4 text-center text-base sm:px-9 sm:py-5 sm:text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[-2deg] hover:scale-[1.03]">
                 Book Curling
               </TrackedLink>
-              <Link href="/activities" className="bg-[#00d4ff] px-9 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[2deg] hover:scale-[1.03]">
+              <Link href="/activities" className="bg-[#00d4ff] px-5 py-4 text-center text-base sm:px-9 sm:py-5 sm:text-lg font-black uppercase tracking-wide text-black transition hover:rotate-[2deg] hover:scale-[1.03]">
                 All Games
               </Link>
             </div>

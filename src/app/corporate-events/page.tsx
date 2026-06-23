@@ -121,18 +121,18 @@ export default function CorporateEventsPage() {
               Playard was built around friendly competition. Whether you're bringing 10 colleagues or 100 guests, we can create an experience that combines games, food, drinks and social interaction in a way that traditional team building venues simply cannot.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <TrackedAnchor
                 href="mailto:info@playard.co.uk?subject=Corporate Event Enquiry"
                 eventName="corporate_enquiry_clicked"
-                className="bg-[#d71920] px-8 py-4 text-center font-black uppercase tracking-wide text-white transition hover:scale-[1.03]"
+                className="bg-[#d71920] px-5 py-4 text-center text-base font-black uppercase tracking-wide text-white transition hover:scale-[1.03] sm:px-9 sm:py-5 sm:text-lg"
               >
                 Enquire Now
               </TrackedAnchor>
 
               <Link
                 href="/activities"
-                className="bg-[#00d4ff] px-8 py-4 text-center font-black uppercase tracking-wide text-black transition hover:scale-[1.03]"
+                className="bg-[#00d4ff] px-5 py-4 text-center text-base font-black uppercase tracking-wide text-black transition hover:scale-[1.03] sm:px-9 sm:py-5 sm:text-lg"
               >
                 View Activities
               </Link>

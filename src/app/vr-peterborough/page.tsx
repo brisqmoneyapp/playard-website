@@ -121,7 +121,7 @@ export default function VRPeterboroughPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
       {/* Hero Section */}
-      <section className="relative flex flex-col-reverse lg:flex-row items-center bg-black px-6 py-24 lg:py-48 overflow-visible">
+      <section className="relative flex flex-col-reverse lg:flex-row items-center bg-black px-6 py-24 lg:py-48 overflow-hidden">
         <div className="lg:w-1/2 text-center lg:text-left z-10">
           <h1 className="big-heading text-[4.5rem] md:text-[6rem] leading-[1] uppercase font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7c3cff] via-[#00d4ff] to-[#ff2bd6] mb-8 select-none">
             STEP.<br />

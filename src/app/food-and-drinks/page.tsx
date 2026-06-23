@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -90,6 +91,52 @@ export default function FoodAndDrinksPage() {
           <p className="max-w-4xl bg-black/50 p-6 text-xl font-bold leading-8 text-white md:text-2xl md:leading-10">
             Drinks, hot dogs, chicken, snacks and easy food options while you play. Our full menu is being finalised and will be available soon.
           </p>
+        </div>
+      </section>
+
+      <section className="bg-[#fff3dd] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 md:grid-cols-2 md:gap-8">
+            <article className="flex min-w-0 flex-col">
+              <p className="section-label mb-3">At Playard</p>
+              <h2 className="mb-4 text-4xl font-black uppercase tracking-[-0.06em] md:text-5xl">
+                Food
+              </h2>
+              <p className="mb-6 max-w-xl text-lg font-bold leading-8 text-zinc-800">
+                Enjoy hot dogs, snacks and food while you play.
+              </p>
+              <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border-4 border-black shadow-2xl ring-4 ring-[#d71920]/20 transition duration-300 hover:-rotate-1">
+                <Image
+                  src="/images/venue/food-drinks.jpeg"
+                  alt="Food at Playard Peterborough"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition duration-500 group-hover:scale-110"
+                  priority
+                />
+              </div>
+            </article>
+
+            <article className="flex min-w-0 flex-col">
+              <p className="section-label mb-3">At Playard</p>
+              <h2 className="mb-4 text-4xl font-black uppercase tracking-[-0.06em] md:text-5xl">
+                Drinks
+              </h2>
+              <p className="mb-6 max-w-xl text-lg font-bold leading-8 text-zinc-800">
+                Soft drinks, colourful specials and bar options available throughout your visit.
+              </p>
+              <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border-4 border-black shadow-2xl ring-4 ring-[#d71920]/20 transition duration-300 hover:rotate-1">
+                <Image
+                  src="/images/venue/drinks.jpeg"
+                  alt="Drinks at Playard Peterborough"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition duration-500 group-hover:scale-110"
+                  priority
+                />
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 

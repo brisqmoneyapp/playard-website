@@ -1,6 +1,21 @@
+"use client";
+
+import { useCallback, useRef, useState } from "react";
+import Image from "next/image";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 import NavLink from "@/components/NavLink";
 import Link from "next/link";
+
+const foodDrinksCarouselImages = [
+  {
+    src: "/images/venue/food-drinks.jpeg",
+    alt: "Food and snacks at Playard Peterborough",
+  },
+  {
+    src: "/images/venue/drinks.jpeg",
+    alt: "Drinks at Playard Peterborough",
+  },
+];
 
 const games = [
   {
@@ -127,6 +142,77 @@ const eventsExperiences = [
     copyClass: "text-white/90",
   },
 ];
+
+
+function FoodDrinksCarousel() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const scrollToIndex = useCallback((index: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const nextIndex = Math.max(0, Math.min(index, foodDrinksCarouselImages.length - 1));
+    container.scrollTo({
+      left: container.clientWidth * nextIndex,
+      behavior: "smooth",
+    });
+    setActiveIndex(nextIndex);
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    const container = scrollRef.current;
+    if (!container || container.clientWidth === 0) return;
+
+    const nextIndex = Math.round(container.scrollLeft / container.clientWidth);
+    setActiveIndex(nextIndex);
+  }, []);
+
+  return (
+    <div className="relative min-h-[260px] overflow-hidden rounded-2xl border-4 border-[#f59e0b] shadow-2xl sm:min-h-[360px] lg:min-h-[420px]">
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="flex h-full snap-x snap-mandatory overflow-x-auto scroll-smooth touch-pan-x [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {foodDrinksCarouselImages.map((image, index) => (
+          <div
+            key={image.src}
+            className="relative min-h-[260px] w-full shrink-0 snap-center snap-always sm:min-h-[360px] lg:min-h-[420px]"
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              priority={index === 0}
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        aria-label="Previous food and drinks photo"
+        onClick={() => scrollToIndex(activeIndex - 1)}
+        disabled={activeIndex === 0}
+        className="absolute left-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-black/75 text-2xl font-black leading-none text-white transition hover:border-[#f59e0b] hover:bg-[#d71920] disabled:pointer-events-none disabled:opacity-40 md:flex"
+      >
+        ‹
+      </button>
+      <button
+        type="button"
+        aria-label="Next food and drinks photo"
+        onClick={() => scrollToIndex(activeIndex + 1)}
+        disabled={activeIndex === foodDrinksCarouselImages.length - 1}
+        className="absolute right-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-black/75 text-2xl font-black leading-none text-white transition hover:border-[#f59e0b] hover:bg-[#d71920] disabled:pointer-events-none disabled:opacity-40 md:flex"
+      >
+        ›
+      </button>
+    </div>
+  );
+}
 
 
 export default function Home() {
@@ -320,7 +406,7 @@ export default function Home() {
 
       <section className="bg-black px-4 py-16 text-white sm:px-6 md:py-20 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="min-h-[260px] bg-[url('/images/venue/food-drinks.jpeg')] bg-cover bg-center shadow-2xl sm:min-h-[360px] lg:min-h-[420px]" />
+          <FoodDrinksCarousel />
           <div>
             <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#00d4ff]">
               Food & Drink

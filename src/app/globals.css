@@ -34,10 +34,14 @@
 html {
   scroll-behavior: smooth;
   background: #1a0708;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 6% 8%, rgba(255, 43, 214, 0.20), transparent 20rem),
     radial-gradient(circle at 92% 6%, rgba(0, 212, 255, 0.18), transparent 20rem),
@@ -53,7 +57,6 @@ body {
     );
   color: var(--foreground);
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
 }
 
 body::before {
