@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 import NavLink from "@/components/NavLink";
@@ -144,50 +144,6 @@ const eventsExperiences = [
 ];
 
 
-function HeroVideo({ className }: { className: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = true;
-    video.defaultMuted = true;
-    video.setAttribute("playsinline", "");
-    video.setAttribute("webkit-playsinline", "");
-
-    const tryPlay = () => {
-      void video.play().catch(() => {});
-    };
-
-    tryPlay();
-
-    video.addEventListener("loadeddata", tryPlay);
-    video.addEventListener("canplay", tryPlay);
-
-    return () => {
-      video.removeEventListener("loadeddata", tryPlay);
-      video.removeEventListener("canplay", tryPlay);
-    };
-  }, []);
-
-  return (
-    <video
-      ref={videoRef}
-      className={className}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="auto"
-      poster="/images/venue/hero-poster.jpg"
-    >
-      <source src="/videos/playard-hero.mp4" type="video/mp4" />
-    </video>
-  );
-}
-
-
 function FoodDrinksCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -263,7 +219,16 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-[#111111]">
       <div className="relative isolate overflow-hidden bg-black">
-        <HeroVideo className="absolute inset-0 -z-30 h-full w-full bg-black object-cover object-center opacity-100 lg:hidden" />
+        <video
+          className="absolute inset-0 -z-30 h-full w-full bg-black object-cover object-center opacity-100 lg:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+        >
+          <source src="/videos/playard-hero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 -z-20 bg-black/45 lg:bg-[radial-gradient(circle_at_20%_20%,rgba(215,25,32,0.28),transparent_24rem),radial-gradient(circle_at_80%_30%,rgba(0,212,255,0.16),transparent_24rem),#050505]" />
 
         <section className="relative flex min-h-[100vh] items-center overflow-hidden px-4 py-20 text-white sm:px-6 md:py-24 lg:min-h-[92vh]">
@@ -288,7 +253,16 @@ export default function Home() {
             </div>
             <div className="hidden lg:block">
               <div className="rotate-[1.5deg] border-4 border-white bg-black p-3 shadow-2xl lg:min-h-[720px]">
-                <HeroVideo className="h-[720px] w-full bg-black object-cover object-center" />
+                <video
+                  className="h-[720px] w-full bg-black object-cover object-center"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                >
+                  <source src="/videos/playard-hero.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
