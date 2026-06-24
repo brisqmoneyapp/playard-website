@@ -225,9 +225,6 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="auto"
-          controls={false}
-          disablePictureInPicture
         >
           <source src="/videos/playard-hero.mp4" type="video/mp4" />
         </video>
@@ -261,9 +258,6 @@ export default function Home() {
                   muted
                   loop
                   playsInline
-                  preload="auto"
-                  controls={false}
-                  disablePictureInPicture
                 >
                   <source src="/videos/playard-hero.mp4" type="video/mp4" />
                 </video>
