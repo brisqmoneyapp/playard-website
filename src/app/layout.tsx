@@ -19,6 +19,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const ICON_VERSION = "20260619";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.playard.co.uk"),
   title: {
@@ -68,8 +70,17 @@ export const metadata: Metadata = {
     canonical: "https://www.playard.co.uk",
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
+    icon: [
+      { url: `/favicon.ico?v=${ICON_VERSION}`, sizes: "any" },
+      { url: `/favicon-16x16.png?v=${ICON_VERSION}`, sizes: "16x16", type: "image/png" },
+      { url: `/favicon-32x32.png?v=${ICON_VERSION}`, sizes: "32x32", type: "image/png" },
+      { url: `/icon.png?v=${ICON_VERSION}`, sizes: "512x512", type: "image/png" },
+      { url: `/icon.svg?v=${ICON_VERSION}`, type: "image/svg+xml" },
+    ],
+    shortcut: `/favicon.ico?v=${ICON_VERSION}`,
+    apple: [
+      { url: `/apple-icon.png?v=${ICON_VERSION}`, sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
