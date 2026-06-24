@@ -16,11 +16,35 @@ const supportAreas = [
 
 const websiteCommitments = [
   "Clear page structure",
+  "Clear navigation",
   "Readable text contrast",
-  "Keyboard friendly navigation",
+  "High contrast colours",
+  "Readable typography",
+  "Keyboard accessibility where possible",
   "Descriptive page titles",
+  "Alternative text for images",
+  "Responsive design",
   "Mobile responsive layouts",
-  "Ongoing improvements",
+  "Ongoing accessibility improvements",
+];
+
+const activities = [
+  "Interactive Darts",
+  "Pool",
+  "Shuffleboard",
+  "Street Curling",
+  "Virtual Reality",
+  "SimHunt",
+];
+
+const activityConsiderations = [
+  "Standing",
+  "Movement",
+  "Hand eye coordination",
+  "Flashing lights",
+  "Loud sounds",
+  "Immersive screens",
+  "Fast moving visual effects",
 ];
 
 export default function AccessibilityPage() {
@@ -62,34 +86,93 @@ export default function AccessibilityPage() {
       </section>
 
       <section className="bg-[#fff3dd] px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-4xl">
+            <p className="section-label mb-5">Our Commitment</p>
+            <h2 className="mb-6 text-5xl font-black tracking-tight md:text-7xl">
+              Accessibility at Playard.
+            </h2>
+          </div>
+
+          <div className="space-y-6 text-xl font-bold leading-9 text-black">
+            <p>
+              Playard Peterborough is committed to making the venue and website as accessible and inclusive as reasonably possible for guests, groups and visitors.
+            </p>
+            <p>
+              We recognise that accessibility needs vary from person to person. We aim to provide clear information, helpful staff support and a welcoming environment wherever we can.
+            </p>
+            <p>
+              Accessibility is an ongoing process. We continue to review our venue, activities, website and customer experience and make improvements where reasonably practicable.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black px-6 py-24 text-white">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="section-label mb-5">Venue Access</p>
+            <p className="section-label mb-5">Venue Accessibility</p>
             <h2 className="mb-6 text-5xl font-black tracking-tight md:text-7xl">
               Planning your visit.
             </h2>
           </div>
 
-          <div className="space-y-6 text-xl font-bold leading-9 text-zinc-700">
+          <div className="space-y-6 text-xl font-bold leading-9 text-white">
             <p>
-              Playard is located at 26 Hereward Cross, Peterborough, PE1 1TE. We
-              recommend contacting us before your visit if you have specific
-              access requirements, mobility needs or questions about the venue
-              layout.
+              Playard is located at 26 Hereward Cross, Peterborough, PE1 1TE. We want guests to feel welcome and informed before they arrive.
             </p>
+            <p>
+              Where available and where reasonably practicable, the venue may offer:
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>Step free entrance where available</li>
+              <li>Accessible routes throughout the public areas where reasonably practicable</li>
+              <li>Seating available throughout the venue</li>
+              <li>Accessible toilet facilities where available</li>
+              <li>Staff available to assist where possible</li>
+              <li>Assistance dogs are welcome</li>
+            </ul>
+            <p>
+              Customers are encouraged to contact Playard before visiting if they have specific accessibility requirements, mobility needs or questions about the venue layout. Our team can advise on suitable activities, group arrangements, quieter periods, seating options and practical considerations that may help make your visit smoother.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <p>
-              Our team can advise on suitable activities, group arrangements,
-              quieter periods, seating options and any practical considerations
-              that may help make your visit smoother.
-            </p>
+      <section className="bg-[#fff3dd] px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-4xl">
+            <p className="section-label mb-5">Activity Accessibility</p>
+            <h2 className="mb-6 text-5xl font-black tracking-tight md:text-7xl">
+              Different activities. Different requirements.
+            </h2>
+          </div>
 
-            <p>
-              Some activities may involve movement, standing, hand eye
-              coordination, screens, sound or shared equipment. If you are unsure
-              whether a specific activity is suitable, please contact us before
-              booking.
-            </p>
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="space-y-6 text-lg font-bold leading-8 text-black">
+              <p>
+                Different activities at Playard have different physical and sensory requirements. Examples include:
+              </p>
+              <ul className="list-disc space-y-2 pl-6">
+                {activities.map((activity) => (
+                  <li key={activity}>{activity}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-6 text-lg font-bold leading-8 text-black">
+              <p>
+                Some activities may involve:
+              </p>
+              <ul className="list-disc space-y-2 pl-6">
+                {activityConsiderations.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <p>
+                If you are unsure whether an activity is suitable for you or someone in your group, please contact Playard before booking. Our team will try to provide helpful information so you can make an informed choice.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -123,10 +206,19 @@ export default function AccessibilityPage() {
             <h2 className="mb-6 text-5xl font-black tracking-tight">
               Tell us what you need.
             </h2>
-            <p className="mb-8 text-lg font-bold leading-8 text-zinc-700">
-              If you or someone in your group has accessibility needs, sensory
-              considerations or mobility concerns, contact us before booking and
-              we will help where possible.
+            <p className="mb-4 text-lg font-bold leading-8 text-black">
+              Customers should contact Playard before visiting if they require:
+            </p>
+            <ul className="mb-6 list-disc space-y-2 pl-6 text-lg font-bold leading-8 text-black">
+              <li>Wheelchair access information</li>
+              <li>Quieter visit times</li>
+              <li>Group assistance</li>
+              <li>Sensory information</li>
+              <li>Seating arrangements</li>
+              <li>Support with bookings</li>
+            </ul>
+            <p className="mb-8 text-lg font-bold leading-8 text-black">
+              Our team will always try to accommodate requests where reasonably possible.
             </p>
             <a
               href="mailto:info@playard.co.uk?subject=Accessibility Enquiry"
@@ -141,7 +233,7 @@ export default function AccessibilityPage() {
             <h2 className="mb-6 text-5xl font-black tracking-tight">
               Need help finding us?
             </h2>
-            <p className="mb-8 text-lg font-bold leading-8 text-zinc-700">
+            <p className="mb-8 text-lg font-bold leading-8 text-black">
               Visit our Parking & Directions page for information on location,
               transport links and how to find Playard in Peterborough city centre.
             </p>
@@ -156,18 +248,41 @@ export default function AccessibilityPage() {
       </section>
 
       <section className="bg-[#fff3dd] px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 max-w-4xl">
+            <p className="section-label mb-5">Accessibility Feedback</p>
+            <h2 className="mb-6 text-5xl font-black tracking-tight md:text-7xl">
+              Help us improve.
+            </h2>
+          </div>
+
+          <div className="max-w-4xl space-y-6 text-lg font-bold leading-8 text-black">
+            <p>
+              Playard welcomes feedback about accessibility on our website and in the venue.
+            </p>
+            <p>
+              If you encounter any accessibility barriers, or if there is something we could do better, please let the team know. Your feedback helps us identify issues and make improvements where reasonably practicable.
+            </p>
+            <p>
+              You can contact us by email at info@playard.co.uk or by phone on 01733 641062.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#fff3dd] px-6 pb-24">
         <div className="mx-auto max-w-4xl">
           <p className="section-label mb-5">Contact</p>
           <h2 className="mb-6 text-5xl font-black tracking-tight">
             Need help before you visit?
           </h2>
-          <div className="border-4 border-black bg-white p-8 text-zinc-700 shadow-2xl">
-            <p className="mb-2 font-bold text-black">Playard Peterborough</p>
-            <p>26 Hereward Cross</p>
-            <p>Peterborough</p>
-            <p>PE1 1TE</p>
-            <p className="mt-4">Email: info@playard.co.uk</p>
-            <p>Phone: 01733 641062</p>
+          <div className="border-4 border-black bg-white p-8 text-black shadow-2xl">
+            <p className="mb-2 font-bold">Playard Peterborough</p>
+            <p className="font-bold">26 Hereward Cross</p>
+            <p className="font-bold">Peterborough</p>
+            <p className="font-bold">PE1 1TE</p>
+            <p className="mt-4 font-bold">Email: info@playard.co.uk</p>
+            <p className="font-bold">Phone: 01733 641062</p>
           </div>
         </div>
       </section>
