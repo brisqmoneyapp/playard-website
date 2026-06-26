@@ -33,15 +33,20 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 9.5rem;
   background: #1a0708;
   max-width: 100%;
-  overflow-x: hidden;
+}
+
+@media (min-width: 1280px) {
+  html {
+    scroll-padding-top: 7.25rem;
+  }
 }
 
 body {
   margin: 0;
   max-width: 100%;
-  overflow-x: hidden;
   background:
     radial-gradient(circle at 6% 8%, rgba(255, 43, 214, 0.20), transparent 20rem),
     radial-gradient(circle at 92% 6%, rgba(0, 212, 255, 0.18), transparent 20rem),

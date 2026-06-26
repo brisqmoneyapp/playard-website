@@ -48,6 +48,18 @@ const pages: MetadataRoute.Sitemap = [
     priority: 0.85,
   },
   {
+    url: `${baseUrl}/events`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.88,
+  },
+  {
+    url: `${baseUrl}/sip-and-paint-peterborough`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  {
     url: `${baseUrl}/gift-cards`,
     lastModified: new Date(),
     changeFrequency: "weekly",

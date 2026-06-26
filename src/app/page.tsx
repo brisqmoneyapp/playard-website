@@ -3,6 +3,7 @@
 import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
+import SipAndPaintCountdown from "@/components/SipAndPaintCountdown";
 import NavLink from "@/components/NavLink";
 import Link from "next/link";
 
@@ -119,6 +120,8 @@ const eventsExperiences = [
     colour: "bg-[#d71920] text-white",
     labelClass: "text-white/80",
     copyClass: "text-white/90",
+    label: "31 July",
+    href: "/sip-and-paint-peterborough",
   },
   {
     title: "Open Mic Night",
@@ -267,6 +270,8 @@ export default function Home() {
         </section>
       </div>
 
+      <SipAndPaintCountdown />
+
       <section className="rotate-[-1deg] scale-[1.03] border-y-4 border-black bg-[#00d4ff] py-4 text-black sm:py-5">
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 text-base font-black uppercase tracking-[-0.03em] sm:text-xl md:text-2xl">
             <span>Games Bar</span>
@@ -373,28 +378,48 @@ export default function Home() {
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-            {eventsExperiences.map((item) => (
-              <div
-                key={item.title}
-                className={`${item.colour} min-h-[280px] p-7 text-left shadow-2xl transition hover:-translate-y-3 hover:rotate-[1deg] sm:min-h-[330px] sm:p-8`}
-              >
-                <p className={`mb-5 text-sm font-black uppercase tracking-[0.22em] ${item.labelClass}`}>
-                  Coming Soon
-                </p>
-                <h3
-                  className={`mb-5 font-black uppercase leading-none tracking-[-0.06em] ${
-                    item.title === "Tournaments"
-                      ? "text-3xl md:text-4xl"
-                      : "text-4xl sm:text-5xl"
-                  }`}
+            {eventsExperiences.map((item) => {
+              const cardContent = (
+                <>
+                  <p className={`mb-5 text-sm font-black uppercase tracking-[0.22em] ${item.labelClass}`}>
+                    {"label" in item && item.label ? item.label : "Coming Soon"}
+                  </p>
+                  <h3
+                    className={`mb-5 font-black uppercase leading-none tracking-[-0.06em] ${
+                      item.title === "Tournaments"
+                        ? "text-3xl md:text-4xl"
+                        : "text-4xl sm:text-5xl"
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className={`text-lg font-bold leading-8 sm:text-xl ${item.copyClass}`}>
+                    {item.text}
+                  </p>
+                </>
+              );
+
+              if ("href" in item && item.href) {
+                return (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className={`${item.colour} block min-h-[280px] p-7 text-left shadow-2xl transition hover:-translate-y-3 hover:rotate-[1deg] sm:min-h-[330px] sm:p-8`}
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <div
+                  key={item.title}
+                  className={`${item.colour} min-h-[280px] p-7 text-left shadow-2xl transition hover:-translate-y-3 hover:rotate-[1deg] sm:min-h-[330px] sm:p-8`}
                 >
-                  {item.title}
-                </h3>
-                <p className={`text-lg font-bold leading-8 sm:text-xl ${item.copyClass}`}>
-                  {item.text}
-                </p>
-              </div>
-            ))}
+                  {cardContent}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

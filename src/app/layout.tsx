@@ -8,6 +8,7 @@ import TrackedLink from "@/components/TrackedLink";
 import "./globals.css";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 import FunbutlerGiftCardModal from "@/components/FunbutlerGiftCardModal";
+import WhatsOnTicker from "@/components/WhatsOnTicker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,6 +85,15 @@ export const metadata: Metadata = {
   },
 };
 
+const footerExploreLinks = [
+  { href: "/", label: "Home" },
+  { href: "/activities", label: "Activities" },
+  { href: "/food-and-drinks", label: "Food & Drinks" },
+  { href: "/offers", label: "Offers" },
+  { href: "/events", label: "Events" },
+  { href: "/contact", label: "Find Us" },
+];
+
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/activities", label: "Activities", trackEvent: "activities_clicked" as const },
@@ -103,19 +113,6 @@ const footerGameLinks = [
   { href: "/games-lounge-peterborough", label: "Games Lounge" },
 ];
 
-const topTickerItems = [
-  "Games Bar",
-  "Food & Drinks",
-  "Interactive Darts",
-  "Pool Tables",
-  "Shuffleboard",
-  "VR",
-  "Parties",
-  "Gift Cards",
-  "Work Socials",
-  "Tournaments",
-];
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -127,20 +124,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-black text-white">
-        <header className="sticky top-0 z-50 w-full overflow-x-hidden bg-black text-white">
-          <div className="red-stripe border-b border-red-950 px-3 py-2 text-black sm:px-6">
-            <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[0.68rem] font-black uppercase tracking-[0.22em] text-white md:justify-between">
-              <span>Peterborough games bar</span>
-              <span className="hidden md:inline">Food • Drinks • Darts • Pool • Parties</span>
-              <span>26 Hereward Cross</span>
-            </div>
-          </div>
-
+        <header className="sticky top-0 z-[100] w-full overflow-x-hidden bg-black text-white shadow-[0_2px_16px_rgba(0,0,0,0.28)]">
           <div className="border-b-4 border-playard-red bg-[#080202]/95 backdrop-blur">
-            <div className="mx-auto flex w-full min-w-0 max-w-7xl flex-wrap items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-6 sm:py-4">
+            <div className="mx-auto flex w-full min-w-0 max-w-7xl flex-wrap items-center justify-between gap-2 px-3 py-2 sm:gap-4 sm:px-6 sm:py-3 lg:py-4">
               <Link
                 href="/"
-                className="min-w-0 shrink text-2xl font-black uppercase tracking-[-0.06em] text-white sm:text-3xl lg:text-4xl"
+                className="min-w-0 shrink text-xl font-black uppercase tracking-[-0.06em] text-white sm:text-3xl lg:text-4xl"
               >
                 Playard
               </Link>
@@ -172,26 +161,26 @@ export default function RootLayout({
                   buttonText="Quick Book"
                   title="Book Playard"
                   subtitle="Activities, parties, group bookings and Playard packages."
-                  className="!px-3 !py-3 !text-xs font-black uppercase tracking-wide playard-glow sm:!px-5 sm:!py-3 sm:!text-sm"
+                  className="!px-2.5 !py-2.5 !text-[0.65rem] font-black uppercase tracking-wide playard-glow sm:!px-5 sm:!py-3 sm:!text-sm"
                   trackEvent="quick_book_clicked"
                 />
                 <FunbutlerGiftCardModal
                   buttonText="Gift Cards"
                   title="Buy Gift Card"
                   subtitle="Choose your gift card amount and complete your purchase securely."
-                  className="border-2 border-white !bg-transparent !px-3 !py-3 !text-xs font-black uppercase tracking-wide text-white !shadow-none transition hover:!scale-100 hover:!rotate-0 hover:border-[#d71920] hover:!bg-[#d71920] hover:text-white"
+                  className="border-2 border-white !bg-transparent !px-2.5 !py-2.5 !text-[0.65rem] font-black uppercase tracking-wide text-white !shadow-none transition hover:!scale-100 hover:!rotate-0 hover:border-[#d71920] hover:!bg-[#d71920] hover:text-white sm:!px-3 sm:!py-3 sm:!text-xs"
                 />
               </div>
             </div>
 
-            <div className="border-t border-red-950/60 px-3 py-2 xl:hidden">
-              <div className="mx-auto grid max-w-7xl grid-cols-5 gap-1 text-center text-[0.62rem] font-black uppercase tracking-[0.04em] text-zinc-300 sm:gap-2 sm:text-xs">
+            <div className="border-t border-red-950/60 px-3 py-1.5 xl:hidden">
+              <div className="mx-auto grid max-w-7xl grid-cols-5 gap-1 text-center text-[0.58rem] font-black uppercase tracking-[0.04em] text-zinc-300 sm:gap-2 sm:text-xs">
                 {navItems.map((item) => (
                   <NavLink
                     key={item.href}
                     href={item.href}
                     trackEvent={"trackEvent" in item ? item.trackEvent : undefined}
-                    className="min-w-0 border border-zinc-800 bg-black px-1 py-2 leading-tight hover:border-playard-red hover:text-white sm:px-2"
+                    className="min-w-0 border border-zinc-800 bg-black px-1 py-1.5 leading-tight hover:border-playard-red hover:text-white sm:px-2 sm:py-2"
                   >
                     {item.label}
                   </NavLink>
@@ -199,24 +188,19 @@ export default function RootLayout({
               </div>
             </div>
           </div>
+
+          <WhatsOnTicker />
         </header>
 
-        {children}
+        <div className="relative z-0 overflow-x-hidden">
+          {children}
 
-        <footer className="relative overflow-hidden border-t-4 border-playard-red bg-[#080202] px-6 py-16 text-white">
+          <footer className="relative overflow-hidden border-t-4 border-playard-red bg-[#080202] px-6 py-16 text-white">
           <div className="noise-overlay" />
           <div className="absolute -left-20 top-24 h-56 w-56 rotate-45 border-[32px] border-playard-red/15" />
           <div className="absolute -right-24 bottom-24 h-72 w-72 rounded-full border-[40px] border-white/10" />
 
           <div className="relative mx-auto max-w-7xl">
-            <div className="mb-10 rotate-[1deg] border-y-4 border-playard-red bg-white py-4 text-black">
-              <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 text-base font-black uppercase tracking-[-0.03em] sm:text-lg md:text-2xl">
-                {topTickerItems.map((item) => (
-                  <span key={item}>{item} •</span>
-                ))}
-              </div>
-            </div>
-
             <div className="mb-12 grid gap-8 border-b border-zinc-800 pb-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
               <div>
                 <p className="mb-5 inline-flex rotate-[-3deg] bg-playard-red px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white">
@@ -307,7 +291,7 @@ export default function RootLayout({
               <div>
                 <h3 className="mb-4 font-black uppercase tracking-[0.18em] text-playard-red">Explore</h3>
                 <div className="flex flex-col gap-2 text-zinc-400">
-                  {navItems.map((item) => (
+                  {footerExploreLinks.map((item) => (
                     <Link key={item.href} href={item.href} className="hover:text-white">
                       {item.label}
                     </Link>
@@ -391,6 +375,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        </div>
         <CookieBanner />
         <Analytics />
       </body>

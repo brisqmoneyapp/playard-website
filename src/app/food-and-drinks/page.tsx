@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { FoodDrinksCreamSection } from "@/components/FoodDrinksPattern";
 
 export const metadata: Metadata = {
   title: "Food & Drinks Peterborough | Playard",
@@ -94,7 +95,7 @@ export default function FoodAndDrinksPage() {
         </div>
       </section>
 
-      <section className="bg-[#fff3dd] px-6 py-16 md:py-20">
+      <FoodDrinksCreamSection className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 md:grid-cols-2 md:gap-8">
             <article className="flex min-w-0 flex-col">
@@ -138,7 +139,7 @@ export default function FoodAndDrinksPage() {
             </article>
           </div>
         </div>
-      </section>
+      </FoodDrinksCreamSection>
 
       <section className="rotate-[-1deg] scale-[1.02] border-y-4 border-black bg-[#f59e0b] px-6 py-6">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-4">
@@ -153,7 +154,7 @@ export default function FoodAndDrinksPage() {
         </div>
       </section>
 
-      <section className="bg-[#fff3dd] px-6 py-24">
+      <FoodDrinksCreamSection className="px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-4xl">
             <p className="section-label mb-5">Menu Highlights</p>
@@ -176,7 +177,7 @@ export default function FoodAndDrinksPage() {
             ))}
           </div>
         </div>
-      </section>
+      </FoodDrinksCreamSection>
 
       <section className="bg-black px-6 py-24 text-white">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
@@ -214,7 +215,7 @@ export default function FoodAndDrinksPage() {
         </div>
       </section>
 
-      <section className="bg-[#fff3dd] px-6 py-24">
+      <FoodDrinksCreamSection className="px-6 py-24">
         <div className="mx-auto max-w-5xl">
           <p className="section-label mb-5">FAQs</p>
           <h2 className="mb-10 text-5xl font-black tracking-tight md:text-7xl">
@@ -233,7 +234,7 @@ export default function FoodAndDrinksPage() {
             ))}
           </div>
         </div>
-      </section>
+      </FoodDrinksCreamSection>
 
       <section className="bg-white px-6 py-24">
         <div className="mx-auto max-w-7xl border-4 border-black p-8 shadow-2xl md:p-14">
