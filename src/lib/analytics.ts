@@ -20,7 +20,14 @@ export type AnalyticsEvent =
   | "gift_card_clicked"
   | "corporate_enquiry_clicked"
   | "offers_clicked"
-  | "activities_clicked";
+  | "activities_clicked"
+  | "events_page_viewed"
+  | "event_page_viewed"
+  | "book_button_clicked"
+  | "email_enquiry_clicked"
+  | "telephone_clicked"
+  | "funbutler_booking_clicked"
+  | "eventbrite_booking_clicked";
 
 const META_CUSTOM_EVENTS = new Set<AnalyticsEvent>([
   "quick_book_clicked",
@@ -36,6 +43,9 @@ const META_CUSTOM_EVENTS = new Set<AnalyticsEvent>([
   "combo_package_clicked",
   "all_you_can_play_clicked",
   "corporate_enquiry_clicked",
+  "funbutler_booking_clicked",
+  "eventbrite_booking_clicked",
+  "book_button_clicked",
 ]);
 
 type EventParams = Record<string, string | number | boolean>;
@@ -92,4 +102,52 @@ export function trackEvent(eventName: AnalyticsEvent, params?: EventParams) {
   }
 
   trackMetaCustomEvent(eventName);
+}
+
+export function trackGaPageView(path: string) {
+  if (!isAnalyticsEnabled()) {
+    return;
+  }
+
+  if (typeof window === "undefined" || typeof window.gtag !== "function") {
+    return;
+  }
+
+  window.gtag("config", GA_MEASUREMENT_ID, {
+    page_path: path,
+  });
+
+  window.gtag("event", "page_view", {
+    page_path: path,
+  });
+
+  if (path === "/events") {
+    trackEvent("events_page_viewed", { page_path: path });
+  }
+
+  if (path.startsWith("/sip-and-paint") || path.startsWith("/events")) {
+    trackEvent("event_page_viewed", { page_path: path });
+  }
+}
+
+export function trackBookButtonClick(source: string) {
+  trackEvent("book_button_clicked", { source });
+}
+
+export function trackFunbutlerBookingClick(source: string) {
+  trackEvent("funbutler_booking_clicked", { source });
+  trackEvent("book_button_clicked", { source, booking_provider: "funbutler" });
+}
+
+export function trackEventbriteBookingClick(source: string) {
+  trackEvent("eventbrite_booking_clicked", { source });
+  trackEvent("book_button_clicked", { source, booking_provider: "eventbrite" });
+}
+
+export function trackEmailEnquiryClick(source: string) {
+  trackEvent("email_enquiry_clicked", { source });
+}
+
+export function trackTelephoneClick(source: string) {
+  trackEvent("telephone_clicked", { source });
 }

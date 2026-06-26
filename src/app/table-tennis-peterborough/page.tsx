@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "Table Tennis in Peterborough | Playard",
-  description:
-    "Book table tennis at Playard Peterborough. Fast paced fun for friends, families, work socials, parties and competitive nights out.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/table-tennis-peterborough");
 
 const bestFor = [
   "Friends night out",
@@ -71,6 +69,7 @@ const faqs = [
 export default function TableTennisPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <ActivityStructuredData name="Table Tennis" path="/table-tennis-peterborough" />
       <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden bg-black px-6 py-24 text-white">
         <div className="absolute inset-0 -z-30 bg-[url('/images/activities/table-tennis.jpg')] bg-cover bg-center opacity-55" />
         <div className="absolute inset-0 -z-20 bg-black/62" />

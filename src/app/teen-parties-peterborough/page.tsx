@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Teen Parties Peterborough | Playard",
-  description:
-    "Teen birthday parties in Peterborough with VR, interactive darts, pool, table tennis, SimShooting, games, food and drinks at Playard.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/teen-parties-peterborough");
 
 const features = [
   "VR & Gaming Activities",

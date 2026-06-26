@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FoodDrinksCreamSection } from "@/components/FoodDrinksPattern";
 
-export const metadata: Metadata = {
-  title: "Food & Drinks Peterborough | Playard",
-  description:
-    "Drinks, hot dogs, chicken, snacks and easy food options while you play at Playard Peterborough. Full menu coming soon.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/food-and-drinks");
 
 const highlights = [
   "Bar & Social Gaming",

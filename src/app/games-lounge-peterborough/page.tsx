@@ -1,11 +1,9 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Games Lounge in Peterborough | Playard",
-  description:
-    "Enjoy the Playard Games Lounge in Peterborough. Board games, card games, cornhole, table football, party games, food, drinks and social gaming under one roof.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/games-lounge-peterborough");
 
 const reasonsText =
   "FREE SOCIAL GAMES • FOOD • DRINKS • GROUPS • FAMILIES • DATE NIGHTS";
@@ -61,6 +59,7 @@ const cardColors = ["#ff2bd6", "#00d4ff", "#f59e0b", "#00b86b"];
 export default function BoardGamesPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <ActivityStructuredData name="Games Lounge" path="/games-lounge-peterborough" />
       {/* HERO SECTION */}
       <section className="relative isolate overflow-hidden bg-black px-6 py-32 md:py-40">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

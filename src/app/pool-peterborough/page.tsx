@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "Pool Tables in Peterborough | Playard",
-  description:
-    "Book pool tables at Playard Peterborough. Perfect for casual games, date nights, group bookings, parties, work socials, food and drinks.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/pool-peterborough");
 
 const reasons = [
   "Classic social game",
@@ -51,6 +49,7 @@ const faqs = [
 export default function PoolPeterboroughPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <ActivityStructuredData name="Pool" path="/pool-peterborough" />
       <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden bg-black px-6 py-24 text-white">
         <div className="absolute inset-0 -z-30 bg-[url('/images/activities/pool.jpg')] bg-cover bg-center opacity-55" />
         <div className="absolute inset-0 -z-20 bg-black/62" />

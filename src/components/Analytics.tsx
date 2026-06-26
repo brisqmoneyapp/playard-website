@@ -8,14 +8,19 @@ import {
   GA_MEASUREMENT_ID,
   META_PIXEL_ID,
   isAnalyticsEnabled,
+  trackGaPageView,
   trackMetaPageView,
 } from "@/lib/analytics";
 
-function MetaPageViewTracker() {
+function AnalyticsPageViewTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    const query = searchParams.toString();
+    const pagePath = query ? `${pathname}?${query}` : pathname;
+
+    trackGaPageView(pagePath);
     trackMetaPageView();
   }, [pathname, searchParams]);
 
@@ -38,7 +43,9 @@ export default function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}');
+          gtag('config', '${GA_MEASUREMENT_ID}', {
+            send_page_view: false
+          });
         `}
       </Script>
       <Script id="microsoft-clarity" strategy="afterInteractive">
@@ -74,7 +81,7 @@ export default function Analytics() {
         />
       </noscript>
       <Suspense fallback={null}>
-        <MetaPageViewTracker />
+        <AnalyticsPageViewTracker />
       </Suspense>
     </>
   );

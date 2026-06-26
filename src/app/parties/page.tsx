@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Parties in Peterborough | Playard",
-  description:
-    "Birthday parties, teen parties, work socials, celebrations and group events at Playard Peterborough.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/parties");
 
 const partyTypes = [
   {

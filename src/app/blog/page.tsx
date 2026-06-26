@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Playard Blog | Things To Do in Peterborough",
-  description:
-    "Ideas, guides and inspiration for things to do in Peterborough, indoor activities, birthday parties, date nights, team building and group days out.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/blog");
 
 const featuredPosts = [
   {

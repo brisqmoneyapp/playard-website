@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Parking & Directions | Playard Peterborough",
-  description:
-    "Find Playard Peterborough at 26 Hereward Cross, PE1 1TE. Parking, walking directions, train station access, bus connections and Google Maps guidance.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/parking-and-directions");
 
 const options = [
   "Hereward Cross Car Park",

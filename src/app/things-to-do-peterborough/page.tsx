@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Things To Do In Peterborough | Playard",
-  description:
-    "Looking for things to do in Peterborough? Discover VR, interactive darts, shuffleboard, pool, street curling, food, drinks, parties and corporate events at Playard.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/things-to-do-peterborough");
 
 const activities = [
   {

@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "VR Experiences in Peterborough | Playard",
-  description:
-    "Book virtual reality experiences at Playard Peterborough. Perfect for families, kids parties, teenagers, corporate events and group gaming sessions.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/vr-peterborough");
 
 const featureCards = [
   "Multiplayer VR",
@@ -120,6 +118,7 @@ const vrCatalogueCards = [
 export default function VRPeterboroughPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <ActivityStructuredData name="VR Experiences" path="/vr-peterborough" />
       {/* Hero Section */}
       <section className="relative flex flex-col-reverse lg:flex-row items-center bg-black px-6 py-24 lg:py-48 overflow-hidden">
         <div className="lg:w-1/2 text-center lg:text-left z-10">

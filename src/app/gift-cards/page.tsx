@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FunbutlerGiftCardModal from "@/components/FunbutlerGiftCardModal";
 
-export const metadata: Metadata = {
-  title: "Gift Cards | Playard Peterborough",
-  description:
-    "Buy Playard gift cards for birthdays, family treats, staff rewards, Christmas presents and unforgettable games, food and good times in Peterborough.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/gift-cards");
 
 const giftIdeas = [
   {

@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Accessibility | Playard Peterborough",
-  description:
-    "Accessibility information for Playard Peterborough, including venue access, support needs, website accessibility and how to contact us before visiting.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/accessibility");
 
 const supportAreas = [
   "Step free access information",

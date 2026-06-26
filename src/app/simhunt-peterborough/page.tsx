@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "SimShooting in Peterborough | Playard",
-  description:
-    "Book SimWay SimShooting at Playard Peterborough. A big screen simulator experience for groups, parties, work socials and competitive nights out.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/simhunt-peterborough");
 
 const bestFor = [
   "Friends night out",
@@ -71,6 +69,7 @@ const faqs = [
 export default function SimHuntPeterboroughPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <ActivityStructuredData name="SimShooting" path="/simhunt-peterborough" />
       <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden bg-black px-6 py-24 text-white">
         <div className="absolute inset-0 -z-30 bg-[url('/images/activities/simhunt.jpg')] bg-cover bg-center opacity-55" />
         <div className="absolute inset-0 -z-20 bg-black/62" />

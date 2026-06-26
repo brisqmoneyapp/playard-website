@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
 import NavLink from "@/components/NavLink";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbListJsonLd, getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Activities in Peterborough",
-  description:
-    "Explore Playard's activities in Peterborough including interactive darts, shuffleboard, pool, indoor street curling, VR, table tennis and SimHunt.",
-};
+export const metadata = getPageMetadata("/activities");
 
 const activities = [
   {
@@ -98,6 +95,12 @@ const activities = [
 export default function ActivitiesPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <JsonLd
+        data={breadcrumbListJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Activities", path: "/activities" },
+        ])}
+      />
       <section className="relative isolate flex min-h-[75vh] items-center overflow-hidden bg-black px-6 py-24 text-white">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_20%,rgba(215,25,32,0.45),transparent_24rem),radial-gradient(circle_at_80%_20%,rgba(0,212,255,0.25),transparent_24rem),radial-gradient(circle_at_70%_80%,rgba(255,43,214,0.18),transparent_24rem)]" />
 

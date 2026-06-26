@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Birthday Parties in Peterborough",
-  description:
-    "Book birthday parties at Playard Peterborough. Kids VR parties, teen parties, adult birthdays, games, food, drinks and group activities in Peterborough city centre.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/birthday-parties-peterborough");
 
 const partyTypes = [
   {

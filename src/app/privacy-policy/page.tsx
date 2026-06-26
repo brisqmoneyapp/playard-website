@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Playard",
-  description:
-    "Read Playard Peterborough's Privacy Policy and learn how we collect, use and protect personal information.",
-};
+export const metadata = getPageMetadata("/privacy-policy");
+
 
 const sections = [
   {

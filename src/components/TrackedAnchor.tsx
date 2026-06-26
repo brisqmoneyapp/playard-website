@@ -5,10 +5,12 @@ import { trackEvent, type AnalyticsEvent } from "@/lib/analytics";
 
 type TrackedAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   eventName: AnalyticsEvent;
+  eventParams?: Record<string, string | number | boolean>;
 };
 
 export default function TrackedAnchor({
   eventName,
+  eventParams,
   onClick,
   ...props
 }: TrackedAnchorProps) {
@@ -16,7 +18,7 @@ export default function TrackedAnchor({
     <a
       {...props}
       onClick={(event) => {
-        trackEvent(eventName);
+        trackEvent(eventName, eventParams);
         onClick?.(event);
       }}
     />

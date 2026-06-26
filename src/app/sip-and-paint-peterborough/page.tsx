@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import EventbriteWidget from "@/components/EventbriteWidget";
+import JsonLd from "@/components/JsonLd";
+import {
+  breadcrumbListJsonLd,
+  eventJsonLd,
+  faqPageJsonLd,
+  getPageMetadata,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Sip & Paint Peterborough | Playard",
-  description:
-    "Join Playard Peterborough for Sip & Paint on Friday 31 July 2026, with two hours of painting followed by one hour of DJ and social time.",
-};
+export const metadata = getPageMetadata("/sip-and-paint-peterborough");
 
 const eventDetails = [
   { label: "Date", value: "Friday 31 July 2026" },
@@ -63,6 +65,27 @@ const faqs = [
 export default function SipAndPaintPeterboroughPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <JsonLd
+        data={[
+          breadcrumbListJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Events", path: "/events" },
+            { name: "Sip & Paint", path: "/sip-and-paint-peterborough" },
+          ]),
+          eventJsonLd({
+            name: "PLNTD AT PLAYARD — Sip & Paint Peterborough",
+            description:
+              "Join Playard Peterborough for Sip & Paint on Friday 31 July 2026, with two hours of guided painting followed by one hour of DJ and social time.",
+            path: "/sip-and-paint-peterborough",
+            startDate: "2026-07-31T19:00:00+01:00",
+            endDate: "2026-07-31T22:00:00+01:00",
+            organizerName: "PLNTD at Playard",
+            offersUrl:
+              "https://www.eventbrite.co.uk/e/sip-and-paint-peterborough-plntd-at-playard-peterborough-tickets-1992528618736",
+          }),
+          faqPageJsonLd(faqs),
+        ]}
+      />
       <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden bg-black px-6 py-24 text-white">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_18%,rgba(215,25,32,0.45),transparent_24rem),radial-gradient(circle_at_82%_18%,rgba(255,43,214,0.28),transparent_22rem),radial-gradient(circle_at_70%_82%,rgba(0,212,255,0.22),transparent_22rem)]" />
 
@@ -211,6 +234,12 @@ export default function SipAndPaintPeterboroughPage() {
             </div>
 
             <div className="grid gap-4">
+              <Link
+                href="/events"
+                className="border-4 border-black px-8 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:bg-black hover:text-white"
+              >
+                View All Events
+              </Link>
               <Link
                 href="/contact"
                 className="border-4 border-black px-8 py-5 text-center text-lg font-black uppercase tracking-wide text-black transition hover:bg-black hover:text-white"

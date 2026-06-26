@@ -1,12 +1,10 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "Free Roam VR in Peterborough | Playard",
-  description:
-    "Play Free Roam VR at Playard Peterborough. Walk, move, battle and play together in shared multiplayer VR worlds for 2 to 4 players.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/free-roam-vr-peterborough");
 
 const games = [
   {
@@ -93,6 +91,7 @@ const bookingModalProps = {
 export default function FreeRoamVRPeterboroughPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-black text-white">
+      <ActivityStructuredData name="Free Roam VR" path="/free-roam-vr-peterborough" />
       <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden px-6 py-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(124,60,255,0.45),transparent_24rem),radial-gradient(circle_at_82%_18%,rgba(0,212,255,0.28),transparent_22rem),radial-gradient(circle_at_70%_82%,rgba(255,43,214,0.22),transparent_22rem)]" />
 

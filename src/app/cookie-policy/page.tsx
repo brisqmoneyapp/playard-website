@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cookie Policy | Playard",
-  description:
-    "Learn how Playard uses cookies and similar technologies on its website.",
-};
+export const metadata = getPageMetadata("/cookie-policy");
+
 
 export default function CookiePolicyPage() {
   return (

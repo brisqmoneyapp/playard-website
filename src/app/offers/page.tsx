@@ -1,14 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 import FunbutlerGiftCardModal from "@/components/FunbutlerGiftCardModal";
 import TrackedLink from "@/components/TrackedLink";
 
-export const metadata: Metadata = {
-  title: "Offers & Promotions | Playard Peterborough",
-  description:
-    "Discover the latest Playard offers, group deals, family promotions, student discounts and seasonal specials in Peterborough.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/offers");
 
 const offers = [
   {

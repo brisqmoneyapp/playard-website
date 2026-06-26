@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import TrackedAnchor from "@/components/TrackedAnchor";
 
-export const metadata: Metadata = {
-  title: "Contact Playard Peterborough",
-  description:
-    "Contact Playard Peterborough for bookings, parties, corporate events and general enquiries.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/contact");
 
 export default function ContactPage() {
   return (

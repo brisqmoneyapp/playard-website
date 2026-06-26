@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Team Building Activities Peterborough | Playard",
-  description:
-    "Team building activities in Peterborough including interactive darts, VR, shuffleboard, pool, street curling, food and drinks at Playard.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/team-building-peterborough");
 
 const activities = [
   "Interactive Darts",

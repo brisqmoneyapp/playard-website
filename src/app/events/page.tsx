@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import TrackedAnchor from "@/components/TrackedAnchor";
+import {
+  breadcrumbListJsonLd,
+  eventsItemListJsonLd,
+  getPageMetadata,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "What's On at Playard | Playard Peterborough",
-  description:
-    "Discover what's on at Playard Peterborough, from Sip & Paint and PLNTD to music-led socials, collaborations and culture in Peterborough city centre.",
-};
+export const metadata = getPageMetadata("/events");
 
 const events = [
   {
@@ -24,21 +26,45 @@ const events = [
   {
     title: "VIBE DISTRICT AT PLAYARD",
     subtitle: "Presented by Crowd Culture",
-    date: "Saturday 1 August 2026",
-    time: "6pm to 1am",
+    date: "Saturday 1 August • 6pm–1am",
+    time: null,
     description:
       "Afrobeats, Amapiano, Afrohouse, games, drinks and culture inside Playard Peterborough.",
     href: "/events",
     colour: "bg-[#00d4ff] text-black",
     labelClass: "text-black/70",
     copyClass: "text-black/80",
-    cta: "Coming Soon",
+    bookingStatus: "BOOKINGS OPEN 1 JULY",
+    cta: "View Details",
+    ctaClass: "border-black bg-black text-white",
   },
 ];
 
 export default function EventsPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <JsonLd
+        data={[
+          breadcrumbListJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Events", path: "/events" },
+          ]),
+          eventsItemListJsonLd([
+            {
+              name: "PLNTD AT PLAYARD — Sip & Paint",
+              description:
+                "Two hours of painting followed by one hour of DJ and social time at Playard Peterborough.",
+              path: "/sip-and-paint-peterborough",
+            },
+            {
+              name: "VIBE DISTRICT AT PLAYARD",
+              description:
+                "Afrobeats, Amapiano, Afrohouse, games, drinks and culture inside Playard Peterborough.",
+              path: "/events",
+            },
+          ]),
+        ]}
+      />
       <section className="relative isolate flex min-h-[65vh] items-center overflow-hidden bg-black px-6 py-24 text-white">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_20%,rgba(215,25,32,0.40),transparent_24rem),radial-gradient(circle_at_80%_20%,rgba(255,43,214,0.25),transparent_24rem),radial-gradient(circle_at_60%_80%,rgba(0,212,255,0.20),transparent_24rem)]" />
 
@@ -97,22 +123,39 @@ export default function EventsPage() {
                   {event.title}
                 </h3>
 
-                <div className="mb-6 space-y-3 border-t-4 border-current/20 pt-6">
-                  <p className="text-lg font-bold leading-7">
-                    <span className="font-black uppercase tracking-[0.12em]">Date: </span>
-                    {event.date}
-                  </p>
-                  <p className="text-lg font-bold leading-7">
-                    <span className="font-black uppercase tracking-[0.12em]">Time: </span>
-                    {event.time}
-                  </p>
-                </div>
+                {"bookingStatus" in event && event.bookingStatus ? (
+                  <div className="mb-6 space-y-3 border-t-4 border-current/20 pt-6">
+                    <p className="inline-flex bg-black px-3 py-1.5 text-lg font-black uppercase tracking-[0.08em] text-[#00d4ff] sm:text-xl">
+                      {event.bookingStatus}
+                    </p>
+                    <p className="text-lg font-bold leading-7">{event.date}</p>
+                  </div>
+                ) : (
+                  <div className="mb-6 space-y-3 border-t-4 border-current/20 pt-6">
+                    <p className="text-lg font-bold leading-7">
+                      <span className="font-black uppercase tracking-[0.12em]">Date: </span>
+                      {event.date}
+                    </p>
+                    {event.time ? (
+                      <p className="text-lg font-bold leading-7">
+                        <span className="font-black uppercase tracking-[0.12em]">Time: </span>
+                        {event.time}
+                      </p>
+                    ) : null}
+                  </div>
+                )}
 
                 <p className={`mb-8 text-lg font-bold leading-8 sm:text-xl ${event.copyClass}`}>
                   {event.description}
                 </p>
 
-                <span className="inline-flex border-4 border-current px-6 py-4 text-sm font-black uppercase tracking-wide">
+                <span
+                  className={`inline-flex border-4 px-6 py-4 text-sm font-black uppercase tracking-wide ${
+                    "ctaClass" in event && event.ctaClass
+                      ? event.ctaClass
+                      : "border-current"
+                  }`}
+                >
                   {event.cta}
                 </span>
               </Link>
@@ -129,12 +172,14 @@ export default function EventsPage() {
           <p className="mb-8 text-lg font-bold leading-8 text-zinc-300 sm:text-xl sm:leading-9">
             Are you an event company, artist, DJ, host, creative, promoter or local organiser looking to collaborate? Speak to us about using Playard for weekly, monthly or one off events in Peterborough city centre.
           </p>
-          <a
+          <TrackedAnchor
             href="mailto:info@playard.co.uk?subject=Event%20Collaboration%20Enquiry"
+            eventName="email_enquiry_clicked"
+            eventParams={{ source: "events_page" }}
             className="inline-flex bg-[#d71920] px-8 py-5 text-lg font-black uppercase tracking-wide text-white transition hover:scale-[1.03]"
           >
             Email Now
-          </a>
+          </TrackedAnchor>
         </div>
       </section>
     </main>

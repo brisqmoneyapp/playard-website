@@ -1,12 +1,10 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "VR Arcade Games in Peterborough | Playard",
-  description:
-    "Play VR arcade games at Playard Peterborough, including sports, shooters, rhythm games, puzzles, family games and multiplayer VR experiences.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/vr-arcade-games-peterborough");
 
 const accentColors = ["#7c3cff", "#00d4ff", "#ff2bd6", "#ff7a00"] as const;
 
@@ -232,6 +230,7 @@ const bookingModalProps = {
 export default function VRArcadeGamesPeterboroughPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-black text-white">
+      <ActivityStructuredData name="VR Arcade Games" path="/vr-arcade-games-peterborough" />
       <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden px-6 py-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(124,60,255,0.45),transparent_24rem),radial-gradient(circle_at_82%_18%,rgba(0,212,255,0.28),transparent_22rem),radial-gradient(circle_at_70%_82%,rgba(255,122,0,0.22),transparent_22rem)]" />
 

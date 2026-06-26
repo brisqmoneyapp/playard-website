@@ -12,6 +12,7 @@ type TickerEvent = {
   target: string;
   expiresAt: string;
   href: string;
+  statusLabel?: string;
 };
 
 const ALL_EVENTS: TickerEvent[] = [
@@ -34,6 +35,7 @@ const ALL_EVENTS: TickerEvent[] = [
     target: "2026-08-01T18:00:00+01:00",
     expiresAt: "2026-08-02T01:00:00+01:00",
     href: "/events",
+    statusLabel: "BOOKINGS OPEN 1 JULY",
   },
 ];
 
@@ -106,12 +108,18 @@ function EventBlock({
       <Bullet />
       <span className="font-semibold text-white">{event.time}</span>
       <Bullet />
-      <span
-        className="font-black tabular-nums uppercase tracking-[0.03em] text-[#00d4ff]"
-        suppressHydrationWarning
-      >
-        {countdownLabel}
-      </span>
+      {event.statusLabel ? (
+        <span className="font-black uppercase tracking-[0.03em] text-[#00d4ff]">
+          {event.statusLabel}
+        </span>
+      ) : (
+        <span
+          className="font-black tabular-nums uppercase tracking-[0.03em] text-[#00d4ff]"
+          suppressHydrationWarning
+        >
+          {countdownLabel}
+        </span>
+      )}
     </span>
   );
 }

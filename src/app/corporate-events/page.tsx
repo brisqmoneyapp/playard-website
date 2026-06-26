@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedAnchor from "@/components/TrackedAnchor";
 
-export const metadata: Metadata = {
-  title: "Corporate Events Peterborough | Team Building | Playard",
-  description:
-    "Corporate events, team building, work socials, Christmas parties, networking events, client entertainment and venue hire in Peterborough at Playard.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/corporate-events");
 
 const eventTypes = [
   {

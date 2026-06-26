@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "Book Playard Peterborough | Activities, Parties & Packages",
-  description:
-    "Book Playard Peterborough activities, parties, packages, darts, pool, shuffleboard, VR, curling, table tennis, SimShooting and group bookings.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/book");
 
 export default function BookPage() {
   return (

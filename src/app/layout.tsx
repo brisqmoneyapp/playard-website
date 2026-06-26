@@ -5,10 +5,13 @@ import CookieBanner from "@/components/CookieBanner";
 import Analytics from "@/components/Analytics";
 import NavLink from "@/components/NavLink";
 import TrackedLink from "@/components/TrackedLink";
+import TrackedAnchor from "@/components/TrackedAnchor";
+import SiteStructuredData from "@/components/SiteStructuredData";
 import "./globals.css";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 import FunbutlerGiftCardModal from "@/components/FunbutlerGiftCardModal";
 import WhatsOnTicker from "@/components/WhatsOnTicker";
+import { BUSINESS, DEFAULT_OG_IMAGE, SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site-config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,19 +26,19 @@ const geistMono = Geist_Mono({
 const ICON_VERSION = "20260619";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.playard.co.uk"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Playard Peterborough | Play Hard. Stay Late.",
-    template: "%s | Playard Peterborough",
+    default: `${SITE_NAME} | ${SITE_TAGLINE}`,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Playard Peterborough is a city centre games bar with interactive darts, VR, shuffleboard, pool, street curling, table tennis, SimShooting, food, drinks, parties, team building and corporate events.",
+  description: BUSINESS.description,
   keywords: [
     "Playard Peterborough",
     "Things to do in Peterborough",
     "Indoor activities Peterborough",
     "Interactive darts Peterborough",
     "VR Peterborough",
+    "Events Peterborough",
     "Shuffleboard Peterborough",
     "Pool Peterborough",
     "Street Curling Peterborough",
@@ -43,32 +46,43 @@ export const metadata: Metadata = {
     "Corporate Events Peterborough",
     "Birthday Parties Peterborough",
   ],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Playard Peterborough | Play Hard. Stay Late.",
+    title: `${SITE_NAME} | ${SITE_TAGLINE}`,
     description:
-      "A city centre games bar with darts, pool, shuffleboard, VR, street curling, food, drinks, birthdays, work socials and big group nights out.",
-    url: "https://www.playard.co.uk",
-    siteName: "Playard Peterborough",
+      "A city centre games bar with darts, pool, shuffleboard, VR, street curling, food, drinks, events, birthdays, work socials and big group nights out.",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: "en_GB",
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Playard Peterborough",
+        alt: SITE_NAME,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Playard Peterborough | Play Hard. Stay Late.",
+    title: `${SITE_NAME} | ${SITE_TAGLINE}`,
     description:
-      "Games bar, food, drinks, parties and big group nights out in Peterborough city centre.",
-    images: ["/og-image.jpg"],
-  },
-  alternates: {
-    canonical: "https://www.playard.co.uk",
+      "Games bar, food, drinks, events, parties and big group nights out in Peterborough city centre.",
+    images: [DEFAULT_OG_IMAGE],
   },
   icons: {
     icon: [
@@ -98,6 +112,7 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/activities", label: "Activities", trackEvent: "activities_clicked" as const },
   { href: "/food-and-drinks", label: "Food & Drinks" },
+  { href: "/events", label: "Events" },
   { href: "/offers", label: "Offers", trackEvent: "offers_clicked" as const },
   { href: "/contact", label: "Find Us" },
 ];
@@ -124,6 +139,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-black text-white">
+        <SiteStructuredData />
         <header className="sticky top-0 z-[100] w-full overflow-x-hidden bg-black text-white shadow-[0_2px_16px_rgba(0,0,0,0.28)]">
           <div className="border-b-4 border-playard-red bg-[#080202]/95 backdrop-blur">
             <div className="mx-auto flex w-full min-w-0 max-w-7xl flex-wrap items-center justify-between gap-2 px-3 py-2 sm:gap-4 sm:px-6 sm:py-3 lg:py-4">
@@ -150,12 +166,14 @@ export default function RootLayout({
               </nav>
 
               <div className="flex min-w-0 flex-wrap items-center justify-end gap-1.5 sm:gap-3">
-                <a
+                <TrackedAnchor
                   href="tel:01733641062"
+                  eventName="telephone_clicked"
+                  eventParams={{ source: "header" }}
                   className="hidden border-2 border-white px-4 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:rotate-[2deg] hover:border-playard-red hover:bg-playard-red lg:inline-flex"
                 >
                   Call
-                </a>
+                </TrackedAnchor>
                 <FunbutlerBookingModal
                   bookingFormId="673706716dbb45cccad59994"
                   buttonText="Quick Book"
@@ -174,7 +192,7 @@ export default function RootLayout({
             </div>
 
             <div className="border-t border-red-950/60 px-3 py-1.5 xl:hidden">
-              <div className="mx-auto grid max-w-7xl grid-cols-5 gap-1 text-center text-[0.58rem] font-black uppercase tracking-[0.04em] text-zinc-300 sm:gap-2 sm:text-xs">
+              <div className="mx-auto grid max-w-7xl grid-cols-3 gap-1 text-center text-[0.58rem] font-black uppercase tracking-[0.04em] text-zinc-300 sm:grid-cols-6 sm:gap-2 sm:text-xs">
                 {navItems.map((item) => (
                   <NavLink
                     key={item.href}
@@ -369,8 +387,22 @@ export default function RootLayout({
               </div>
 
               <div className="flex flex-col gap-2 lg:items-end">
-                <a href="mailto:info@playard.co.uk" className="hover:text-white">info@playard.co.uk</a>
-                <a href="tel:01733641062" className="hover:text-white">01733 641062</a>
+                <TrackedAnchor
+                  href="mailto:info@playard.co.uk"
+                  eventName="email_enquiry_clicked"
+                  eventParams={{ source: "footer" }}
+                  className="hover:text-white"
+                >
+                  info@playard.co.uk
+                </TrackedAnchor>
+                <TrackedAnchor
+                  href="tel:01733641062"
+                  eventName="telephone_clicked"
+                  eventParams={{ source: "footer" }}
+                  className="hover:text-white"
+                >
+                  01733 641062
+                </TrackedAnchor>
               </div>
             </div>
           </div>

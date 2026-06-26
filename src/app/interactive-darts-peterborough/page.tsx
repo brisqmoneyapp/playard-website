@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "Interactive Darts in Peterborough | Playard",
-  description:
-    "Book interactive darts at Playard Peterborough. Digital darts, automatic scoring, group games, food, drinks, parties and work socials.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/interactive-darts-peterborough");
 
 const dartGames = [
   {
@@ -95,6 +93,7 @@ const faqs = [
 export default function InteractiveDartsPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <ActivityStructuredData name="Interactive Darts" path="/interactive-darts-peterborough" />
       <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden bg-black px-6 py-24 text-white">
         <div className="absolute inset-0 -z-30 bg-[url('/images/activities/darts.jpg')] bg-cover bg-center opacity-55" />
         <div className="absolute inset-0 -z-20 bg-black/62" />

@@ -9,6 +9,7 @@ type TickerEvent = {
   dateTime: string;
   target: string;
   href: string;
+  statusLabel?: string;
 };
 
 const TICKER_EVENTS: TickerEvent[] = [
@@ -22,9 +23,10 @@ const TICKER_EVENTS: TickerEvent[] = [
   {
     name: "VIBE DISTRICT AT PLAYARD",
     label: "Presented by Crowd Culture",
-    dateTime: "Saturday 1 August 2026, 6pm to 1am",
+    dateTime: "Saturday 1 August • 6pm–1am",
     target: "2026-08-01T18:00:00+01:00",
     href: "/events",
+    statusLabel: "BOOKINGS OPEN 1 JULY",
   },
 ];
 
@@ -114,12 +116,18 @@ export default function TopEventTicker() {
 
         <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 md:justify-end">
           <span className="text-zinc-500 lg:hidden">{event.dateTime}</span>
-          <span
-            className="tabular-nums text-[#00d4ff]"
-            suppressHydrationWarning
-          >
-            {hasStarted ? "Live now" : formatCountdown(displayTime)}
-          </span>
+          {event.statusLabel ? (
+            <span className="font-black uppercase tracking-[0.06em] text-[#00d4ff]">
+              {event.statusLabel}
+            </span>
+          ) : (
+            <span
+              className="tabular-nums text-[#00d4ff]"
+              suppressHydrationWarning
+            >
+              {hasStarted ? "Live now" : formatCountdown(displayTime)}
+            </span>
+          )}
           <span className="border border-[#d71920] bg-[#d71920] px-2 py-0.5 text-[0.58rem] text-white transition group-hover:bg-white group-hover:text-black sm:px-2.5 sm:text-[0.62rem]">
             View Details
           </span>

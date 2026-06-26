@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbListJsonLd, faqPageJsonLd, getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Playard Peterborough",
-  description:
-    "Frequently asked questions about Playard Peterborough including activities, bookings, parties, food, drinks, tournaments and corporate events.",
-};
+export const metadata = getPageMetadata("/faq");
 
 const faqs = [
   {
@@ -63,6 +60,15 @@ const faqs = [
 export default function FAQPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <JsonLd
+        data={[
+          breadcrumbListJsonLd([
+            { name: "Home", path: "/" },
+            { name: "FAQ", path: "/faq" },
+          ]),
+          faqPageJsonLd(faqs),
+        ]}
+      />
       <section className="relative isolate flex min-h-[75vh] items-center overflow-hidden bg-black px-6 py-24 text-white">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_20%,rgba(255,43,214,0.35),transparent_24rem),radial-gradient(circle_at_80%_20%,rgba(0,212,255,0.25),transparent_24rem),radial-gradient(circle_at_70%_80%,rgba(215,25,32,0.20),transparent_24rem)]" />
 

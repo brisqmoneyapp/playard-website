@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions | Playard",
-  description:
-    "Terms and Conditions for Playard Peterborough including bookings, activities, events and website usage.",
-};
+export const metadata = getPageMetadata("/terms-and-conditions");
+
 
 type TermsSection = {
   title: string;

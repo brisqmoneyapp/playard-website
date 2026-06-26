@@ -1,13 +1,10 @@
 
 
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Indoor Activities in Peterborough | Playard",
-  description:
-    "Looking for indoor activities in Peterborough? Playard offers VR, interactive darts, shuffleboard, pool, street curling, table tennis, SimShooting, food and drinks.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/indoor-activities-peterborough");
 
 const activities = [
   {

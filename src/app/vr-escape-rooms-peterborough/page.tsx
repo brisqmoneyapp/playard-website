@@ -1,12 +1,10 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "VR Escape Rooms in Peterborough | Playard",
-  description:
-    "Play VR escape rooms at Playard Peterborough. Work together, solve puzzles and complete immersive missions with your group.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/vr-escape-rooms-peterborough");
 
 const accentColors = ["#7c3cff", "#00d4ff", "#ff2bd6", "#ff7a00"] as const;
 
@@ -185,6 +183,7 @@ const bookingModalProps = {
 export default function VREscapeRoomsPeterboroughPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-black text-white">
+      <ActivityStructuredData name="VR Escape Rooms" path="/vr-escape-rooms-peterborough" />
       <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden px-6 py-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(124,60,255,0.45),transparent_24rem),radial-gradient(circle_at_82%_18%,rgba(0,212,255,0.28),transparent_22rem),radial-gradient(circle_at_70%_82%,rgba(255,43,214,0.22),transparent_22rem)]" />
 

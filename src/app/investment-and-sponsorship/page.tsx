@@ -1,10 +1,8 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Investment & Sponsorship | Playard Peterborough",
-  description:
-    "Learn about investment opportunities, sponsorship partnerships and venue branding opportunities at Playard Peterborough.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/investment-and-sponsorship");
 
 const sponsorOptions = [
   {

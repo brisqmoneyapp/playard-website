@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { trackEventbriteBookingClick } from "@/lib/analytics";
 
 const EVENTBRITE_SCRIPT_ID = "eventbrite-widgets-script";
 const EVENTBRITE_SCRIPT_SRC =
@@ -222,7 +223,10 @@ export default function EventbriteWidget({
     <>
       <button
         type="button"
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          trackEventbriteBookingClick(buttonText);
+          setIsOpen(true);
+        }}
         className={`inline-flex items-center justify-center bg-[#d71920] px-8 py-5 text-center text-base font-black uppercase tracking-wide text-white shadow-xl transition hover:rotate-[-2deg] hover:scale-[1.03] hover:bg-[#ef233c] sm:text-lg ${className}`}
       >
         {buttonText}

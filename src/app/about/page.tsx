@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "About Playard | Peterborough Entertainment Venue",
-  description:
-    "Learn about Playard Peterborough, a competitive social gaming venue offering VR, interactive darts, shuffleboard, pool, street curling, food, drinks, parties and corporate events.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/about");
 
 const highlights = [
   "VR Experiences",

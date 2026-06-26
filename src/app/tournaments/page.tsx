@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Tournaments | Playard Peterborough",
-  description:
-    "Join competitive tournaments at Playard Peterborough including darts, pool, VR, table tennis, shuffleboard and special gaming events.",
-};
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/tournaments");
 
 const tournaments = [
   {

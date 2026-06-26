@@ -4,7 +4,10 @@ import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 
 import type { AnalyticsEvent } from "@/lib/analytics";
-import { trackEvent as trackAnalyticsEvent } from "@/lib/analytics";
+import {
+  trackEvent as trackAnalyticsEvent,
+  trackFunbutlerBookingClick,
+} from "@/lib/analytics";
 
 type FunbutlerBookingModalProps = {
   clientId?: string;
@@ -180,6 +183,7 @@ export default function FunbutlerBookingModal({
       <button
         type="button"
         onClick={() => {
+          trackFunbutlerBookingClick(buttonText);
           if (trackEvent) {
             trackAnalyticsEvent(trackEvent);
           }

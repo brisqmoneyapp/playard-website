@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 
-export const metadata: Metadata = {
-  title: "Street Curling in Peterborough | Playard",
-  description:
-    "Book indoor street curling at Playard Peterborough. Curling without the ice, perfect for families, groups, birthdays, team building and corporate events.",
-};
+import ActivityStructuredData from "@/components/ActivityStructuredData";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata = getPageMetadata("/street-curling-peterborough");
 
 const reasons = [
   "No experience required",
@@ -51,6 +49,7 @@ const faqs = [
 export default function StreetCurlingPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fff3dd] text-black">
+      <ActivityStructuredData name="Street Curling" path="/street-curling-peterborough" />
       <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden bg-black px-6 py-24 text-white">
         <div className="absolute inset-0 -z-30 bg-[url('/images/activities/curling.jpg')] bg-cover bg-center opacity-55" />
         <div className="absolute inset-0 -z-20 bg-black/62" />
