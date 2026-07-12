@@ -13,6 +13,7 @@ type TickerEvent = {
   expiresAt: string;
   href: string;
   statusLabel?: string;
+  tickerLine?: Array<{ text: string; highlight?: boolean }>;
 };
 
 const ALL_EVENTS: TickerEvent[] = [
@@ -34,8 +35,13 @@ const ALL_EVENTS: TickerEvent[] = [
     time: "6pm–1am",
     target: "2026-08-01T18:00:00+01:00",
     expiresAt: "2026-08-02T01:00:00+01:00",
-    href: "/events",
-    statusLabel: "BOOKINGS OPEN 1 JULY",
+    href: "/vibe-district-peterborough",
+    tickerLine: [
+      { text: "VIBE DISTRICT AT PLAYARD" },
+      { text: "SATURDAY 1 AUGUST" },
+      { text: "6PM–1AM" },
+      { text: "BOOK NOW", highlight: true },
+    ],
   },
 ];
 
@@ -90,6 +96,29 @@ function EventBlock({
   event: TickerEvent;
   countdownLabel: string;
 }) {
+  if (event.tickerLine) {
+    return (
+      <span
+        data-event-id={event.id}
+        data-event-href={event.href}
+        className="inline-flex shrink-0 items-center whitespace-nowrap text-[0.58rem] sm:text-[0.62rem]"
+      >
+        {event.tickerLine.map((part, index) => (
+          <span key={`${part.text}-${index}`} className="inline-flex items-center">
+            {index > 0 ? <Bullet /> : null}
+            <span
+              className={`font-black uppercase tracking-[0.03em] ${
+                part.highlight ? "text-[#00d4ff]" : "text-white"
+              }`}
+            >
+              {part.text}
+            </span>
+          </span>
+        ))}
+      </span>
+    );
+  }
+
   return (
     <span
       data-event-id={event.id}

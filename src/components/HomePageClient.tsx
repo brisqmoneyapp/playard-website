@@ -124,13 +124,13 @@ const eventsExperiences = [
     href: "/sip-and-paint-peterborough",
   },
   {
-    title: "Open Mic Night",
-    text: "Music, comedy, spoken word and local talent in a relaxed games bar setting.",
+    title: "Vibe District",
+    text: "Afrobeats, Amapiano, Afrohouse, games, drinks and culture at Playard Peterborough.",
     colour: "bg-[#00d4ff] text-black",
     labelClass: "text-black/70",
     copyClass: "text-black/80",
-    label: "Events",
-    href: "/events",
+    label: "1 August",
+    href: "/vibe-district-peterborough",
   },
   {
     title: "Games Night",

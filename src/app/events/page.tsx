@@ -26,17 +26,15 @@ const events = [
   {
     title: "VIBE DISTRICT AT PLAYARD",
     subtitle: "Presented by Crowd Culture",
-    date: "Saturday 1 August • 6pm–1am",
-    time: null,
+    date: "Saturday 1 August 2026",
+    time: "6:00 PM – 1:00 AM",
     description:
       "Afrobeats, Amapiano, Afrohouse, games, drinks and culture inside Playard Peterborough.",
-    href: "/events",
+    href: "/vibe-district-peterborough",
     colour: "bg-[#00d4ff] text-black",
     labelClass: "text-black/70",
     copyClass: "text-black/80",
-    bookingStatus: "BOOKINGS OPEN 1 JULY",
-    cta: "View Details",
-    ctaClass: "border-black bg-black text-white",
+    cta: "Book Now",
   },
 ];
 
@@ -60,7 +58,7 @@ export default function EventsPage() {
               name: "VIBE DISTRICT AT PLAYARD",
               description:
                 "Afrobeats, Amapiano, Afrohouse, games, drinks and culture inside Playard Peterborough.",
-              path: "/events",
+              path: "/vibe-district-peterborough",
             },
           ]),
         ]}
@@ -123,39 +121,24 @@ export default function EventsPage() {
                   {event.title}
                 </h3>
 
-                {"bookingStatus" in event && event.bookingStatus ? (
-                  <div className="mb-6 space-y-3 border-t-4 border-current/20 pt-6">
-                    <p className="inline-flex bg-black px-3 py-1.5 text-lg font-black uppercase tracking-[0.08em] text-[#00d4ff] sm:text-xl">
-                      {event.bookingStatus}
-                    </p>
-                    <p className="text-lg font-bold leading-7">{event.date}</p>
-                  </div>
-                ) : (
-                  <div className="mb-6 space-y-3 border-t-4 border-current/20 pt-6">
+                <div className="mb-6 space-y-3 border-t-4 border-current/20 pt-6">
+                  <p className="text-lg font-bold leading-7">
+                    <span className="font-black uppercase tracking-[0.12em]">Date: </span>
+                    {event.date}
+                  </p>
+                  {event.time ? (
                     <p className="text-lg font-bold leading-7">
-                      <span className="font-black uppercase tracking-[0.12em]">Date: </span>
-                      {event.date}
+                      <span className="font-black uppercase tracking-[0.12em]">Time: </span>
+                      {event.time}
                     </p>
-                    {event.time ? (
-                      <p className="text-lg font-bold leading-7">
-                        <span className="font-black uppercase tracking-[0.12em]">Time: </span>
-                        {event.time}
-                      </p>
-                    ) : null}
-                  </div>
-                )}
+                  ) : null}
+                </div>
 
                 <p className={`mb-8 text-lg font-bold leading-8 sm:text-xl ${event.copyClass}`}>
                   {event.description}
                 </p>
 
-                <span
-                  className={`inline-flex border-4 px-6 py-4 text-sm font-black uppercase tracking-wide ${
-                    "ctaClass" in event && event.ctaClass
-                      ? event.ctaClass
-                      : "border-current"
-                  }`}
-                >
+                <span className="inline-flex border-4 border-current px-6 py-4 text-sm font-black uppercase tracking-wide">
                   {event.cta}
                 </span>
               </Link>

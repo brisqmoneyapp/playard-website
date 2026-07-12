@@ -27,7 +27,8 @@ export type AnalyticsEvent =
   | "email_enquiry_clicked"
   | "telephone_clicked"
   | "funbutler_booking_clicked"
-  | "eventbrite_booking_clicked";
+  | "eventbrite_booking_clicked"
+  | "fatsoma_booking_clicked";
 
 const META_CUSTOM_EVENTS = new Set<AnalyticsEvent>([
   "quick_book_clicked",
@@ -45,6 +46,7 @@ const META_CUSTOM_EVENTS = new Set<AnalyticsEvent>([
   "corporate_enquiry_clicked",
   "funbutler_booking_clicked",
   "eventbrite_booking_clicked",
+  "fatsoma_booking_clicked",
   "book_button_clicked",
 ]);
 
@@ -125,9 +127,18 @@ export function trackGaPageView(path: string) {
     trackEvent("events_page_viewed", { page_path: path });
   }
 
-  if (path.startsWith("/sip-and-paint") || path.startsWith("/events")) {
+  if (
+    path.startsWith("/sip-and-paint") ||
+    path.startsWith("/vibe-district") ||
+    path.startsWith("/events")
+  ) {
     trackEvent("event_page_viewed", { page_path: path });
   }
+}
+
+export function trackFatsomaBookingClick(source: string) {
+  trackEvent("fatsoma_booking_clicked", { source });
+  trackEvent("book_button_clicked", { source, booking_provider: "fatsoma" });
 }
 
 export function trackBookButtonClick(source: string) {

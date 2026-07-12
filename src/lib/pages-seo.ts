@@ -81,6 +81,23 @@ export const PAGE_SEO_ENTRIES: PageSeoEntry[] = [
     priority: 0.92,
   },
   {
+    path: "/vibe-district-peterborough",
+    title: "Vibe District Peterborough | Playard",
+    description:
+      "Book Vibe District at Playard Peterborough on Saturday 1 August 2026. Afrobeats, Amapiano, Afrohouse, games, drinks and culture from 6pm to 1am.",
+    keywords: [
+      "Vibe District Peterborough",
+      "Vibe District Playard",
+      "Afrobeats Peterborough",
+      "Amapiano Peterborough",
+      "Crowd Culture Playard",
+      "events Peterborough",
+    ],
+    category: "Events",
+    changeFrequency: "weekly",
+    priority: 0.92,
+  },
+  {
     path: "/parties",
     title: "Parties in Peterborough | Playard",
     description:

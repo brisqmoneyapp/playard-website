@@ -23,10 +23,10 @@ const TICKER_EVENTS: TickerEvent[] = [
   {
     name: "VIBE DISTRICT AT PLAYARD",
     label: "Presented by Crowd Culture",
-    dateTime: "Saturday 1 August • 6pm–1am",
+    dateTime: "Saturday 1 August 2026 · 6:00 PM – 1:00 AM",
     target: "2026-08-01T18:00:00+01:00",
-    href: "/events",
-    statusLabel: "BOOKINGS OPEN 1 JULY",
+    href: "/vibe-district-peterborough",
+    statusLabel: "BOOK NOW",
   },
 ];
 
