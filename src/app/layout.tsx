@@ -11,6 +11,7 @@ import "./globals.css";
 import FunbutlerBookingModal from "@/components/FunbutlerBookingModal";
 import FunbutlerGiftCardModal from "@/components/FunbutlerGiftCardModal";
 import WhatsOnTicker from "@/components/WhatsOnTicker";
+import UpcomingEventsPopup from "@/components/UpcomingEventsPopup";
 import { BUSINESS, DEFAULT_OG_IMAGE, SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site-config";
 
 const geistSans = Geist({
@@ -409,6 +410,7 @@ export default function RootLayout({
         </footer>
         </div>
         <CookieBanner />
+        <UpcomingEventsPopup />
         <Analytics />
       </body>
     </html>
